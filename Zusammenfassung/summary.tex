@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./screenshots/} }
 \usepackage{titlesec}
+\usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
 
@@ -26,7 +27,7 @@
 
 \newpage
 
-\chapter{Mathematische Grundlagen}
+\chapter{Grundlagen}
 \vspace*{-1.25em}
 \section{Lineare Algebra}
 \subsection{Skalarprodukt}
@@ -81,8 +82,72 @@ Drei verschiedene Lernmethoden
   \item Bestärkendes Lernen (\textit{Reinforcement Learning})
 \end{itemize}
 
-\subsection{Überwachtes Lernen}
-- Ziel: finden einer Funktion $f: X \rightarrow Y$ wobei $X$ auch \textit{Features} und $Y$ auch \textit{Responses} genannt werden\\
-- Eine perfekte Abbildung ist nicht möglich, es treten \textit{reduzierbare} Fehler (z.B. durch eine bessere Funktion $f$) und \textit{nicht reduzierbare} Fehler auf (z.B. Messfehler in Eingabedaten)
+\section{Überwachtes Lernen}
+- Ziel: finden einer Funktion $f: X \rightarrow Y$ wobei $X$ auch \textit{Features / Prädiktoren} und $Y$ auch \textit{Responses} genannt werden\\
+- $X$ = $\mathbb{R}^d$ (\textit{d}-dimensionaler Vektorraum) mit $d\in \mathbb{N}$\\
+- Eine perfekte Abbildung ist nicht möglich, es treten \textit{reduzierbare} Fehler (z.B. durch eine bessere Funktion $f$) und \textit{nicht reduzierbare} Fehler (z.B. Messfehler in Eingabedaten) auf\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item \textit{Vorhersage:} $y = f(x)$ optimieren wobei $f$ auch \textit{Blackbox} sein kann
+  \item \textit{Inferenz:} Interpretierbarkeit von $f$ steht im Vordergrund (Welche Prädiktoren sind für welche Response verwantwortlich)
+  \item \textit{Parametrische} Methoden: Annahme einer parametrisierten Struktur von $f$ dessen Parameter mit Hilfe von Daten bestimmt werden
+  \item \textit{Nicht-parametrische} Methoden: Keine Annahme einer Struktur von $f$ sondern möglichst direkte Definition mit Hilfe von Daten
+\end{itemize}
+- Menge $X$ und $Y$ bekannt, genaue Abbildung $f$ kann aber nur anhand von Beispielen $D = \{(x^i, y^i) | x^i \in X, y^i \in Y, 1 \leq i \leq n\}$ (\textit{Trainingsdatensatz} bzw. \textit{gelabelte} Daten) erahnt werden\\
+
+\subsection{Beispiel Klassifikation}
+- Wenn $Y$ diskrete Menge $\{C_1, ..., C_k\}$ für $k \in \mathbb{N}$ dann handelt es sich um ein \textit{Klassifikationsproblem}, $C_1, ..., C_k$ sind dann \textit{Klassen / Kategorien}\\
+- $|Y| = 2$ (\textit{Binäre} Klassifikation) mit $f : \mathbb{R} \rightarrow \{$angenehm, unangenehm$\}$ (Temperaturklassifikation)\\
+- $|Y| = 5$ (\textit{Mehrklassen}-Klassifikation) mit $f : \mathbb{R} \rightarrow \{$frostig, kalt, angenehm, warm, heiß$\}$
+
+\subsection{Beispiel Regression}
+- Wenn $Y$ kontinuierliche Menge, d.h. $Y \subseteq \mathbb{R}$, dann handelt es sich um ein \textit{Regressionsproblem}\\
+- Interesse an \textit{quantitativen} Aussagen\\
+\begin{center}
+  \includegraphics[scale=.4]{ml01_3}
+\end{center}
+- Ausgabemenge $Y$ kann auch mehrdimensional sein (z.B. $\{$gut, schlecht$\}\times \{$günstig, normal, teuer$\}$)
+
+\section{Unüberwachtes Lernen}
+- Mehrwert erhalten ohne Zuhilfenahme von gelabelten Daten\\
+- Man geht von Menge an Daten $D = \{x^i|x^i \in X, 1 \leq i \leq n\}$ aus und versucht mehr über Beschaffenheit von $X$ herauszufinden\\
+- z.B. \textit{Verteilung} von $X$ bei Sprachmodellen, \textit{Dimensionsreduktion} zur Verbesserung von überwachten Lernverfahren
+
+\section{Datenvisualisierung}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml01_4}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml01_5}
+  \end{minipage}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml01_6}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml01_7}
+  \end{minipage}
+\end{figure}
+
+\section{Datenvorverarbeitung}
+Bevor ein Modell erstellt und trainiert werden kann, müssen Daten durch\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item \textit{Auswahl}: Nur für den Anwendungsfall relevante Daten verwenden
+  \item \textit{Aufbereitung}
+  \subitem Dateiformat (Tabellen, BigData)
+  \subitem Bereinigung von unvollständigen oder ungültigen Daten
+  \subitem Repräsentative Auswahl bei langer Laufzeit / großem Speicheraufwand
+  \item \textit{Transformation}
+  \subitem Features in geeigneten Wertebereich bringen ([0, 1])
+  \subitem Zerlegen in sinnvolle Features
+  \subitem Aggregation mehrerer Features
+\end{itemize}
 
 \end{document}

@@ -150,4 +150,17 @@ Bevor ein Modell erstellt und trainiert werden kann, müssen Daten durch\\
   \subitem Aggregation mehrerer Features
 \end{itemize}
 
+\chapter{Lineare Regression}
+\subsection{Lineare Regression im Eindimensionalen}
+- $f : \mathbb{R} \rightarrow \mathbb{R}$ mit $f_w(x) = w_1x + w_0$\\
+- $w = (w_0, w_1)^T \in \mathbb{R}^2$ sind die \textit{Parameter} des Modells
+\begin{center}
+  \includegraphics[scale=0.275]{ml02_1}
+\end{center}
+- Wie mit Daten $D = \{(x^i, y^i) \in \mathbb{R}^2 | 1 \leq i \leq n\}$ die \textit{besten} Parameter von $f$ bestimmen?\\
+- Quadratischen Fehler (\textit{Residual Sum of Squares}) mit\\
+$RSS(w) = \sum_{i=1}^n(y^i - f_w(x^i))^2$ bestimmen
+\begin{center}
+  \includegraphics[scale=0.35]{ml02_2}
+\end{center}
 \end{document}

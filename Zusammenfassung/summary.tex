@@ -60,6 +60,16 @@ $I = \begin{bmatrix}1 & 0 & 0\\0 & 1 & 0\\0 & 0 &1\end{bmatrix}$\\
 \includegraphics[scale=.2]{ml01_1} $1 - \frac{1}{4}x_1 - \frac{1}{6}x_2 = 0$
 \end{center}
 
+\section{Statistik}
+\begin{itemize}
+  \item Durchschnittswert: (Summe über alle Zeilen) / (Anzahl an Zeilen)
+  \item Standardabweichung: Wurzel ver Varianz
+  \item 25\%-Quantile: 25\% aller Werte sind kleiner als dieser Wert
+  \item 50\%-Quantile: 50\% aller Werte sind kleiner als dieser Wert (= \textit{Median})
+  \item 75\%-Quantile: 75\% aller Werte sind kleiner als dieser Wert
+\end{itemize}
+
+
 \section{Analysis}
 \subsection{Kettenregel}
 - Wenn $z$ von $y$ und $y$ von $x$ abhängt, dann gilt: $\frac{dz}{dx} = \frac{dz}{dy}\frac{dy}{dx}$\\
@@ -135,6 +145,14 @@ Drei verschiedene Lernmethoden
     \includegraphics[scale=.25]{ml01_7}
   \end{minipage}
 \end{figure}
+\subsection{Boxplot}
+\begin{center}
+  \includegraphics[scale=.125]{ml01_8}
+\end{center}
+- Zwischen dem linken waagerechten Strich (Minimum) und dem rechten waagerechten Strich (Maximum) liegen 99.3\% aller Daten\\
+- Die \textit{Outliers} an den beiden Enden sind die letzten 0.7\%\\
+- Der Abstandsfaktor (hier 1.5) ist frei wählbar\\
+- Sollte der Punkt $Q1 - 1.5\cdot IQR$ bzw. $Q3 + 1.5\cdot IQR$ nicht existieren wird der Strich auf den nächst-näheren Punkt gesetzt
 
 \section{Datenvorverarbeitung}
 Bevor ein Modell erstellt und trainiert werden kann, müssen Daten durch\\
@@ -230,8 +248,8 @@ $\Rightarrow$ Quadratischer Fehler \textit{RSS} oder mittlerer quadratischer Feh
 - $R^2$ misst die komplette Varianz des Modells und ist $\in [0, 1]$\\
 \vspace*{-1.25em}
 \begin{itemize}
-  \item $R^2$ nahe 1 zeugt von einem passenden Model das die Daten gut erklärt
-  \item $R^2$ nahe 0 bedeutet, dass das Modell die Daten schlecht erklärt
+  \item $R^2$ nahe 1 zeugt von einem passenden Model das die Daten gut erklärt (viele Datenpunkte liegen auf der Geraden bzw. Hyperebene)
+  \item $R^2$ nahe 0 bedeutet, dass das Modell die Daten schlecht erklärt (umso weiter entfernt die Datenpunkte von der Hyperebene sind umso näher ist $R^2$ bei 0)
 \end{itemize}
 - $R^2$ ist unabhängig von Anzahl an Trainingsdaten \textit{UND} dem Wertebereich\\
 - Allgemeine Aussage ab welchem $R^2$-Wert das Modell \textit{gut} ist, ist nicht möglich. Hängt vom Anwendungsfall (Medizin / Physik) ab

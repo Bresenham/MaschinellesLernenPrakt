@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1574876904 "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf" "summary" 1574876910
+["pdflatex"] 1574878128 "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf" "summary" 1574878132
   "C:/Users/test/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1574718492 4273884 0619cbdb8b09e780f648b03fbaa46492 ""
   "C:/Users/test/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1574872271 83751 6e4565e2a96ca36e797cc3ed7d4e67f8 ""
   "C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -76,8 +76,8 @@
   "C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty" 1573809547 7168 8281b68f9aa94d84ca197175fc565baa ""
   "C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty" 1573809550 22510 31d4b56e32bf8500deed2fdaa3411925 ""
   "C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/tex/latex/titlesec/titlesec.sty" 1571240058 48596 2b6a95da931c07a430b1a61904aaa42d ""
-  "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.aux" 1574876909 3962 5c45c4035306a2292151b375f7a0c06c ""
-  "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" 1574876903 16985 21bd6a115c3cec39352c7330883b71b0 ""
+  "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.aux" 1574878131 4161 674e33fcc96d53504049003224b797da ""
+  "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" 1574878127 18024 bc20e3ce270396a340b335330229845b ""
   "screenshots/ml01_1.png" 1574791122 15651 9ceaebde41115b29de7e41388effd494 ""
   "screenshots/ml01_2.png" 1574791977 27207 2876d4d8b5865291a1a4a61d1533ba89 ""
   "screenshots/ml01_3.png" 1574793705 32113 8fe7e24196fb6a9fcfd59ef1ebbeb9e5 ""
@@ -85,6 +85,7 @@
   "screenshots/ml01_5.png" 1574794153 47683 bc7a94d324465df0ba4b411d01c7fdc8 ""
   "screenshots/ml01_6.png" 1574794174 64852 65bf60a4a6fadb5cba60439cf925c84e ""
   "screenshots/ml01_7.png" 1574794194 78313 93c0297aafb9ac44cd4da840c7fe44f4 ""
+  "screenshots/ml01_8.png" 1574877795 127617 b3b175964437cf2e9bbc087327c1bdb7 ""
   "screenshots/ml02_1.png" 1574795070 78041 a3e653482901c7ce8c557f9f2a790bd3 ""
   "screenshots/ml02_10.png" 1574876700 85746 3f3909b6aa80041d3e89a678c7cdec04 ""
   "screenshots/ml02_11.png" 1574876715 86434 21b0d6c470fee7b5eed8923efe88c1be ""
@@ -96,11 +97,11 @@
   "screenshots/ml02_7.png" 1574875390 100895 4854238c77d884a0da641b8e57a1c77f ""
   "screenshots/ml02_8.png" 1574875453 133096 5785992d4895f7f93b40f37929cf821c ""
   "screenshots/ml02_9.png" 1574876380 54056 22493b6331da568601ba446c895ff23d ""
-  "summary.aux" 1574876909 3962 5c45c4035306a2292151b375f7a0c06c "pdflatex"
-  "summary.tex" 1574876903 16985 21bd6a115c3cec39352c7330883b71b0 ""
+  "summary.aux" 1574878131 4161 674e33fcc96d53504049003224b797da "pdflatex"
+  "summary.tex" 1574878127 18024 bc20e3ce270396a340b335330229845b ""
   (generated)
   "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.log"
   "summary.pdf"
-  "summary.log"
-  "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf"
   "summary.aux"
+  "c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf"
+  "summary.log"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.25)  27 NOV 2019 18:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.25)  27 NOV 2019 19:08
 entering extended mode
 **c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
 (c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
@@ -239,221 +239,232 @@ Package pdftex.def Info: ./screenshots/ml01_1.png  used on input line 60.
 <./screenshots/ml01_2.png, id=23, 426.84468pt x 282.30469pt>
 File: ./screenshots/ml01_2.png Graphic file (type png)
 <use ./screenshots/ml01_2.png>
-Package pdftex.def Info: ./screenshots/ml01_2.png  used on input line 77.
+Package pdftex.def Info: ./screenshots/ml01_2.png  used on input line 87.
 (pdftex.def)             Requested size: 170.73485pt x 112.91986pt.
- [3 <./screenshots/ml01_2.png>]
-Overfull \hbox (14.94888pt too wide) in paragraph at lines 93--94
+ [3]
+Overfull \hbox (14.94888pt too wide) in paragraph at lines 103--104
 []\OT1/cmr/m/it/10 Inferenz: \OT1/cmr/m/n/10 In-ter-pretier-barkeit von $\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 steht im Vorder-grund (Welche Pradiktoren
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
+[4 <./screenshots/ml01_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
-<./screenshots/ml01_3.png, id=30, 581.92406pt x 307.1475pt>
+<./screenshots/ml01_3.png, id=33, 581.92406pt x 307.1475pt>
 File: ./screenshots/ml01_3.png Graphic file (type png)
 <use ./screenshots/ml01_3.png>
-Package pdftex.def Info: ./screenshots/ml01_3.png  used on input line 108.
+Package pdftex.def Info: ./screenshots/ml01_3.png  used on input line 118.
 (pdftex.def)             Requested size: 232.7655pt x 122.85681pt.
-[4]
-Overfull \hbox (13.854pt too wide) in paragraph at lines 113--116
+
+Overfull \hbox (13.854pt too wide) in paragraph at lines 123--126
 \OT1/cmr/m/n/10 - z.B. \OT1/cmr/m/it/10 Verteilung \OT1/cmr/m/n/10 von $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 bei Sprach-mod-ellen, \OT1/cmr/m/it/10 Di-men-sion-sre-duk-tion \OT1/cmr/m/n/10 zur Verbesserung
  []
 
 <./screenshots/ml01_4.png, id=34, 756.57657pt x 541.27219pt>
 File: ./screenshots/ml01_4.png Graphic file (type png)
 <use ./screenshots/ml01_4.png>
-Package pdftex.def Info: ./screenshots/ml01_4.png  used on input line 121.
+Package pdftex.def Info: ./screenshots/ml01_4.png  used on input line 131.
 (pdftex.def)             Requested size: 189.14368pt x 135.3177pt.
 
-Overfull \hbox (51.14578pt too wide) in paragraph at lines 121--122
+Overfull \hbox (51.14578pt too wide) in paragraph at lines 131--132
 [][] 
  []
 
 <./screenshots/ml01_5.png, id=35, 722.7pt x 551.05875pt>
 File: ./screenshots/ml01_5.png Graphic file (type png)
 <use ./screenshots/ml01_5.png>
-Package pdftex.def Info: ./screenshots/ml01_5.png  used on input line 125.
+Package pdftex.def Info: ./screenshots/ml01_5.png  used on input line 135.
 (pdftex.def)             Requested size: 180.67455pt x 137.76434pt.
 
-Overfull \hbox (42.67665pt too wide) in paragraph at lines 125--126
+Overfull \hbox (42.67665pt too wide) in paragraph at lines 135--136
 [][] 
  []
 
 <./screenshots/ml01_6.png, id=36, 785.18344pt x 539.76656pt>
 File: ./screenshots/ml01_6.png Graphic file (type png)
 <use ./screenshots/ml01_6.png>
-Package pdftex.def Info: ./screenshots/ml01_6.png  used on input line 131.
+Package pdftex.def Info: ./screenshots/ml01_6.png  used on input line 141.
 (pdftex.def)             Requested size: 196.29538pt x 134.9413pt.
 
-Overfull \hbox (58.29749pt too wide) in paragraph at lines 131--132
+Overfull \hbox (58.29749pt too wide) in paragraph at lines 141--142
 [][] 
  []
 
 <./screenshots/ml01_7.png, id=37, 762.59906pt x 508.90125pt>
 File: ./screenshots/ml01_7.png Graphic file (type png)
 <use ./screenshots/ml01_7.png>
-Package pdftex.def Info: ./screenshots/ml01_7.png  used on input line 135.
+Package pdftex.def Info: ./screenshots/ml01_7.png  used on input line 145.
 (pdftex.def)             Requested size: 190.64929pt x 127.22499pt.
 
-Overfull \hbox (52.6514pt too wide) in paragraph at lines 135--136
+Overfull \hbox (52.6514pt too wide) in paragraph at lines 145--146
 [][] 
  []
 
-[5 <./screenshots/ml01_3.png> <./screenshots/ml01_4.png> <./screenshots/ml01_5.png>]
-Overfull \hbox (3.00056pt too wide) in paragraph at lines 147--148
+[5 <./screenshots/ml01_3.png>]
+<./screenshots/ml01_8.png, id=42, 1552.29938pt x 575.14874pt>
+File: ./screenshots/ml01_8.png Graphic file (type png)
+<use ./screenshots/ml01_8.png>
+Package pdftex.def Info: ./screenshots/ml01_8.png  used on input line 150.
+(pdftex.def)             Requested size: 194.03694pt x 71.89342pt.
+
+Overfull \hbox (23.5005pt too wide) in paragraph at lines 152--156
+\OT1/cmr/m/n/10 - Zwis-chen dem linken waagerechten Strich (Min-i-mum) und dem rechten waagerechten
+ []
+
+[6 <./screenshots/ml01_4.png> <./screenshots/ml01_5.png> <./screenshots/ml01_6.png> <./screenshots/ml01_7.png> <./screenshots/ml01_8.png>]
+Overfull \hbox (3.00056pt too wide) in paragraph at lines 165--166
 []| \OT1/cmr/m/n/10 Reprasentative Auswahl bei langer Laufzeit / groem Spe-icher-aufwand 
  []
 
-[6 <./screenshots/ml01_6.png> <./screenshots/ml01_7.png>]
+[7]
 Chapter 2.
-<./screenshots/ml02_1.png, id=49, 468.24937pt x 408.77719pt>
+<./screenshots/ml02_1.png, id=55, 468.24937pt x 408.77719pt>
 File: ./screenshots/ml02_1.png Graphic file (type png)
 <use ./screenshots/ml02_1.png>
-Package pdftex.def Info: ./screenshots/ml02_1.png  used on input line 159.
+Package pdftex.def Info: ./screenshots/ml02_1.png  used on input line 177.
 (pdftex.def)             Requested size: 128.7654pt x 112.41095pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-<./screenshots/ml02_2.png, id=50, 299.61937pt x 277.035pt>
+<./screenshots/ml02_2.png, id=56, 299.61937pt x 277.035pt>
 File: ./screenshots/ml02_2.png Graphic file (type png)
 <use ./screenshots/ml02_2.png>
-Package pdftex.def Info: ./screenshots/ml02_2.png  used on input line 166.
+Package pdftex.def Info: ./screenshots/ml02_2.png  used on input line 184.
 (pdftex.def)             Requested size: 104.86835pt x 96.9637pt.
-<./screenshots/ml02_3.png, id=51, 797.22844pt x 459.21562pt>
+<./screenshots/ml02_3.png, id=57, 797.22844pt x 459.21562pt>
 File: ./screenshots/ml02_3.png Graphic file (type png)
 <use ./screenshots/ml02_3.png>
-Package pdftex.def Info: ./screenshots/ml02_3.png  used on input line 184.
+Package pdftex.def Info: ./screenshots/ml02_3.png  used on input line 202.
 (pdftex.def)             Requested size: 199.30663pt x 114.80362pt.
-[7
+[8
 
  <./screenshots/ml02_1.png> <./screenshots/ml02_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--202
+Underfull \hbox (badness 10000) in paragraph at lines 217--220
 
  []
 
-<./screenshots/ml02_4.png, id=58, 592.46344pt x 408.77719pt>
+<./screenshots/ml02_4.png, id=63, 592.46344pt x 408.77719pt>
 File: ./screenshots/ml02_4.png Graphic file (type png)
 <use ./screenshots/ml02_4.png>
-Package pdftex.def Info: ./screenshots/ml02_4.png  used on input line 203.
+Package pdftex.def Info: ./screenshots/ml02_4.png  used on input line 221.
 (pdftex.def)             Requested size: 148.1155pt x 102.19405pt.
 
-Overfull \hbox (3.08394pt too wide) in paragraph at lines 205--208
+Overfull \hbox (3.08394pt too wide) in paragraph at lines 223--226
 \OT1/cmr/m/n/10 - Im Mehrdi-men-sion-alen wird eine Hy-per-ebene, im drei-di-men-sion-alen eine Ebene,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--208
+Underfull \hbox (badness 10000) in paragraph at lines 223--226
 
  []
 
-[8 <./screenshots/ml02_3.png> <./screenshots/ml02_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+[9 <./screenshots/ml02_3.png> <./screenshots/ml02_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-<./screenshots/ml02_5.png, id=64, 906.38625pt x 593.21625pt>
+<./screenshots/ml02_5.png, id=69, 906.38625pt x 593.21625pt>
 File: ./screenshots/ml02_5.png Graphic file (type png)
 <use ./screenshots/ml02_5.png>
-Package pdftex.def Info: ./screenshots/ml02_5.png  used on input line 217.
+Package pdftex.def Info: ./screenshots/ml02_5.png  used on input line 235.
 (pdftex.def)             Requested size: 226.59601pt x 148.3037pt.
-[9 <./screenshots/ml02_5.png>]
-<./screenshots/ml02_6.png, id=71, 743.02594pt x 383.93437pt>
+[10 <./screenshots/ml02_5.png>]
+<./screenshots/ml02_6.png, id=76, 743.02594pt x 383.93437pt>
 File: ./screenshots/ml02_6.png Graphic file (type png)
 <use ./screenshots/ml02_6.png>
-Package pdftex.def Info: ./screenshots/ml02_6.png  used on input line 263.
+Package pdftex.def Info: ./screenshots/ml02_6.png  used on input line 281.
 (pdftex.def)             Requested size: 219.19075pt x 113.25964pt.
-<./screenshots/ml02_7.png, id=72, 884.55469pt x 559.33969pt>
+<./screenshots/ml02_7.png, id=77, 884.55469pt x 559.33969pt>
 File: ./screenshots/ml02_7.png Graphic file (type png)
 <use ./screenshots/ml02_7.png>
-Package pdftex.def Info: ./screenshots/ml02_7.png  used on input line 271.
+Package pdftex.def Info: ./screenshots/ml02_7.png  used on input line 289.
 (pdftex.def)             Requested size: 187.962pt x 118.85597pt.
 
-Overfull \hbox (49.96411pt too wide) in paragraph at lines 271--272
+Overfull \hbox (49.96411pt too wide) in paragraph at lines 289--290
 [][] 
  []
 
-<./screenshots/ml02_8.png, id=73, 1053.1847pt x 624.83438pt>
+<./screenshots/ml02_8.png, id=78, 1053.1847pt x 624.83438pt>
 File: ./screenshots/ml02_8.png Graphic file (type png)
 <use ./screenshots/ml02_8.png>
-Package pdftex.def Info: ./screenshots/ml02_8.png  used on input line 275.
+Package pdftex.def Info: ./screenshots/ml02_8.png  used on input line 293.
 (pdftex.def)             Requested size: 223.79477pt x 132.77316pt.
 
-Overfull \hbox (85.79688pt too wide) in paragraph at lines 275--276
+Overfull \hbox (85.79688pt too wide) in paragraph at lines 293--294
 [][] 
  []
 
-[10 <./screenshots/ml02_6.png>]
-Overfull \hbox (9.50055pt too wide) in paragraph at lines 288--292
+[11 <./screenshots/ml02_6.png>]
+Overfull \hbox (9.50055pt too wide) in paragraph at lines 306--310
 \OT1/cmr/m/n/10 - Test-daten-satz $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 enthalt unge-se-hene Daten zur Va-li-dierung der Prax-is-tauglichkeit
  []
 
 
-Overfull \hbox (13.58388pt too wide) in paragraph at lines 302--303
+Overfull \hbox (13.58388pt too wide) in paragraph at lines 320--321
 []\OT1/cmr/m/n/10 Anzahl Lern-schritte: Je geringer desto un-wahrschein-licher ist []Uberanpassung,
  []
 
-[11 <./screenshots/ml02_7.png> <./screenshots/ml02_8.png>]
-Overfull \hbox (8.33391pt too wide) in paragraph at lines 317--321
+[12 <./screenshots/ml02_7.png> <./screenshots/ml02_8.png>]
+Overfull \hbox (8.33391pt too wide) in paragraph at lines 335--339
 \OT1/cmr/m/n/10 - Sollen die Hy-per-pa-ram-e-ter des Mod-ells op-ti-miert wer-den, wer-den die verfugbaren
  []
 
 
-Overfull \hbox (15.83397pt too wide) in paragraph at lines 317--321
+Overfull \hbox (15.83397pt too wide) in paragraph at lines 335--339
 \OT1/cmr/m/n/10 - Die Hy-per-pa-ram-e-ter wer-den mit dem Va-li-dierungs-daten-satz op-ti-miert - Endgultige
  []
 
-<./screenshots/ml02_9.png, id=83, 740.0147pt x 335.75438pt>
+<./screenshots/ml02_9.png, id=88, 740.0147pt x 335.75438pt>
 File: ./screenshots/ml02_9.png Graphic file (type png)
 <use ./screenshots/ml02_9.png>
-Package pdftex.def Info: ./screenshots/ml02_9.png  used on input line 328.
+Package pdftex.def Info: ./screenshots/ml02_9.png  used on input line 346.
 (pdftex.def)             Requested size: 166.50742pt x 75.54659pt.
-<./screenshots/ml02_10.png, id=84, 879.285pt x 520.94624pt>
+<./screenshots/ml02_10.png, id=89, 879.285pt x 520.94624pt>
 File: ./screenshots/ml02_10.png Graphic file (type png)
 <use ./screenshots/ml02_10.png>
-Package pdftex.def Info: ./screenshots/ml02_10.png  used on input line 338.
+Package pdftex.def Info: ./screenshots/ml02_10.png  used on input line 356.
 (pdftex.def)             Requested size: 189.04259pt x 112.00125pt.
 
-Overfull \hbox (51.0447pt too wide) in paragraph at lines 338--339
+Overfull \hbox (51.0447pt too wide) in paragraph at lines 356--357
 [][] 
  []
 
-<./screenshots/ml02_11.png, id=85, 879.285pt x 523.9575pt>
+<./screenshots/ml02_11.png, id=90, 879.285pt x 523.9575pt>
 File: ./screenshots/ml02_11.png Graphic file (type png)
 <use ./screenshots/ml02_11.png>
-Package pdftex.def Info: ./screenshots/ml02_11.png  used on input line 342.
+Package pdftex.def Info: ./screenshots/ml02_11.png  used on input line 360.
 (pdftex.def)             Requested size: 189.04259pt x 112.64867pt.
 
-Overfull \hbox (51.0447pt too wide) in paragraph at lines 342--343
+Overfull \hbox (51.0447pt too wide) in paragraph at lines 360--361
 [][] 
  []
 
-[12 <./screenshots/ml02_9.png> <./screenshots/ml02_10.png> <./screenshots/ml02_11.png>] [13] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
+[13 <./screenshots/ml02_9.png> <./screenshots/ml02_10.png> <./screenshots/ml02_11.png>] [14] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
 Here is how much of TeX's memory you used:
- 4771 strings out of 492450
- 64631 string characters out of 3120471
- 134363 words of memory out of 3000000
- 9077 multiletter control sequences out of 15000+200000
+ 4778 strings out of 492450
+ 64776 string characters out of 3120471
+ 133363 words of memory out of 3000000
+ 9084 multiletter control sequences out of 15000+200000
  11897 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,9n,36p,369b,987s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (13 pages, 1364453 bytes).
+Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (14 pages, 1485632 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
+ 151 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

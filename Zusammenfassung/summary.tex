@@ -237,5 +237,114 @@ $\Rightarrow$ Quadratischer Fehler \textit{RSS} oder mittlerer quadratischer Feh
 - Allgemeine Aussage ab welchem $R^2$-Wert das Modell \textit{gut} ist, ist nicht möglich. Hängt vom Anwendungsfall (Medizin / Physik) ab
 
 \section{Interpretierbarkeit}
+- Die Parameter $w$ von Linearen Regressionsmodellen sind interpretierbar:\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item $w_i > 0$: positiver Zusammenhang, steigt $x_i$ um $m$ so steigt $y$ um $m\cdot |w_i|$
+  \item $w_i nahe 0$: kein linearer Zusammenhang zwischen $x_i$ und $y$
+  \item $w_i < 0$ negativer Zusammenhang, steigt $x_i$ um $m$ so sinkt $y$ um $m\cdot |w_i|$
+\end{itemize}
 
+\section{Nichtlineare Zusammenhänge}
+- Mit der mehrdimensionalen linearen Regressions lassen sich auch \textit{nichtlineare} Zusammehänge lernen\\
+- Mit Funktion $\Phi: \mathbb{R} \rightarrow \mathbb{R}^d$ wird ein \textit{Basiswechsel} vollzogen\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Die Konkatenation von $\Phi: \mathbb{R} \rightarrow \mathbb{R}^d$, $\Phi(x) = (x, x^2)^T$
+  und $f: \mathbb{R}^2 \rightarrow \mathbb{R}, f(x) = w_2x_w + w_1x_1 + w_0$ durch $f\circ \Phi$
+  erlaubt Darstellung der quadratischen Funktion $(f\circ \Phi)(x) = f(\Phi(x)) = w_2x^2 + w_1x + w_0$
+  \item $\Phi: \mathbb{R}^2 \rightarrow \mathbb{R}^5, \Phi(x) = (x_2, x_1, x_1x_2, x_2^2, x_1^2)^T$\\
+  und $f: \mathbb{R}^5 \rightarrow \mathbb{R}, f(x) = \sum_{i = 1}^5 w_ix_i + w_0$ ergibt $(f\circ \Phi)(x) = f(\Phi(x)) = w_5x_1^2 + w_4x_2^2 + w_3x_1x_2 + w_2x_1 + w_1x_2 + w_0$
+\end{itemize}
+
+\subsection{Beispiel}
+- Annahme eines quadratischen Zusammenhangs $f(x) = w_2\cdot x^2 + w_1\cdot x + w_0$
+\begin{center}
+  \includegraphics[scale=.295]{ml02_6}
+\end{center}
+
+\subsection{Richtiger Grad}
+- Mit der mehrdimensionalen Regression, dem Basiswechsel und Gradientenabstiegsverfahren ist es möglich, ein Polyon \textit{n}-ten Grades an \textit{n} Datenpunkte zu fitten
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.2125]{ml02_7}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.2125]{ml02_8}
+  \end{minipage}
+\end{figure}
+
+- Mit höherer Modellkomplexität (Grad und Koeffizienten des Polynoms) kommt es zu\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Numerischen Problemen
+  \item \textit{Overfitting}: Das Modell passt sich zu sehr an die Daten an und ist nicht mehr in der Lage zu generalisieren
+  $\rightarrow$ Schlechte Leistung in der Praxis
+\end{itemize}
+
+\section{Trainings- und Testdaten}
+- Datensatz $D$ wird in zwei disjunkte Teile $T$ und $V$ aufgeteilt\\
+- Trainingsdatensatz $T$ wird für das Lernen verwendet\\
+- Testdatensatz $V$ enthält ungesehene Daten zur Validierung der Praxistauglichkeit\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Ein hoher Fehler auf $T$ lässt auf Unteranpassung schließen (zu geringe Modellkomplexität, zu wenig Daten)
+  \item Ein geringer Fehler auf $T$ aber hoher Fehler auf $V$ bedeutet Überanpassung $\rightarrow$ Komplexität verringern
+\end{itemize}
+
+\section{Optimierung von Hyperparametern}
+- Lineare Regression auf Polynomen mit Gradientenabstiegsverfahren besitzt\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Lernrate $\eta$: Einfluss auf Modellkomplexität
+  \item Anzahl Lernschritte: Je geringer desto unwahrscheinlicher ist Überanpassung, allerdings Unteranpassung wiederum möglich
+  \item Polynomgrad Zu Hoch $\rightarrow$ Überanpassung, zu niedrig $\rightarrow$ Unteranpassung
+\end{itemize}
+als Hpyerparameter
+
+\subsection{Rastersuche}
+- Durchsuchen des Hyperparameterraums entweder\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Entlang eines gleichmäßigen Rasters mit linearer oder logarithmischer Skala
+  \item Entlang eines zufälligen Rasters mit uniformer oder logarithmischer Skala
+\end{itemize}
+- Verfeinern der Suche durch Rekursion
+
+\subsection{Validierungsdaten}
+- Sollen die Hyperparameter des Modells optimiert werden, werden die verfügbaren Daten $D$
+in \textit{Trainingsdaten}, \textit{Validierungsdaten} und \textit{Testdaten} aufgeteilt.\\
+- Die Hyperparameter werden mit dem Validierungsdatensatz optimiert
+- Endgültige Performance des Modells wird auf den Testdaten bestimmt
+
+\subsection{Kreuzvalidierung}
+- Zerteilen des Datensatzes in $k$ Partitionen, ws wird nun $k$-mal trainiert\\
+- Mit jeder Iteration $i$ wird eine andere Partition $i$ getestet\\
+- Die Restlichen Partitionen dienen als Trainingsdaten\\
+- Final wird die ausgewählte Leistungsmetrik über $k$ Iterationen gemittelt
+\begin{center}
+  \includegraphics[scale=.225]{ml02_9}
+\end{center}
+
+\subsection{Ridge Regression}
+- Verhindern von Überanpassung durch Bestrafung von $w$ für exzessive Werte mit angepasster Fehlerfunktion
+$E(w) = \frac{1}{2}\cdot \sum_{i=1}^n(y^i - f_w(x^i))^2 + \alpha ||w||^2$\\
+- Hyperparamter $\alpha \in \mathbb{R} \geq 0$ ist ein weiterer Freiheitsgrad mit dem sich der Polynomgrad stufenlos einstellen lässt
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.215]{ml02_10}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.215]{ml02_11}
+  \end{minipage}
+\end{figure}
+\begin{itemize}
+  \item $\alpha = 0$: klassische Regression
+  \item $\alpha > 0$: Normaler Wirkungsbereich, mit wachsendem $\alpha$ werden $w$ immer weiter eingeschränkt und der effektive Polynomgrad sinkt
+  \item lim $\alpha \rightarrow \infty$: $f(x) = 0$ da Parameter lim $w \rightarrow 0$
+\end{itemize}
 \end{document}

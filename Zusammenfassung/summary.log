@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.25)  26 NOV 2019 20:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.25)  27 NOV 2019 17:59
 entering extended mode
 **c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
 (c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
@@ -119,34 +119,56 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux)
+)) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.sty"
+\lst@mode=\count102
+\lst@gtempboxa=\box32
+\lst@token=\toks23
+\lst@length=\count103
+\lst@currlwidth=\dimen119
+\lst@column=\count104
+\lst@pos=\count105
+\lst@lostspace=\dimen120
+\lst@width=\dimen121
+\lst@newlines=\count106
+\lst@lineno=\count107
+\lst@maxwidth=\dimen122
+ ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count108
+\lst@skipnumbers=\count109
+\lst@framebox=\box33
+) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.cfg"
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+ (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux)
 \openout1 = `summary.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
  ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen119
-\scratchbox=\box32
-\nofMPsegments=\count103
-\nofMParguments=\count104
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen120
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count110
+\scratchdimen=\dimen123
+\scratchbox=\box34
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen124
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks25
 ) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
@@ -181,33 +203,35 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 44
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 459.
-) [1
+)
+\c@lstlisting=\count116
+ [1
 
 {C:/Users/test/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Chapter 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
 ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
  ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 40.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 41.
  ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--58
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
 <./screenshots/ml01_1.png, id=9, 408.02437pt x 415.5525pt>
 File: ./screenshots/ml01_1.png Graphic file (type png)
 <use ./screenshots/ml01_1.png>
-Package pdftex.def Info: ./screenshots/ml01_1.png  used on input line 59.
+Package pdftex.def Info: ./screenshots/ml01_1.png  used on input line 60.
 (pdftex.def)             Requested size: 81.60342pt x 83.10902pt.
 [2
 
@@ -215,75 +239,75 @@ Package pdftex.def Info: ./screenshots/ml01_1.png  used on input line 59.
 <./screenshots/ml01_2.png, id=23, 426.84468pt x 282.30469pt>
 File: ./screenshots/ml01_2.png Graphic file (type png)
 <use ./screenshots/ml01_2.png>
-Package pdftex.def Info: ./screenshots/ml01_2.png  used on input line 76.
+Package pdftex.def Info: ./screenshots/ml01_2.png  used on input line 77.
 (pdftex.def)             Requested size: 170.73485pt x 112.91986pt.
  [3 <./screenshots/ml01_2.png>]
-Overfull \hbox (14.94888pt too wide) in paragraph at lines 92--93
+Overfull \hbox (14.94888pt too wide) in paragraph at lines 93--94
 []\OT1/cmr/m/it/10 Inferenz: \OT1/cmr/m/n/10 In-ter-pretier-barkeit von $\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 steht im Vorder-grund (Welche Pradiktoren
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
 <./screenshots/ml01_3.png, id=30, 581.92406pt x 307.1475pt>
 File: ./screenshots/ml01_3.png Graphic file (type png)
 <use ./screenshots/ml01_3.png>
-Package pdftex.def Info: ./screenshots/ml01_3.png  used on input line 107.
+Package pdftex.def Info: ./screenshots/ml01_3.png  used on input line 108.
 (pdftex.def)             Requested size: 232.7655pt x 122.85681pt.
 [4]
-Overfull \hbox (13.854pt too wide) in paragraph at lines 112--115
+Overfull \hbox (13.854pt too wide) in paragraph at lines 113--116
 \OT1/cmr/m/n/10 - z.B. \OT1/cmr/m/it/10 Verteilung \OT1/cmr/m/n/10 von $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 bei Sprach-mod-ellen, \OT1/cmr/m/it/10 Di-men-sion-sre-duk-tion \OT1/cmr/m/n/10 zur Verbesserung
  []
 
 <./screenshots/ml01_4.png, id=34, 756.57657pt x 541.27219pt>
 File: ./screenshots/ml01_4.png Graphic file (type png)
 <use ./screenshots/ml01_4.png>
-Package pdftex.def Info: ./screenshots/ml01_4.png  used on input line 120.
+Package pdftex.def Info: ./screenshots/ml01_4.png  used on input line 121.
 (pdftex.def)             Requested size: 189.14368pt x 135.3177pt.
 
-Overfull \hbox (51.14578pt too wide) in paragraph at lines 120--121
+Overfull \hbox (51.14578pt too wide) in paragraph at lines 121--122
 [][] 
  []
 
 <./screenshots/ml01_5.png, id=35, 722.7pt x 551.05875pt>
 File: ./screenshots/ml01_5.png Graphic file (type png)
 <use ./screenshots/ml01_5.png>
-Package pdftex.def Info: ./screenshots/ml01_5.png  used on input line 124.
+Package pdftex.def Info: ./screenshots/ml01_5.png  used on input line 125.
 (pdftex.def)             Requested size: 180.67455pt x 137.76434pt.
 
-Overfull \hbox (42.67665pt too wide) in paragraph at lines 124--125
+Overfull \hbox (42.67665pt too wide) in paragraph at lines 125--126
 [][] 
  []
 
 <./screenshots/ml01_6.png, id=36, 785.18344pt x 539.76656pt>
 File: ./screenshots/ml01_6.png Graphic file (type png)
 <use ./screenshots/ml01_6.png>
-Package pdftex.def Info: ./screenshots/ml01_6.png  used on input line 130.
+Package pdftex.def Info: ./screenshots/ml01_6.png  used on input line 131.
 (pdftex.def)             Requested size: 196.29538pt x 134.9413pt.
 
-Overfull \hbox (58.29749pt too wide) in paragraph at lines 130--131
+Overfull \hbox (58.29749pt too wide) in paragraph at lines 131--132
 [][] 
  []
 
 <./screenshots/ml01_7.png, id=37, 762.59906pt x 508.90125pt>
 File: ./screenshots/ml01_7.png Graphic file (type png)
 <use ./screenshots/ml01_7.png>
-Package pdftex.def Info: ./screenshots/ml01_7.png  used on input line 134.
+Package pdftex.def Info: ./screenshots/ml01_7.png  used on input line 135.
 (pdftex.def)             Requested size: 190.64929pt x 127.22499pt.
 
-Overfull \hbox (52.6514pt too wide) in paragraph at lines 134--135
+Overfull \hbox (52.6514pt too wide) in paragraph at lines 135--136
 [][] 
  []
 
 [5 <./screenshots/ml01_3.png> <./screenshots/ml01_4.png> <./screenshots/ml01_5.png>]
-Overfull \hbox (3.00056pt too wide) in paragraph at lines 146--147
+Overfull \hbox (3.00056pt too wide) in paragraph at lines 147--148
 []| \OT1/cmr/m/n/10 Reprasentative Auswahl bei langer Laufzeit / groem Spe-icher-aufwand 
  []
 
@@ -292,28 +316,73 @@ Chapter 2.
 <./screenshots/ml02_1.png, id=49, 468.24937pt x 408.77719pt>
 File: ./screenshots/ml02_1.png Graphic file (type png)
 <use ./screenshots/ml02_1.png>
-Package pdftex.def Info: ./screenshots/ml02_1.png  used on input line 158.
+Package pdftex.def Info: ./screenshots/ml02_1.png  used on input line 159.
 (pdftex.def)             Requested size: 128.7654pt x 112.41095pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
 <./screenshots/ml02_2.png, id=50, 299.61937pt x 277.035pt>
 File: ./screenshots/ml02_2.png Graphic file (type png)
 <use ./screenshots/ml02_2.png>
-Package pdftex.def Info: ./screenshots/ml02_2.png  used on input line 164.
+Package pdftex.def Info: ./screenshots/ml02_2.png  used on input line 166.
 (pdftex.def)             Requested size: 104.86835pt x 96.9637pt.
+<./screenshots/ml02_3.png, id=51, 797.22844pt x 459.21562pt>
+File: ./screenshots/ml02_3.png Graphic file (type png)
+<use ./screenshots/ml02_3.png>
+Package pdftex.def Info: ./screenshots/ml02_3.png  used on input line 184.
+(pdftex.def)             Requested size: 199.30663pt x 114.80362pt.
 [7
 
- <./screenshots/ml02_1.png> <./screenshots/ml02_2.png>] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
+ <./screenshots/ml02_1.png> <./screenshots/ml02_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--202
+
+ []
+
+<./screenshots/ml02_4.png, id=58, 592.46344pt x 408.77719pt>
+File: ./screenshots/ml02_4.png Graphic file (type png)
+<use ./screenshots/ml02_4.png>
+Package pdftex.def Info: ./screenshots/ml02_4.png  used on input line 203.
+(pdftex.def)             Requested size: 148.1155pt x 102.19405pt.
+
+Overfull \hbox (3.08394pt too wide) in paragraph at lines 205--208
+\OT1/cmr/m/n/10 - Im Mehrdi-men-sion-alen wird eine Hy-per-ebene, im drei-di-men-sion-alen eine Ebene,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--208
+
+ []
+
+[8 <./screenshots/ml02_3.png> <./screenshots/ml02_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+ []
+
+<./screenshots/ml02_5.png, id=64, 906.38625pt x 593.21625pt>
+File: ./screenshots/ml02_5.png Graphic file (type png)
+<use ./screenshots/ml02_5.png>
+Package pdftex.def Info: ./screenshots/ml02_5.png  used on input line 217.
+(pdftex.def)             Requested size: 226.59601pt x 148.3037pt.
+[9 <./screenshots/ml02_5.png>] [10] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
 Here is how much of TeX's memory you used:
- 3084 strings out of 492450
- 41957 string characters out of 3120471
- 114498 words of memory out of 3000000
- 7410 multiletter control sequences out of 15000+200000
- 7550 words of font info for 29 fonts, out of 3000000 for 9000
+ 4729 strings out of 492450
+ 63747 string characters out of 3120471
+ 134363 words of memory out of 3000000
+ 9035 multiletter control sequences out of 15000+200000
+ 11897 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,32p,369b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (7 pages, 510492 bytes).
+ 55i,8n,36p,369b,987s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (10 pages, 904689 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
+ 124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,6 +5,7 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{listings}
 
 \titleformat{\chapter}[display]
   {\normalfont\bfseries}{}{0pt}{\Large}
@@ -151,16 +152,90 @@ Bevor ein Modell erstellt und trainiert werden kann, müssen Daten durch\\
 \end{itemize}
 
 \chapter{Lineare Regression}
-\subsection{Lineare Regression im Eindimensionalen}
+\section{Lineare Regression im Eindimensionalen}
 - $f : \mathbb{R} \rightarrow \mathbb{R}$ mit $f_w(x) = w_1x + w_0$\\
 - $w = (w_0, w_1)^T \in \mathbb{R}^2$ sind die \textit{Parameter} des Modells
 \begin{center}
   \includegraphics[scale=0.275]{ml02_1}
 \end{center}
 - Wie mit Daten $D = \{(x^i, y^i) \in \mathbb{R}^2 | 1 \leq i \leq n\}$ die \textit{besten} Parameter von $f$ bestimmen?\\
+\subsection{Lösungsverfahren}
 - Quadratischen Fehler (\textit{Residual Sum of Squares}) mit\\
 $RSS(w) = \sum_{i=1}^n(y^i - f_w(x^i))^2$ bestimmen
 \begin{center}
   \includegraphics[scale=0.35]{ml02_2}
 \end{center}
+- Zur besseren Vergleichbarkeit verwendet man oft die normalisierte Variante\\
+\textit{Mean Squared Error}: $MSE(w) = \frac{1}{n}\cdot RSS(w)$ (n = Anzahl Trainingsdaten)\\
+- Die beste Funktion durch Minimierung des Fehlers finden
+$\Rightarrow w^* =$ arg min $E(w) =$ arg min $\frac{1}{2}\cdot \sum_{i=1}^n(y^i - f_w(x^i))^2$\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Ableitung von $E(w)$ gleich Null setzen und Gleichungssystem lösen
+  \item $\nabla E(w) = \begin{bmatrix}\frac{dE(w)}{dw_0}\\\frac{dE(w)}{dw_1}\end{bmatrix} = 0$
+  \subitem $\frac{dE(w)}{dw_0} = -\sum_{i=1}^ny^i + w_1\cdot \sum_{i=1}^nx^i + n\cdot w_0$
+  \subitem $\frac{dE(w)}{dw_1} = -\sum_{i=1}^nx^iy^i + w_1\cdot \sum_{i=1}^nx^ix^i + w_0\cdot \sum_{i=1}^nx^i$
+  \item Gleichungssystem mit zwei Gleichungen und zwei Unbekannten lösbar, aber numerisch ungenau bei großen Matrizen 
+\end{itemize}
+
+\subsection{Gradientenabstiegsverfahren}
+
+\begin{center}
+  \includegraphics[scale=.25]{ml02_3}
+\end{center}
+- Iterativ einem Bruchteil der negativen Ableitung: $-\eta f'(x) = \eta\cdot (2 - 2x)$ folgen\\
+- \textit{Lernrate} $\eta$ hat direkten Einfluss auf Konvergenz (zu klein $\Rightarrow$ viele Schritte, zu groß $\Rightarrow$ Oszillation)\\
+\begin{lstlisting}
+  w0 = 0, w1 = 0
+  for (x, y) in D
+    dw0 += -y + w1*x + w0
+    dw1 += -xy + w1*x*x + w0*x
+  end for
+  w0 += -eta*dw0
+  w1 += -eta*dw1
+\end{lstlisting}
+
+\section{Mehrdimensionale Lineare Regression}
+- $X = \mathbb{R}^d$ und $f: \mathbb{R}^d \rightarrow \mathbb{R}$ sowie $f_w(x) = \sum_{i=1}^dw_ix_i + w_0$\\
+mit Parametern $w = (w_0, w_1, ..., w_d)^T \in \mathbb{R}^{d + 1}$
+- Kompaktere Schreibweise mit $x_0 = 1$: $f_w(x) = \sum_{i = 1}^dw_ix_i + w_0 = w^Tx$\\
+\begin{center}
+  \includegraphics[scale=.25]{ml02_4}
+\end{center}
+- Im Mehrdimensionalen wird eine Hyperebene, im dreidimensionalen eine Ebene, im Raum so positioniert, dass der Abstand zu den Datenpunkten minimiert wird\\
+- Angepasste Fehlermetrik $E(w) = \frac{1}{2}\cdot \sum_{i=1}^n(y^i - f(x^i))^2$
+mit $\nabla E(w) = \begin{bmatrix}\frac{dE(w)}{dw_0}\\\frac{dE(w)}{dw_1}\\...\\\frac{dE(w)}{dw_d}\end{bmatrix}$\\
+\begin{lstlisting}
+  dw = 0
+  for (x, y) in D
+    dw += -(y - f(x) * gradF(x))
+  end for
+  w += -eta*dw
+\end{lstlisting}
+wobei gradF(x) = $\nabla f(x) = \begin{bmatrix}1\\x_1\\...\\x_d\end{bmatrix}$\\
+\begin{center}
+  \includegraphics[scale=.25]{ml02_5}
+\end{center}
+
+\section{Genauigkeit}
+- Wie gut ist das durch das Gradientenabstiegsverfahren gefundene Modell?\\
+$\Rightarrow$ Quadratischer Fehler \textit{RSS} oder mittlerer quadratischer Fehler \textit{MSE}\\
+- Letzterer ist unabhängig von der Anzahl an Trainingsdaten allerdings gibt es keine allgemein gültige Skala da diese vom Wertebereich der y-Werte abhängt
+
+\subsection{$R^2$ Statistik}
+- Definiert über den quadratischen Gesamtfehler $TSS = \sum_{i=1}^n(y^i - \bar{y})^2$\\
+- $\bar{y} = \frac{1}{n}\cdot \sum_{i=1}^ny^i$ $\Rightarrow$ $R^2(w) = \frac{TSS - RSS(w)}{TSS} = 1 - \frac{RSS(w)}{TSS}$\\
+- \textit{TSS} misst die komplette Varianz in den Ausgabedaten $y^i$\\
+- $TSS - RSS(w)$ misst die durch das Modell mit Parametern $w$ erklärte Varianz\\
+- $R^2$ misst die komplette Varianz des Modells und ist $\in [0, 1]$\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item $R^2$ nahe 1 zeugt von einem passenden Model das die Daten gut erklärt
+  \item $R^2$ nahe 0 bedeutet, dass das Modell die Daten schlecht erklärt
+\end{itemize}
+- $R^2$ ist unabhängig von Anzahl an Trainingsdaten \textit{UND} dem Wertebereich\\
+- Allgemeine Aussage ab welchem $R^2$-Wert das Modell \textit{gut} ist, ist nicht möglich. Hängt vom Anwendungsfall (Medizin / Physik) ab
+
+\section{Interpretierbarkeit}
+
 \end{document}

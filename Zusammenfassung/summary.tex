@@ -365,4 +365,131 @@ $E(w) = \frac{1}{2}\cdot \sum_{i=1}^n(y^i - f_w(x^i))^2 + \alpha ||w||^2$\\
   \item $\alpha > 0$: Normaler Wirkungsbereich, mit wachsendem $\alpha$ werden $w$ immer weiter eingeschränkt und der effektive Polynomgrad sinkt
   \item lim $\alpha \rightarrow \infty$: $f(x) = 0$ da Parameter lim $w \rightarrow 0$
 \end{itemize}
+
+\chapter{Logistische Regression}
+\section{Klassifikation}
+\subsection{Lineare Regression}
+- Lineare Regression als Klassifikator zu verwenden: $f: \mathbb{R} \rightarrow \mathbb{R}$
+mit $f(x) = w_1x + w_0$
+\begin{center}
+  \includegraphics[scale=.215]{ml03_1}
+\end{center}
+- Im Beispiel: $x$ = Monatseinkommen, $f(x)$ = Kunde kreditwürdig ja / nein, ABER:\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Diskrete Ausgabewerte (Klasse 0 / 1) wird nicht eingehalten, Ausgabe nimmt alle Werte in $[-0.0014, 1.4]$ an
+  \item Intepretation von $f(x)$ als Wahrscheinlichkeit auch nicht möglich\\
+  da $f(0) = -0.0014 < 0$ und $f(8000) = 1.4 > 1$
+\end{itemize}
+
+\subsection{Logistische Regression}
+- Idee: Wahrscheinlichkeit der Klassenzugehörigkeit aufgreifen aber\\
+Wertebereich von $f$ mit Hilfe der logistischen Funktion
+$$logistic(x) = \frac{e^x}{1 + e^x}$$
+unter Kontrolle bekommen
+\begin{center}
+  \includegraphics[scale=.3]{ml03_2}
+\end{center}
+- Kombination der Linearen Regression $f(x) = w_1x + w_0$ mit der logistischen Funktion
+$$p(x) = logistic(f(x)) = \frac{e^{w_1x + w_0}}{1 + e^{w_1x + w_0}}$$
+$$p(x) \in (0, 1) \forall x \in \mathbb{R}$$\\
+- $p(x)$ ist die Wahrscheinlichkeit, dass $x$ zur Klasse $1$ gehört:\\
+$$p(x) = Pr(y = 1 | X = x)$$\\
+- $x$ gehört zur Klasse $0$ mit Wahrscheinlichkeit $1 - p(x)$:\\
+$$Pr(y = 0|X = x) = 1 - Pr(y = 1 | X = x) = 1 - p(x)$$
+
+\section{Maximum Likelihood}
+Parameter der Modells werden so bestimmt, dass die Wahrscheinlichkeit, dass das Modell die Daten generiert, maximiert wird\\
+
+\subsection{Beispiel Münzwurf}
+- Eine Münze zeigt mit unbekannter Wahrscheinlichkeit $w \in [0, 1]$ Kopf und mit Wahrscheinlichkeit $(1 - w)$ Zahl\\
+- Münze wird $n$-mal geworfen, die Wahrscheinlichkeit, $k$-mal Kopf zu erhalten ist\\
+$$L(w) = w^k(1 - w)^{n-k}$$
+- $L(w)$ wird \textit{Likelihood} genannt, man sucht: $arg$ $max$ $L(w)$\\
+Maximum finden durch Ableiten\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item $\frac{dL(w)}{dw} = kw^{k-1}\cdot(1 - w)^{n-k} + w^k(n-k)(1-w)^{n-k-1}\cdot(-1)$\\
+  $ = w^{k-1}\cdot (1-w)^{n-k-1}\cdot[k(1-w)-(n-k)\cdot w]$
+\end{itemize}
+anschließend gleich Null setzen\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item $\frac{dL(w)}{dw} = 0 \Leftrightarrow w = 0 \lor w = 1 \lor w = \frac{k}{n}$
+  \item $k(1-w) - w\cdot(n - k) = 0 \Leftrightarrow k -wk - wn + wk = 0 \Leftrightarrow k - wn = 0 \Leftrightarrow w = \frac{k}{n}$
+\end{itemize}
+und Überprüfen von\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item $w = 0: L(0) = 0^k(1 - 0)^{n-k} = 0$
+  \item $w = 1: L(1) = 1^k(1 - 1)^{n-k} = 0$
+  \item $w = \frac{k}{n}: L(\frac{k}{n}) = (\frac{k}{n})^k\cdot (1 - \frac{k}{n})^{n-k} > 0$ für $k > 0$ und $k \neq n$
+\end{itemize}
+Die \textit{Maximum Likelihood} Schätzung ist demnach $w = \frac{k}{n}$
+
+\subsection{Beispiel Logistische Regression}
+Die Likelihood ist wie folgt definiert
+\begin{equation*}
+L(w) = \Pi_{i=1}^n 
+\begin{cases}
+  p(x^i) & \text{falls $y^i = 1$}\\
+  1 - p(x^i) & \text{falls $y^i = 0$}
+\end{cases} = \Pi_{i | y^i=1}p(x^i) \cdot \Pi_{i | y^i = 0}(1 - p(x^i))
+\end{equation*}
+Anstatt das Maximum mit Hilfe der Ableitung zu finden, kann auch das Minimum des negativen Logarithmus gesucht werden
+\begin{equation*}
+  -log(L(w)) = -\sum_{i|y^i = 1}log(p(x^i)) - \sum_{i | y^i = 0}log(1 - p(x^i))
+\end{equation*}
+und Ableiten
+$$\frac{d(-log(L_w))}{dw_j} = - \sum_{i|y^i = 1} \frac{\frac{dp(x^i)}{dw_j}}{p(x^i)} + \sum_{i|y^i = 0} \frac{\frac{dp(x^i)}{dw_j}}{1 - p(x^i)}$$
+\begin{equation*}
+  \frac{dp(x)}{dw_j} = \frac{d}{dw_j}\cdot \frac{e^{w_1x + w_0}}{1 + e^{w_1x + w_0}} = \frac{e^{w_1x + w_0}}{(1 + e^{w_1x + w_0})^2}
+  \begin{cases}
+    1 & \text{falls $j = 0$}\\
+    $x$ & \text{falls $j = 1$}
+  \end{cases}
+\end{equation*}
+$$1 - p(x) = \frac{1}{1 + e^{w_1x + w_0}}$$
+\begin{equation*}
+  \frac{\frac{dp(x)}{dw_j}}{p(x)} = \frac{1}{p(x)}\cdot \frac{dp(x)}{dw_j} = 
+  \frac{1 + e^{w_1x + w_0}}{e^{w_1x + w_0}}\cdot \frac{e^{w_1x + w_0}}{(1 + e^{w_1x + w_0})^2} = (1 - p(x))
+  \begin{cases}
+    1 & \text{falls $j = 0$}\\
+    $x$ & \text{falls $j = 1$}
+  \end{cases}
+\end{equation*}
+
+\begin{equation*}
+  \frac{\frac{dp(x)}{dw_j}}{1 - p(x)} = \frac{1}{1 - p(x)}\cdot \frac{dp(x)}{dw_j}
+  = (1 + e^{w_1x + w_0})\cdot \frac{e^{w_1x + w_0}}{(1 + e^{w_1x + w_0})^2} = p(x)
+  \begin{cases}
+    1 & \text{falls $j = 0$}\\
+    $x$ & \text{falls $j = 1$}
+  \end{cases}
+\end{equation*}
+
+Zusammenfassend
+$$\frac{d(-log(L(w)))}{dw_0} = -\sum_{i|y^i = 1}(1 - p(x^i)) + \sum_{i | y^i = 0}p(x^i)$$
+$$\frac{d(-log(L(w)))}{dw_1} = -\sum_{i|y^i = 1}(1 - p(x^i))\cdot x^i + \sum_{i|y^i = 0}p(x^i)\cdot x^i$$
+
+Mit dem Gradientenabstiegsverfahren erhält man für das Beispiel der Kreditvergabe
+\begin{center}
+  \includegraphics[scale=.25]{ml03_3}
+\end{center}
+
+\section{Bayes Klassifikator}
+- Der Kredit wird also genau dann ausgegeben, wenn die Wahrscheinlichkeit, dass er zurück gezahlt wird größer ist, als dass er es nicht wird\\
+- Der \textit{Bayes Klassifikator} weißt jeder Beobachtung $x \in X$ die wahrscheinlichste Klasse zu: $f(x) =$ $arg$ $max$ $Pr(y = y* | X = x)$\\
+- Im Beispiel liegt die \textit{Entscheidungsgrenze} bei 2300EUR
+\begin{center}
+  \includegraphics[scale=.25]{ml03_4}
+\end{center}
+
+\section{Mehrdimensionale Logistische Regression}
+- Für $x \in \mathbb{R}^d$ wird das Modell beschrieben durch $p(x) = \frac{e^{w^Tx}}{1 + e^{w^Tx}}$\\
+- Der Gradient aus der negativen, logarithmierten Likelihood ergibt sich durch
+$$\frac{d(-log(L(w)))}{dw_j} = -\sum_{i|y^i = 1}(1 - p(x_j^i))\cdot x_j^i + \sum_{i|y^i = 0}p(x_j^i)\cdot x_j^i$$
+
+\section{Nichtlineare Logistische Regression}
+
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.25)  27 NOV 2019 19:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.25)  28 NOV 2019 19:14
 entering extended mode
 **c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
 (c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
@@ -452,19 +452,74 @@ Overfull \hbox (51.0447pt too wide) in paragraph at lines 360--361
 [][] 
  []
 
-[13 <./screenshots/ml02_9.png> <./screenshots/ml02_10.png> <./screenshots/ml02_11.png>] [14] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
+[13 <./screenshots/ml02_9.png> <./screenshots/ml02_10.png> <./screenshots/ml02_11.png>] [14]
+Chapter 3.
+<./screenshots/ml03_1.png, id=101, 899.61093pt x 559.33969pt>
+File: ./screenshots/ml03_1.png Graphic file (type png)
+<use ./screenshots/ml03_1.png>
+Package pdftex.def Info: ./screenshots/ml03_1.png  used on input line 375.
+(pdftex.def)             Requested size: 193.41258pt x 120.25568pt.
+<./screenshots/ml03_2.png, id=102, 538.26094pt x 358.33875pt>
+File: ./screenshots/ml03_2.png Graphic file (type png)
+<use ./screenshots/ml03_2.png>
+Package pdftex.def Info: ./screenshots/ml03_2.png  used on input line 391.
+(pdftex.def)             Requested size: 161.47952pt x 107.50244pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--397
+
+ []
+
+[15
+
+ <./screenshots/ml03_1.png> <./screenshots/ml03_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 397--399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
+
+ []
+
+[16]
+Overfull \hbox (2.5909pt too wide) detected at line 460
+[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = (1 \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )) []
+ []
+
+
+Overfull \hbox (14.4674pt too wide) detected at line 469
+[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = (1 + \OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []
+ []
+
+<./screenshots/ml03_3.png, id=111, 840.13875pt x 516.42938pt>
+File: ./screenshots/ml03_3.png Graphic file (type png)
+<use ./screenshots/ml03_3.png>
+Package pdftex.def Info: ./screenshots/ml03_3.png  used on input line 477.
+(pdftex.def)             Requested size: 210.03416pt x 129.10703pt.
+[17]
+<./screenshots/ml03_4.png, id=115, 837.1275pt x 439.6425pt>
+File: ./screenshots/ml03_4.png Graphic file (type png)
+<use ./screenshots/ml03_4.png>
+Package pdftex.def Info: ./screenshots/ml03_4.png  used on input line 485.
+(pdftex.def)             Requested size: 209.28136pt x 109.91035pt.
+ [18 <./screenshots/ml03_3.png> <./screenshots/ml03_4.png>] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
 Here is how much of TeX's memory you used:
- 4778 strings out of 492450
- 64776 string characters out of 3120471
+ 4806 strings out of 492450
+ 65356 string characters out of 3120471
  133363 words of memory out of 3000000
- 9084 multiletter control sequences out of 15000+200000
+ 9112 multiletter control sequences out of 15000+200000
  11897 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,9n,36p,369b,987s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,36p,369b,987s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (14 pages, 1485632 bytes).
+Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (18 pages, 1832098 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
+ 171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 

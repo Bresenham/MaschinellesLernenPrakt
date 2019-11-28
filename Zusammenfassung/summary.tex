@@ -491,5 +491,42 @@ Mit dem Gradientenabstiegsverfahren erhält man für das Beispiel der Kreditverg
 $$\frac{d(-log(L(w)))}{dw_j} = -\sum_{i|y^i = 1}(1 - p(x_j^i))\cdot x_j^i + \sum_{i|y^i = 0}p(x_j^i)\cdot x_j^i$$
 
 \section{Nichtlineare Logistische Regression}
+- Mit der Basiserweiterung $\Phi: \mathbb{R}^d \rightarrow \mathbb{R^{d'}}$ und der mehrdimensionalen
+Logistischen Regression können auch nichtlineare Klassifikatoren gelernt werden
+\begin{center}
+  \includegraphics[scale=.3125]{ml03_5}
+\end{center}
+- Mit der Basiserweiterung $\Phi(x) = (x_1^2, x_2^2)$ kann ein Logistisches Regressionsmodell gelernt werden, das die beiden Klassen trennt
+\begin{center}
+  \includegraphics[scale=.3125]{ml03_6}
+\end{center}
+
+\section{Leistungsmetriken}
+\begin{center}
+  \includegraphics[scale=.25]{ml03_7}
+\end{center}
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Genauigkeit (\textit{accuracy}) $\frac{tp + tn}{tp + tn + fp + fn}$: Ist der Anteil der korrekt klassifizierten Daten am Gesamtdatensatz.
+  Es wird versucht, die Genauigkeit zu maximieren
+  \item Fehlerrate $\frac{fp + fn}{tp + tn + fp + fn}$ = 1 - Genauigkeit: Gegenteil der Genauigkeit. Wird minimiert.
+  \item Präzision (\textit{precision}) $\frac{tp}{tp + fp}$: Anteil der korrekt positiv vorhergesagten Datensätze an der Gesamtheit der als positiv vorhergesagten Datensätze
+  \item Trefferquote (\textit{recall}) $\frac{tp}{tp + fn}$: Anteil der korrekt positiv vorhergesagten Datensätze an der Gesamtheit der echt positiven Datensätze
+\end{itemize}
+Präzision und Trefferquote werden maximiert, allerdings muss üblicherweise ein Kompromiss getroffen werden.\\
+Es kommt außerdem auf den Anwendungsfall an, welche Leistungsmetrik verwendet werden sollte:\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Medizinische Tests: Positiv bedeutet \textit{krank} (z.B. HIV positiv), dann sollte ein Test einen hohen Recall haben
+  \item Spam-Erkennung: Positiv bedeutet \textit{gewollte} E-Mail, dann sollte ein Spam-Erkenner eine hohe Precision haben
+\end{itemize}
+
+\subsection{Beispiel steigende Kurse an der Börse}
+Man setzt auf steigende Kurse immer dann wenn das Modell \textit{up} vorhersagt. Es ist wichtig zu wissen, wie oft das Modell relativ gesehen richtig liegt.
+\begin{itemize}
+  \item Die Präzision bezieht sich auf den Anteil der korrekt vorhergesagten positiven Renditen. Auf diesen Wert sollte man achten.
+  \item Die Genauigkeit besagt in diesem Fall lediglich, welcher Anteil der Vorhersagen richtig war, unabhängig ob \textit{up} oder \textit{down}
+  \item Die Trefferquote besagt, welcher Anteil der positiven Renditen tatsächlich auch korrekt vorhergesagt wurde
+\end{itemize}
 
 \end{document}

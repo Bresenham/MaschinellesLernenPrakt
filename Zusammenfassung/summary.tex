@@ -502,6 +502,7 @@ Logistischen Regression können auch nichtlineare Klassifikatoren gelernt werden
 \end{center}
 
 \section{Leistungsmetriken}
+Für die Binäre Klassifikation ist kein $R^2$-Wert möglich $\Rightarrow$ Wahrheitsmatrix:
 \begin{center}
   \includegraphics[scale=.25]{ml03_7}
 \end{center}
@@ -520,6 +521,11 @@ Es kommt außerdem auf den Anwendungsfall an, welche Leistungsmetrik verwendet w
   \item Medizinische Tests: Positiv bedeutet \textit{krank} (z.B. HIV positiv), dann sollte ein Test einen hohen Recall haben
   \item Spam-Erkennung: Positiv bedeutet \textit{gewollte} E-Mail, dann sollte ein Spam-Erkenner eine hohe Precision haben
 \end{itemize}
+
+\subsection{Recall-Precision-Kurve}
+\begin{center}
+  \includegraphics[scale=.225]{ml03_8}
+\end{center}
 
 \subsection{Beispiel steigende Kurse an der Börse}
 Man setzt auf steigende Kurse immer dann wenn das Modell \textit{up} vorhersagt. Es ist wichtig zu wissen, wie oft das Modell relativ gesehen richtig liegt.

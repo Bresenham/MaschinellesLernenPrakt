@@ -1,12 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.25)  28 NOV 2019 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.15)  29 NOV 2019 14:07
 entering extended mode
-**c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
-(c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
-LaTeX2e <2019-10-01> patch level 3
-("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
-Document Class: report 2019/10/25 v1.4k Standard LaTeX document class
-("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
-File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
+(/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
+LaTeX2e <2019-10-01> patch level 1
+(/usr/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/08/27 v1.4j Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -20,25 +23,25 @@ File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
-Package: graphics 2019/11/01 v1.3d Standard LaTeX Graphics (DPC,SPQR)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+) (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/10/08 v1.3c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titlesec\titlesec.sty"
+) (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box27
 \beforetitleunit=\skip43
@@ -49,28 +52,28 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidth=\dimen107
 \titlewidthlast=\dimen108
 \titlewidthfirst=\dimen109
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+) (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count89
 \float@exts=\toks16
 \float@box=\box28
 \@float@everytoks=\toks17
 \@floatcapt=\box29
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
-Package: amsmath 2019/11/16 v2.17d AMS math features
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2019/04/01 v2.17c AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
-("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
 \ex@=\dimen110
-)) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen111
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count90
@@ -108,18 +111,18 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \multlinegap=\skip46
 \multlinetaggap=\skip47
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2858.
-LaTeX Info: Redefining \] on input line 2859.
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
+LaTeX Info: Redefining \[ on input line 2855.
+LaTeX Info: Redefining \] on input line 2856.
+) (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
+ (/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.sty"
+)) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count102
 \lst@gtempboxa=\box32
 \lst@token=\toks23
@@ -132,16 +135,16 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \lst@newlines=\count106
 \lst@lineno=\count107
 \lst@maxwidth=\dimen122
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
+ (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 \c@lstnumber=\count108
 \lst@skipnumbers=\count109
 \lst@framebox=\box33
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.cfg"
+) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
- (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux)
+ (/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.aux)
 \openout1 = `summary.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -156,7 +159,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count110
 \scratchdimen=\dimen123
@@ -169,56 +172,57 @@ LaTeX Font Info:    ... okay on input line 15.
 \MPnumerator=\count114
 \makeMPintoPDFobject=\count115
 \everyMPtoPDFconversion=\toks25
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
+ (/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
+) (/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvdefinekeys.sty"
+ (/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
+ (/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-))) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
+))) (/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvsetkeys.sty"
+ (/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
+ (/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifluatex.sty"
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-))))) ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdftexcmds.sty"
+ (/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)))) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO)
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifpdf.sty"
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+ (/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 441.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 459.
-)
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
 \c@lstlisting=\count116
  [1
 
-{C:/Users/test/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Chapter 1.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
-("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 41.
- ("C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+ (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -228,7 +232,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
-<./screenshots/ml01_1.png, id=9, 408.02437pt x 415.5525pt>
+<./screenshots/ml01_1.png, id=10, 408.02437pt x 415.5525pt>
 File: ./screenshots/ml01_1.png Graphic file (type png)
 <use ./screenshots/ml01_1.png>
 Package pdftex.def Info: ./screenshots/ml01_1.png  used on input line 60.
@@ -236,14 +240,14 @@ Package pdftex.def Info: ./screenshots/ml01_1.png  used on input line 60.
 [2
 
  <./screenshots/ml01_1.png>]
-<./screenshots/ml01_2.png, id=23, 426.84468pt x 282.30469pt>
+<./screenshots/ml01_2.png, id=24, 426.84468pt x 282.30469pt>
 File: ./screenshots/ml01_2.png Graphic file (type png)
 <use ./screenshots/ml01_2.png>
 Package pdftex.def Info: ./screenshots/ml01_2.png  used on input line 87.
 (pdftex.def)             Requested size: 170.73485pt x 112.91986pt.
  [3]
 Overfull \hbox (14.94888pt too wide) in paragraph at lines 103--104
-[]\OT1/cmr/m/it/10 Inferenz: \OT1/cmr/m/n/10 In-ter-pretier-barkeit von $\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 steht im Vorder-grund (Welche Pradiktoren
+[]\OT1/cmr/m/it/10 Inferenz: \OT1/cmr/m/n/10 In-ter-pretier-barkeit von $\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 steht im Vorder-grund (Welche Pr^^?adiktoren
  []
 
 
@@ -256,7 +260,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
-<./screenshots/ml01_3.png, id=33, 581.92406pt x 307.1475pt>
+<./screenshots/ml01_3.png, id=34, 581.92406pt x 307.1475pt>
 File: ./screenshots/ml01_3.png Graphic file (type png)
 <use ./screenshots/ml01_3.png>
 Package pdftex.def Info: ./screenshots/ml01_3.png  used on input line 118.
@@ -266,7 +270,7 @@ Overfull \hbox (13.854pt too wide) in paragraph at lines 123--126
 \OT1/cmr/m/n/10 - z.B. \OT1/cmr/m/it/10 Verteilung \OT1/cmr/m/n/10 von $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 bei Sprach-mod-ellen, \OT1/cmr/m/it/10 Di-men-sion-sre-duk-tion \OT1/cmr/m/n/10 zur Verbesserung
  []
 
-<./screenshots/ml01_4.png, id=34, 756.57657pt x 541.27219pt>
+<./screenshots/ml01_4.png, id=35, 756.57657pt x 541.27219pt>
 File: ./screenshots/ml01_4.png Graphic file (type png)
 <use ./screenshots/ml01_4.png>
 Package pdftex.def Info: ./screenshots/ml01_4.png  used on input line 131.
@@ -276,7 +280,7 @@ Overfull \hbox (51.14578pt too wide) in paragraph at lines 131--132
 [][] 
  []
 
-<./screenshots/ml01_5.png, id=35, 722.7pt x 551.05875pt>
+<./screenshots/ml01_5.png, id=36, 722.7pt x 551.05875pt>
 File: ./screenshots/ml01_5.png Graphic file (type png)
 <use ./screenshots/ml01_5.png>
 Package pdftex.def Info: ./screenshots/ml01_5.png  used on input line 135.
@@ -286,7 +290,7 @@ Overfull \hbox (42.67665pt too wide) in paragraph at lines 135--136
 [][] 
  []
 
-<./screenshots/ml01_6.png, id=36, 785.18344pt x 539.76656pt>
+<./screenshots/ml01_6.png, id=37, 785.18344pt x 539.76656pt>
 File: ./screenshots/ml01_6.png Graphic file (type png)
 <use ./screenshots/ml01_6.png>
 Package pdftex.def Info: ./screenshots/ml01_6.png  used on input line 141.
@@ -296,7 +300,7 @@ Overfull \hbox (58.29749pt too wide) in paragraph at lines 141--142
 [][] 
  []
 
-<./screenshots/ml01_7.png, id=37, 762.59906pt x 508.90125pt>
+<./screenshots/ml01_7.png, id=38, 762.59906pt x 508.90125pt>
 File: ./screenshots/ml01_7.png Graphic file (type png)
 <use ./screenshots/ml01_7.png>
 Package pdftex.def Info: ./screenshots/ml01_7.png  used on input line 145.
@@ -307,7 +311,7 @@ Overfull \hbox (52.6514pt too wide) in paragraph at lines 145--146
  []
 
 [5 <./screenshots/ml01_3.png>]
-<./screenshots/ml01_8.png, id=42, 1552.29938pt x 575.14874pt>
+<./screenshots/ml01_8.png, id=43, 1552.29938pt x 575.14874pt>
 File: ./screenshots/ml01_8.png Graphic file (type png)
 <use ./screenshots/ml01_8.png>
 Package pdftex.def Info: ./screenshots/ml01_8.png  used on input line 150.
@@ -319,12 +323,12 @@ Overfull \hbox (23.5005pt too wide) in paragraph at lines 152--156
 
 [6 <./screenshots/ml01_4.png> <./screenshots/ml01_5.png> <./screenshots/ml01_6.png> <./screenshots/ml01_7.png> <./screenshots/ml01_8.png>]
 Overfull \hbox (3.00056pt too wide) in paragraph at lines 165--166
-[]| \OT1/cmr/m/n/10 Reprasentative Auswahl bei langer Laufzeit / groem Spe-icher-aufwand 
+[]| \OT1/cmr/m/n/10 Repr^^?asentative Auswahl bei langer Laufzeit / gro^^Yem Spe-icher-aufwand 
  []
 
 [7]
 Chapter 2.
-<./screenshots/ml02_1.png, id=55, 468.24937pt x 408.77719pt>
+<./screenshots/ml02_1.png, id=56, 468.24937pt x 408.77719pt>
 File: ./screenshots/ml02_1.png Graphic file (type png)
 <use ./screenshots/ml02_1.png>
 Package pdftex.def Info: ./screenshots/ml02_1.png  used on input line 177.
@@ -334,12 +338,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-<./screenshots/ml02_2.png, id=56, 299.61937pt x 277.035pt>
+<./screenshots/ml02_2.png, id=57, 299.61937pt x 277.035pt>
 File: ./screenshots/ml02_2.png Graphic file (type png)
 <use ./screenshots/ml02_2.png>
 Package pdftex.def Info: ./screenshots/ml02_2.png  used on input line 184.
 (pdftex.def)             Requested size: 104.86835pt x 96.9637pt.
-<./screenshots/ml02_3.png, id=57, 797.22844pt x 459.21562pt>
+<./screenshots/ml02_3.png, id=58, 797.22844pt x 459.21562pt>
 File: ./screenshots/ml02_3.png Graphic file (type png)
 <use ./screenshots/ml02_3.png>
 Package pdftex.def Info: ./screenshots/ml02_3.png  used on input line 202.
@@ -356,7 +360,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--220
 
  []
 
-<./screenshots/ml02_4.png, id=63, 592.46344pt x 408.77719pt>
+<./screenshots/ml02_4.png, id=64, 592.46344pt x 408.77719pt>
 File: ./screenshots/ml02_4.png Graphic file (type png)
 <use ./screenshots/ml02_4.png>
 Package pdftex.def Info: ./screenshots/ml02_4.png  used on input line 221.
@@ -376,18 +380,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-<./screenshots/ml02_5.png, id=69, 906.38625pt x 593.21625pt>
+<./screenshots/ml02_5.png, id=70, 906.38625pt x 593.21625pt>
 File: ./screenshots/ml02_5.png Graphic file (type png)
 <use ./screenshots/ml02_5.png>
 Package pdftex.def Info: ./screenshots/ml02_5.png  used on input line 235.
 (pdftex.def)             Requested size: 226.59601pt x 148.3037pt.
 [10 <./screenshots/ml02_5.png>]
-<./screenshots/ml02_6.png, id=76, 743.02594pt x 383.93437pt>
+<./screenshots/ml02_6.png, id=77, 743.02594pt x 383.93437pt>
 File: ./screenshots/ml02_6.png Graphic file (type png)
 <use ./screenshots/ml02_6.png>
 Package pdftex.def Info: ./screenshots/ml02_6.png  used on input line 281.
 (pdftex.def)             Requested size: 219.19075pt x 113.25964pt.
-<./screenshots/ml02_7.png, id=77, 884.55469pt x 559.33969pt>
+<./screenshots/ml02_7.png, id=78, 884.55469pt x 559.33969pt>
 File: ./screenshots/ml02_7.png Graphic file (type png)
 <use ./screenshots/ml02_7.png>
 Package pdftex.def Info: ./screenshots/ml02_7.png  used on input line 289.
@@ -397,7 +401,7 @@ Overfull \hbox (49.96411pt too wide) in paragraph at lines 289--290
 [][] 
  []
 
-<./screenshots/ml02_8.png, id=78, 1053.1847pt x 624.83438pt>
+<./screenshots/ml02_8.png, id=79, 1053.1847pt x 624.83438pt>
 File: ./screenshots/ml02_8.png Graphic file (type png)
 <use ./screenshots/ml02_8.png>
 Package pdftex.def Info: ./screenshots/ml02_8.png  used on input line 293.
@@ -409,7 +413,7 @@ Overfull \hbox (85.79688pt too wide) in paragraph at lines 293--294
 
 [11 <./screenshots/ml02_6.png>]
 Overfull \hbox (9.50055pt too wide) in paragraph at lines 306--310
-\OT1/cmr/m/n/10 - Test-daten-satz $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 enthalt unge-se-hene Daten zur Va-li-dierung der Prax-is-tauglichkeit
+\OT1/cmr/m/n/10 - Test-daten-satz $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 enth^^?alt unge-se-hene Daten zur Va-li-dierung der Prax-is-tauglichkeit
  []
 
 
@@ -419,20 +423,20 @@ Overfull \hbox (13.58388pt too wide) in paragraph at lines 320--321
 
 [12 <./screenshots/ml02_7.png> <./screenshots/ml02_8.png>]
 Overfull \hbox (8.33391pt too wide) in paragraph at lines 335--339
-\OT1/cmr/m/n/10 - Sollen die Hy-per-pa-ram-e-ter des Mod-ells op-ti-miert wer-den, wer-den die verfugbaren
+\OT1/cmr/m/n/10 - Sollen die Hy-per-pa-ram-e-ter des Mod-ells op-ti-miert wer-den, wer-den die verf^^?ugbaren
  []
 
 
 Overfull \hbox (15.83397pt too wide) in paragraph at lines 335--339
-\OT1/cmr/m/n/10 - Die Hy-per-pa-ram-e-ter wer-den mit dem Va-li-dierungs-daten-satz op-ti-miert - Endgultige
+\OT1/cmr/m/n/10 - Die Hy-per-pa-ram-e-ter wer-den mit dem Va-li-dierungs-daten-satz op-ti-miert - Endg^^?ultige
  []
 
-<./screenshots/ml02_9.png, id=88, 740.0147pt x 335.75438pt>
+<./screenshots/ml02_9.png, id=89, 740.0147pt x 335.75438pt>
 File: ./screenshots/ml02_9.png Graphic file (type png)
 <use ./screenshots/ml02_9.png>
 Package pdftex.def Info: ./screenshots/ml02_9.png  used on input line 346.
 (pdftex.def)             Requested size: 166.50742pt x 75.54659pt.
-<./screenshots/ml02_10.png, id=89, 879.285pt x 520.94624pt>
+<./screenshots/ml02_10.png, id=90, 879.285pt x 520.94624pt>
 File: ./screenshots/ml02_10.png Graphic file (type png)
 <use ./screenshots/ml02_10.png>
 Package pdftex.def Info: ./screenshots/ml02_10.png  used on input line 356.
@@ -442,7 +446,7 @@ Overfull \hbox (51.0447pt too wide) in paragraph at lines 356--357
 [][] 
  []
 
-<./screenshots/ml02_11.png, id=90, 879.285pt x 523.9575pt>
+<./screenshots/ml02_11.png, id=91, 879.285pt x 523.9575pt>
 File: ./screenshots/ml02_11.png Graphic file (type png)
 <use ./screenshots/ml02_11.png>
 Package pdftex.def Info: ./screenshots/ml02_11.png  used on input line 360.
@@ -454,12 +458,12 @@ Overfull \hbox (51.0447pt too wide) in paragraph at lines 360--361
 
 [13 <./screenshots/ml02_9.png> <./screenshots/ml02_10.png> <./screenshots/ml02_11.png>] [14]
 Chapter 3.
-<./screenshots/ml03_1.png, id=101, 899.61093pt x 559.33969pt>
+<./screenshots/ml03_1.png, id=102, 899.61093pt x 559.33969pt>
 File: ./screenshots/ml03_1.png Graphic file (type png)
 <use ./screenshots/ml03_1.png>
 Package pdftex.def Info: ./screenshots/ml03_1.png  used on input line 375.
 (pdftex.def)             Requested size: 193.41258pt x 120.25568pt.
-<./screenshots/ml03_2.png, id=102, 538.26094pt x 358.33875pt>
+<./screenshots/ml03_2.png, id=103, 538.26094pt x 358.33875pt>
 File: ./screenshots/ml03_2.png Graphic file (type png)
 <use ./screenshots/ml03_2.png>
 Package pdftex.def Info: ./screenshots/ml03_2.png  used on input line 391.
@@ -488,55 +492,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 405--407
 
 [16]
 Overfull \hbox (2.5909pt too wide) detected at line 460
-[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = (1 \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )) []
+[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )) []
  []
 
 
 Overfull \hbox (14.4674pt too wide) detected at line 469
-[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = (1 + \OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []
+[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = (1 + \OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []
  []
 
-<./screenshots/ml03_3.png, id=111, 840.13875pt x 516.42938pt>
+<./screenshots/ml03_3.png, id=112, 840.13875pt x 516.42938pt>
 File: ./screenshots/ml03_3.png Graphic file (type png)
 <use ./screenshots/ml03_3.png>
 Package pdftex.def Info: ./screenshots/ml03_3.png  used on input line 477.
 (pdftex.def)             Requested size: 210.03416pt x 129.10703pt.
 [17]
-<./screenshots/ml03_4.png, id=115, 837.1275pt x 439.6425pt>
+<./screenshots/ml03_4.png, id=116, 837.1275pt x 439.6425pt>
 File: ./screenshots/ml03_4.png Graphic file (type png)
 <use ./screenshots/ml03_4.png>
 Package pdftex.def Info: ./screenshots/ml03_4.png  used on input line 485.
 (pdftex.def)             Requested size: 209.28136pt x 109.91035pt.
 Missing character: There is no d in font msbm7!
-<./screenshots/ml03_5.png, id=116, 871.75688pt x 362.10281pt>
+<./screenshots/ml03_5.png, id=117, 871.75688pt x 362.10281pt>
 File: ./screenshots/ml03_5.png Graphic file (type png)
 <use ./screenshots/ml03_5.png>
 Package pdftex.def Info: ./screenshots/ml03_5.png  used on input line 497.
 (pdftex.def)             Requested size: 272.42336pt x 113.15685pt.
  [18 <./screenshots/ml03_3.png> <./screenshots/ml03_4.png>]
-<./screenshots/ml03_6.png, id=123, 816.04875pt x 452.4403pt>
+<./screenshots/ml03_6.png, id=124, 816.04875pt x 452.4403pt>
 File: ./screenshots/ml03_6.png Graphic file (type png)
 <use ./screenshots/ml03_6.png>
 Package pdftex.def Info: ./screenshots/ml03_6.png  used on input line 501.
 (pdftex.def)             Requested size: 255.0146pt x 141.38725pt.
-<./screenshots/ml03_7.png, id=124, 698.61pt x 505.89pt>
+<./screenshots/ml03_7.png, id=125, 698.61pt x 505.89pt>
 File: ./screenshots/ml03_7.png Graphic file (type png)
 <use ./screenshots/ml03_7.png>
-Package pdftex.def Info: ./screenshots/ml03_7.png  used on input line 506.
+Package pdftex.def Info: ./screenshots/ml03_7.png  used on input line 507.
 (pdftex.def)             Requested size: 174.65207pt x 126.47218pt.
- [19 <./screenshots/ml03_5.png> <./screenshots/ml03_6.png> <./screenshots/ml03_7.png>] [20] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
+ [19 <./screenshots/ml03_5.png> <./screenshots/ml03_6.png> <./screenshots/ml03_7.png>]
+<./screenshots/ml03_8.png, id=133, 616.3025pt x 527.9725pt>
+File: ./screenshots/ml03_8.png Graphic file (type png)
+<use ./screenshots/ml03_8.png>
+Package pdftex.def Info: ./screenshots/ml03_8.png  used on input line 527.
+(pdftex.def)             Requested size: 138.67148pt x 118.79674pt.
+ [20 <./screenshots/ml03_8.png>] (/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.aux) ) 
 Here is how much of TeX's memory you used:
- 4827 strings out of 492450
- 65791 string characters out of 3120471
- 133363 words of memory out of 3000000
- 9133 multiletter control sequences out of 15000+200000
- 11897 words of font info for 46 fonts, out of 3000000 for 9000
+ 4785 strings out of 492167
+ 63433 string characters out of 6131557
+ 133254 words of memory out of 5000000
+ 9094 multiletter control sequences out of 15000+600000
+ 11897 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,36p,369b,987s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (20 pages, 2145149 bytes).
+ 46i,12n,36p,343b,987s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf (20 pages, 2160282 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

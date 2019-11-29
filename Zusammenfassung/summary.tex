@@ -637,6 +637,19 @@ Die Klassifizierung lässt sich umdrehen, indem man alle Gewichte mit $\cdot (-1
   end while
 \end{lstlisting}
 
+Die Gewichte eines Perzeptrons können auch einfacher berechnet werden, wenn z.B. bekannt ist, dass\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item die Punke $(3, 0)$ und $(0, 3)$ auf der Entscheidungsgrenze (bzw. Entscheidungsoberfläche) liegen
+  \item der Ursprung $(0, 0)$ negativ klassifiziert wird
+\end{itemize}
+
+$f(x_1, x_2) = w_0 + w_1x_1 + w_2x_2$\\
+$f(3, 0) = w_0 + 3x_1 = 0 \Rightarrow w_0 = -3x_1$\\
+$f(0, 3) = w_0 + 3x_2 = 0 \Rightarrow w_0 = -3x_2$\\
+$f(0, 0) < 0 \Rightarrow x_1 = x_2 = 1 \Rightarrow w_0 = -3$\\
+eine Mögliche Lösung ist dann: $f(x_1, x_2) = -3 + x_1 + x_2$
+
 \subsubsection{Beispiel Lernalgorithmus}
 \begin{itemize}
   \item $(x^1, y^1) = ([1, 1], 0)$ bzw. $([1, 1, 1], 0)$
@@ -673,5 +686,52 @@ Auch wenn ein Problem linear trennbar ist, erhält man mit dem Perzeptron Lernal
     \includegraphics[scale=.25]{ml04_10}
   \end{minipage}
 \end{figure}
+
+\section{Adaline}
+Das \textit{Adaline} ähnelt im Aufbau dem Perzeptron besitzt jedoch eine andere Aktivierungsfunktion und einen unterschiedlichen Lernalgorithmus genannt \textit{Deltaregel}
+\begin{center}
+  \includegraphics[scale=.2125]{ml04_11}
+\end{center}
+Das \textit{Adaline} ist ein \textit{Binärklassifikator} $f: \mathbb{R}^d \rightarrow {-1, 0, 1}$ definiert als
+$$f(x) = \alpha\cdot(w\circ x + w_0)$$
+wobei $\alpha$ die \textit{Signum} Aktivierungsfunktion ist.\\
+Auch hier nehmen wir implizit an, dass $x_0 = 1$ und $w$ den Parameter $w_0$ beinhaltet
+
+\subsection{Einführung}
+Die \textit{Signum} Aktivierungsfunktion ist definiert als
+\begin{equation*}
+  \alpha(x) = \begin{cases}
+    1 & \text{falls $x > 0$}\\
+    0 & \text{falls $x = 0$}\\
+    -1 & \text{andernfalls}
+  \end{cases}
+\end{equation*}
+
+\begin{center}
+  \includegraphics[scale=.2275]{ml04_12}
+\end{center}
+
+\subsection{Lernalgorithmus}
+Wie bei der Linearen Regression verwenden wir beim Adaline ein bekanntes Fehlermaß inspiriert
+durch die RSS/MSE in Verbindung mit dem \textit{Gradientenabstiegsverfahren}, um den negativen Gradienten
+des Fehlermaßes zum Minimum zu folgen:\\
+$$E(w)^i = \frac{1}{2}\cdot (y^i - f(x^i))^2 = \frac{1}{2}\cdot(y^i - w\circ x^i)^2$$
+$$\frac{dE(w^i)}{dw_j} = (y^i - w\circ x^i)\cdot \frac{d}{dw_j}(y^i - w\circ x^i) = -(y^i - w\circ x^i)$$
+$$\nabla_wE(w)^i = \begin{bmatrix}\frac{dE(w)^i}{dw_0}\\...\\\frac{dE(w)^i}{dw_n}\end{bmatrix} = -(y^i - w\circ x^i)\cdot x^i$$
+
+\begin{lstlisting}
+  w = 0
+  while (1 / n) * sum(|yi - alpha(w.dot(xi))|) > gamma
+    for i = 1 until n
+      w += eta * (yi - w.dot(xi)) * xi /* Deltaregel */
+    end for
+  end while
+\end{lstlisting}
+
+\begin{itemize}
+  \item Bei hoher Lernrate $\eta$ beginnt der Algorithmus zu oszillieren und konvergiert nicht
+  \item Aufgrund seiner linearen Natur kann auch das Adaline die XOR-Funktion nicht direkt lernen
+  \item Je nach Datensatz und Initialisierung ist der Klassifikator eindeutig
+\end{itemize}
 
 \end{document}

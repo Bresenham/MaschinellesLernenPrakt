@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1575038053 "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf" "summary" 1575038055
-  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.aux" 1575038055 6569 9cbe381a4256bbe25847825afda737de ""
-  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" 1575038053 31168 2d44ae5a9c5a04f03186f6564185a731 ""
+["pdflatex"] 1575040360 "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf" "summary" 1575040373
+  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.aux" 1575040361 6879 44b7f9f3bc0e345c9141f2f5debaf028 ""
+  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex" 1575040373 33800 4a468d998f9381c80826111372fb55ff ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1572595918 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1572595918 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1572595918 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -118,6 +118,8 @@
   "screenshots/ml03_8.png" 1575032774 48795 9d28f658872499bc77e69da43f5de667 ""
   "screenshots/ml04_1.png" 1575035347 43756 486ecbed70e2d396e3423f3b1732a80d ""
   "screenshots/ml04_10.png" 1575038011 34590 2ef40c07604b97e1df7a771e1b802254 ""
+  "screenshots/ml04_11.png" 1575038616 48357 63e923f6bbec8ccb3a228eb2ba28a22c ""
+  "screenshots/ml04_12.png" 1575039749 13537 5abc02147fd4bcc9fca77121a1140b5e ""
   "screenshots/ml04_2.png" 1575035462 16570 ca430757d0a2c96d4a2eb75433c8e39d ""
   "screenshots/ml04_3.png" 1575035779 53149 06eae20b998435a47bafcc28398ace57 ""
   "screenshots/ml04_4.png" 1575035896 46678 365b1bfffe667a0ff44aa7f6f7d0e133 ""
@@ -126,11 +128,11 @@
   "screenshots/ml04_7.png" 1575036259 31802 00827c3540652a7d325db3d6ea014e66 ""
   "screenshots/ml04_8.png" 1575036302 44541 40a636a66ddd48c7b4fab254eae31521 ""
   "screenshots/ml04_9.png" 1575037956 27504 e959799e7ab78b32772ca82f1ce35817 ""
-  "summary.aux" 1575038055 6569 9cbe381a4256bbe25847825afda737de "pdflatex"
-  "summary.tex" 1575038053 31168 2d44ae5a9c5a04f03186f6564185a731 ""
+  "summary.aux" 1575040361 6879 44b7f9f3bc0e345c9141f2f5debaf028 "pdflatex"
+  "summary.tex" 1575040373 33800 4a468d998f9381c80826111372fb55ff ""
   (generated)
-  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.log"
   "summary.pdf"
-  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf"
-  "summary.log"
   "summary.aux"
+  "summary.log"
+  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.pdf"
+  "/home/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.log"

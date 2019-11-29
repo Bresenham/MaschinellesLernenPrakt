@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{listings}
+\usepackage{pifont}
 
 \titleformat{\chapter}[display]
   {\normalfont\bfseries}{}{0pt}{\Large}
@@ -534,5 +535,143 @@ Man setzt auf steigende Kurse immer dann wenn das Modell \textit{up} vorhersagt.
   \item Die Genauigkeit besagt in diesem Fall lediglich, welcher Anteil der Vorhersagen richtig war, unabhängig ob \textit{up} oder \textit{down}
   \item Die Trefferquote besagt, welcher Anteil der positiven Renditen tatsächlich auch korrekt vorhergesagt wurde
 \end{itemize}
+
+\chapter{Perzeptron und Adaline}
+\section{Perzeptron}
+\subsection{Biologischer Hintergrund}
+In einem biologischen neuronalen Netz finden Berechnungen statt, indem elektrische Ladungen zwischen Nervenzellen ausgetauscht werden\\
+\vspace*{-1.25em}
+\begin{itemize}
+  \item Ein Neuron kann viele Synapsen haben und somit mit hunderten weiteren Neuronen verknüpft sein
+  \item Ein Neuron kann auch viele Dendriten besitzen und somit Input von vielen Neuronen empfangen
+  \item Verbindungen können \textit{verstärkend} oder \textit{hemmend} wirken, je nach der Chemie innerhalb des synaptischen Spalts
+\end{itemize}
+\begin{center}
+  \includegraphics[scale=.2275]{ml04_3}
+\end{center}
+
+\subsection{Einführung}
+Ein \textit{Perzeptron} ist ein binärer Klassifikator $f: \mathbb{R}^d \rightarrow\{0,1\}$ definiert als
+$$f(x) = \alpha \cdot(w\circ x + w_0)$$
+Alternativ wird das Perzeptron in der Literatur auch definiert als
+$$f(x) = \alpha \cdot (w\circ x)$$
+Hier ist $x = (1, x_1, ..., x_n)^T$ und $w = (w_0, w_1, ..., w_n)^T$, d.h. $x_0 = 1$ und $w_0$ sind in $x$ und $w$ enthalten
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.2]{ml04_1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.325]{ml04_6}
+  \end{minipage}
+\end{figure}
+
+Die \textit{Heaviside} Aktivierungsfunktion ist definiert als
+\begin{equation*}
+  \alpha(x) = \begin{cases}
+    1 & \text{falls $x > 0$}\\
+    0 & \text{andernfalls}
+  \end{cases}
+\end{equation*}
+\begin{center}
+  \includegraphics[scale=.225]{ml04_2}
+\end{center}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml04_4}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml04_5}
+  \end{minipage}
+\end{figure}
+
+Die Klassifizierung lässt sich umdrehen, indem man alle Gewichte mit $\cdot (-1)$ multipliziert
+
+\subsection{Lernalgorithmus}
+\begin{itemize}
+  \item Beginne mit einer zufälligen oder festen Wahl für $w$, z.B. $w = 0$
+  \item Bestimme die falsch klassifzierten Datenpunkte
+  \item Versuche iterativ die einzelnen Parameter so zu verändern, dass die Anzahl der falsch klassifzierten Daten sinkt
+  \item Höre auf sobald keine Verbesserung mehr eintritt
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml04_7}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml04_8}
+  \end{minipage}
+\end{figure}
+
+\vspace*{-1.25em}
+\begin{itemize}
+  \item $x$ wurde als Klasse 1 eingestuft, ist aber Klasse 0
+  \subitem $f_w(x) = \alpha \cdot (w\circ x) = 1 \Rightarrow w\circ x > 0$
+  \subitem $w' = w - x$
+  \subitem $w'\circ x = (w - x)\circ x = w\circ x - x \circ x$
+  \subitem $f_{w'}(x) = \alpha \cdot (w\circ x - x \circ x) = 0$
+  \item $x$ wurde als Klasse 0 eingestuft, ist aber Klasse 1
+  \subitem $f_w(x) = \alpha \cdot (w\circ x) = 0 \Rightarrow w\circ x \leq 0$
+  \subitem $w' = w + x$
+  \subitem $w'\circ x = (w + x)\circ x = w\circ x + x\circ x$
+  \subitem $f_{w'}(x) = \alpha(w\circ x + x\circ x) = 1$
+\end{itemize}
+
+
+\begin{lstlisting}
+  w = 0
+  while (1.0 / n) * sum(|yi - alpha(w.dot(xi))|) > gamma do
+    w' = w
+    for i = 1 until n
+      oi = alpha(w.dot(xi))
+      w' += (yi - oi) * xi
+    end for
+    w = w'
+  end while
+\end{lstlisting}
+
+\subsubsection{Beispiel Lernalgorithmus}
+\begin{itemize}
+  \item $(x^1, y^1) = ([1, 1], 0)$ bzw. $([1, 1, 1], 0)$
+  \item $(x^2, y^2) = ([1, 2], 1)$ bzw. $([1, 1, 2], 0)$
+  \item $(x^3, y^3) = ([2, 2], 0)$ bzw. $([1, 2, 2], 0)$
+\end{itemize}
+
+\begin{tabular}{l|l|l|l|l|l}
+  $w_0$ & $w_1$ & $w_2$ & $([1, 1], 0)$ & $([1, 2], 1)$ & $([2, 2], 0)$\\
+  \hline
+  0 & 0 & 0 & $0^{\checkmark}$ & $0^{x}$ & $0^{\checkmark}$\\
+  +1 & +1 & +2 & & &\\
+  \hline
+  1 & 1 & 2 & $1^x$ & $1^{\checkmark}$ & $1^x$\\
+  -1 & -1 & -1 & & &\\
+  -1 & -2 & -2 & & &\\
+  \hline
+  -1 & -2 & -1 & $0^{\checkmark}$ & $0^x$ & $0^{\checkmark}$\\
+  +1 & + 1 & + 2 & & &\\
+  \hline
+  0 & -1 & 1 & $0^{\checkmark}$ & $1^{\checkmark}$ & $0^{\checkmark}$
+\end{tabular}
+
+\subsection{Grenzen des Perzeptron}
+Probleme wie das Exklusiv-Oder (XOR), welche nicht \textit{linear trennbar} sind, können von einem Perzeptron nicht gelernt werden.\\
+Auch wenn ein Problem linear trennbar ist, erhält man mit dem Perzeptron Lernalgorithmus kein eindeutiges Modell
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml04_9}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.25]{ml04_10}
+  \end{minipage}
+\end{figure}
 
 \end{document}

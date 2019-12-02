@@ -734,4 +734,78 @@ $$\nabla_wE(w)^i = \begin{bmatrix}\frac{dE(w)^i}{dw_0}\\...\\\frac{dE(w)^i}{dw_n
   \item Je nach Datensatz und Initialisierung ist der Klassifikator eindeutig
 \end{itemize}
 
+\chapter{K-Nearest Neighbors}
+\section{Einführung}
+Ausgehend vom optimalen Bayes-Klassifikator mit Klassen $C_1, ..., C_m$, $x\in X$
+$$f(x) = \text{arg max } Pr(y=C_j|X=x)$$
+Bei der KNN-Klassifikation gibt es keine direkte Formel für $Pr(y = C_j|X = x)$.\\
+KNN kommt ohne Parameter aus und ist somit eine \textit{nicht-parametrische} Methode.\\
+Man merkt sich direkt alle Punkte $x^i$ zusammen mit ihrer Klasse $y^i$, welche im Datensatz
+$$T = \{(x^i, y^i)|1\leq i \leq n\}$$
+enthalten sind. Es gibt somit keine Trainingsphase. Man nimmt stattdessen an, dass ein zu klassifizierender
+Datenpunkt $x$ die gleiche Klasse hat, wie die Trainingsdaten in seiner Nähe
+
+\begin{center}
+  \includegraphics[scale=.275]{ml05_1}
+\end{center}
+
+Wobei mit \textit{Nähe} der euklidische Abstand
+
+$$dist(x, x') = ||x - x'||_2 = \sqrt{\sum_{i=1}^d(x_i - x'_i)^2}$$
+
+für $x, x' \in \mathbb{R}^d$ gemeint ist.\\
+Für eine Menge an Trainingsdaten $T = \{(x^i, y^i) | 1\leq i \leq n\}$ und einen Punkt $x$
+definiert man mit $N^k(x)\subseteq T$ die Menge der \textit{k} Trainingspunkte mit der geringsten Distanz $dist(x,x')$ zum Punkt $x$,
+die sogenannte \textit{k-Nachbarschaft}. Die Anzahl der Elemente in $N$ ist definiert als $|N^k(x)| = k$.\\
+Die Wahrscheinlichkeit der Klassenzugehörigkeit zur Klasse $C_j$ ist definiert als
+
+$$Pr(y = C_j | X = x) = \frac{|\{(x^i, y^i) \in N^k(x) | y^i = C_j\}}{k}$$
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml05_2}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml05_3}
+  \end{minipage}
+\end{figure}
+
+\begin{center}
+  \includegraphics[scale=.275]{ml05_4}
+\end{center}
+
+\subsection{Auswirkungen von $K$}
+KNN-Methoden besitzen einen einzigen \textit{Hyperparameter} $k \in \mathbb{N}$ welcher maßgeblich die Leistung beeinflusst.
+Ziel ist daher, $k$ zu optimieren um\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item die \textit{Fehlerrate} auf dem Testdatensatz zu minimieren
+  \item die Genauigkeit zu maximieren
+\end{itemize}
+
+\begin{center}
+  \includegraphics[scale=.35]{ml05_5}
+\end{center}
+
+Allgemein kann man sagen, dass ein kleines $k$ zu einer rauen Trennkurve zwischen den Klassen führt und größeres $k$ zu einer glatten Trennkurve.
+Die Entscheidungsgrenze nähert sich mit steigendem $k$ immer mehr einer Geraden an
+
+\begin{center}
+  \includegraphics[scale=.35]{ml05_6}
+\end{center}
+
+\subsection{Laufzeit und Beschleunigungsstrukturen}
+Ein naiver Ansatz ist bei jedem zu klassifizierenden Datenpunkt die Abstände zu allen $n$ Trainingsdaten zu berechnen,
+aufsteigend zu sortieren und die $k$-ersten Punkte auszuwählen. Ein solcher Algorithmus hat die Laufzeitkomplexität von
+
+$$\mathcal{O}(n^2\cdot log(n))$$
+
+Reduzieren der Laufzeit gelingt z.B. mit speziellen Datenstrukturen wie dem \textit{KD-Baum}:
+
+\begin{center}
+  \includegraphics[scale=.375]{ml05_7}
+\end{center}
+
 \end{document}

@@ -794,9 +794,16 @@ Die Entscheidungsgrenze nähert sich mit steigendem $k$ immer mehr einer Geraden
 Wenn die Entscheidungsgrenze des optimalen Bayes-Klassifikators sehr stark nichtlineare wäre führt demnach ein kleines $k$ zu besseren
 Ergebnissen. Zu kleines $k$ birgt jedoch die Gefahr der Überanpassung, zu großes $k$ wiederum kann Unteranpassung zur Folge haben.
 
-\begin{center}
-  \includegraphics[scale=.35]{ml05_6}
-\end{center}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.265]{ml05_6}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.255]{ml05_8}
+  \end{minipage}
+\end{figure}
 
 \subsection{Laufzeit und Beschleunigungsstrukturen}
 Ein naiver Ansatz ist bei jedem zu klassifizierenden Datenpunkt die Abstände zu allen $n$ Trainingsdaten zu berechnen,
@@ -809,5 +816,105 @@ Reduzieren der Laufzeit gelingt z.B. mit speziellen Datenstrukturen wie dem \tex
 \begin{center}
   \includegraphics[scale=.375]{ml05_7}
 \end{center}
+
+Gruppieren der Datenpunkte nach Abstand in einem immer feiner werdenden Netz
+
+\chapter{Support Vector Machines}
+\section{Maximal Margin Klassifikator}
+\subsection{Einführung}
+
+Maximal Margin Klassifikatoren betrachten die binäre Klassifikation von Punkten $x^i \in \mathbb{R}^d$ mit
+$y^i \in \{-1, 1\}$ und nehmen an, dass eine \textit{separierende Hyperebene} im $\mathbb{R}^d$ existiert,
+die beide Klassen perfekt voneinander trennt.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml06_1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml06_2}
+  \end{minipage}
+\end{figure}
+
+\subsection{Separierende Hyperebene}
+Eine Hyperebene mit Parametern $w_0, w$ welche die Eigenschaft besitzt, dass für alle Datenpunkte
+$(x^i, y^i)\in T\subseteq \mathbb{R}^d \times \{-1, 1\}$ gilt, dass
+$$w_0 + w^Tx^i > 0 \text{ falls } y^i = 1 \land w_0 + w^Tx^i < 0 \text{ falls } y^i = -1$$
+$\Rightarrow y^i\cdot (w_0 + w^Tx^i) > 0$ wird als \textit{separierende Hyperebene} bezeichnet.
+
+\subsection{Maximal Margin}
+Mit $f(x) = w_0 + w^Tx$ wird der binäre Klassifikator definiert als $sgn(f(x))$.\\
+An $f(x)$ kann man ablesen, wie sicher sich der Klassifikator ist:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item Für $|f(x)| \thickapprox 0$ befindet sich der Punkt $x$ sehr nahe an der Hyperebene
+  $w_0 + w^Tx = 0$ und ist daher eher ein \textit{Wackelkandidat}
+  \item Für $f(x) >> 0$ befindet sich der Punkt (sehr) weit entfernt von der Hyperebene
+  im positiven oder negativen Bereich und die Klassifikation ist sicher
+\end{itemize}
+
+Die Maximal Margin Hyperebene ist die separierende Hyperebene aus unendlich vielen potentiell separierenden
+Hyperebenen, die am weitesten von den Datenpunkten entfernt ist (= Unsicherheit minimeren).
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.265]{ml06_3}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml06_4}
+  \end{minipage}
+\end{figure}
+
+Die vier Datenpunkte, die der Maximal Margin Hyperebene am nächsten liegen, nennt man \textit{Support Vektoren},
+da sie die Hyperebene stützen. Falls sie verschoben werden, ändert sich auch die Hyperebene. Wichtig ist, dass die
+Maximal Margin Hyperebene nur von einer kleinen Anzahl Support Vektoren gestützt wird.
+
+\subsection{Optimierungsproblem}
+Um die Maximal Hyperebene zu berechnen, muss das Optimierungsproblem
+$$arg\text{ min }\frac{1}{2}\cdot ||w||_2^2$$
+unter den Nebenbedingungen
+$$y^i\cdot(w_0 + w^Tx^i) \geq 1\text{ }\forall\text{ }1\leq i \leq n$$
+gelöst werden. Hier wird der Abstand der Support Vektoren zur Maximal Margin Hyperebene auf $1$ normiert,
+d.h. kein Punkt hat einen Abstand $< 1$.\par
+
+\subsection{Karush-Kuhn-Tucker Theoreom}
+
+Das Optimierungsproblem löst man mit dem \textit{Karush-Kuhn-Tucker} Theorem (KKT). Für die \textit{Maxima}
+einer Funktion $f(x): \mathbb{R}^d \rightarrow R$ mit $n$ Nebenbedingungen ($1\leq i \leq n$) der Form $g_i(x)\leq 0$ gelten
+bezüglich der \textit{Lagrange}-Funktion $L(x) = f(x) - \sum_{i=1}^m\lambda_i\cdot g_i(x)$ die notwendigen Bedingungen:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $\lambda_i\in \mathbb{R}$ und $\lambda_i \geq 0$ (\textit{Lagrange Multiplikatoren})
+  \item $\nabla_xL(x) = 0$
+  \item $\lambda_i\cdot g_i(x) = 0$ $\forall$ $i\in \{1, ..., n\}$
+\end{itemize}
+
+Angewandt auf das Maximal Margin Problem wird nun $-\frac{1}{2}||w||_2^2$ maximiert anstatt $\frac{1}{2}||w||_2^2$ zu minimieren.
+Die \textit{Primale} Lagrange-Funktion:
+$$L_p(w_0, w) = -\frac{1}{2}||w||_2^2 - \sum_{i=1}^n\lambda_i(1 - y^i\cdot(w_0 + w^Tx^i))$$
+Da $-\frac{1}{2}||w||_2^2 = -\frac{1}{2}w^Tw = -\frac{1}{2}(w_1^2 + w_2^2 + ... + w_d^2)$
+und $\nabla -\frac{1}{2}||w||_2^2 = -\begin{bmatrix}w_1\\w_2\\...\\w_d\end{bmatrix}$ gilt
+$$\nabla_xL_p(w_0, w) = -w + \sum_{i=1}^n\lambda_iy^ix^i = 0$$
+wodurch $w = \sum_{i=1}^n\lambda_iy^ix^i$ und $\frac{dL_p(w_0, w)}{dw_0} = \sum_{i=1}^n\lambda_iy^i = 0$.\\
+Nach Einsetzen erhält man die \textit{Duale} Lagrange-Funktion:
+$$L_d(\lambda) = \sum_{i=1}^n\lambda_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy^iy^jx^{i^T}x^j$$
+die nun für $\lambda_i \geq 0$ und $i\in \{1,..., n\}$ optimiert wird.
+
+\subsection{Beispiel mit zwei Datenpunkten}
+$x^1 = \begin{bmatrix}1\\2\end{bmatrix}, x^2 = \begin{bmatrix}2\\1\end{bmatrix}$ und $y^1 = 1, y^2 = -1$
+
+\begin{center}
+  \includegraphics[scale=.275]{ml06_5}
+\end{center}
+
+Nach Einsetzen in $L_D(\lambda_1, \lambda_2)$:
+$$\lambda_1 + \lambda_2 - \frac{1}{2}\cdot\lambda_1^2\cdot1^2\cdot(1^2 + 2^2) - \frac{1}{2}\cdot\lambda_2^2\cdot(-1)^2\cdot(2^2 + 1^2)
+-\frac{1}{2}\cdot\lambda_1\lambda_2\cdot(-1)\cdot(2 + 2) - \frac{1}{2}\cdot\lambda_2\lambda_1\cdot(-1)\cdot1\cdot(2 + 2)$$
+$$\Leftrightarrow -\frac{5}{2}\cdot\lambda_1^2 - \frac{5}{2}\cdot\lambda_2^2 + 4\lambda_1\lambda_2 + \lambda_1 + \lambda_2$$
+Dies muss nun unter der Nebenbedingung $g(\lambda_1, \lambda_2) = \lambda_1 - \lambda_2 = 0$ optimiert werden.
 
 \end{document}

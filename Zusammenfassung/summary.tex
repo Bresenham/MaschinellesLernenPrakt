@@ -915,6 +915,70 @@ Nach Einsetzen in $L_D(\lambda_1, \lambda_2)$:
 $$\lambda_1 + \lambda_2 - \frac{1}{2}\cdot\lambda_1^2\cdot1^2\cdot(1^2 + 2^2) - \frac{1}{2}\cdot\lambda_2^2\cdot(-1)^2\cdot(2^2 + 1^2)
 -\frac{1}{2}\cdot\lambda_1\lambda_2\cdot(-1)\cdot(2 + 2) - \frac{1}{2}\cdot\lambda_2\lambda_1\cdot(-1)\cdot1\cdot(2 + 2)$$
 $$\Leftrightarrow -\frac{5}{2}\cdot\lambda_1^2 - \frac{5}{2}\cdot\lambda_2^2 + 4\lambda_1\lambda_2 + \lambda_1 + \lambda_2$$
-Dies muss nun unter der Nebenbedingung $g(\lambda_1, \lambda_2) = \lambda_1 - \lambda_2 = 0$ optimiert werden.
+Dies muss nun unter der Nebenbedingung $g(\lambda_1, \lambda_2) = \lambda_1 - \lambda_2 = 0$ optimiert werden. Aus dieser folgt,
+dass $\lambda_1 = \lambda_2 = \lambda$ und damit $L_D(\lambda, \lambda) = -\lambda^2 + 2\lambda$ mit globalem Maximum bei $\lambda = 1$
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.265]{ml06_6}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml06_7}
+  \end{minipage}
+\end{figure}
+
+$w = \sum_{i=1}^n\lambda_iy^ix^i = \begin{bmatrix}1\\2\end{bmatrix} - \begin{bmatrix}2\\1\end{bmatrix} =
+\begin{bmatrix}-1\\1\end{bmatrix}$\\
+$w_0$ lässt sich mit den ursprünglichen Nebenbedingungen $y^i\cdot(w_0 + w^Tx^i)\geq 1$\\
+$\forall$ $1\leq i\leq n$ bestimmen:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $1\cdot(w_0 + \begin{bmatrix}-1&1\end{bmatrix}\cdot\begin{bmatrix}1\\2\end{bmatrix}) \geq 1$ $\Rightarrow$ $w_0 + 1\geq 1$
+  \item $-1\cdot(w_0 + \begin{bmatrix}-1&1\end{bmatrix}\cdot\begin{bmatrix}2\\1\end{bmatrix}) \geq 1$ $\Rightarrow$ $-w_0 + 1\geq 1$
+\end{itemize}
+Damit ist $w_0 = 0$ und $f(x) = w_0 + w^Tx = x_2 - x_1$
+
+\subsection{Beispiel mit drei Datenpunkten}
+$x^1 = \begin{bmatrix}1\\2\end{bmatrix}, x^2 = \begin{bmatrix}2\\4\end{bmatrix}, x^3 = \begin{bmatrix}2\\1\end{bmatrix}$
+und $y^1 = 1, y^2 = 1, y^3 = -1$
+
+\begin{center}
+  \includegraphics[scale=.275]{ml06_8}
+\end{center}
+
+Anschließendes Einsetzen ergibt das Duale Problem der Maximierung von 
+$$h(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 + \lambda_3 - \frac{5}{2}\lambda_1^2 - 10\lambda_2^2 -
+\frac{5}{2}\lambda_3^2 - 10\lambda_1\lambda_2 + 4\lambda_1\lambda_3 + 8\lambda_2\lambda_3$$
+mit der Nebenbedingung $g(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 - \lambda_3 = 0$.
+
+Nach erneutem Einsetzen erhält man $z(\lambda_1, \lambda_2, \lambda_3, \lambda^*) = h(\lambda_1, \lambda_2, \lambda_3) +
+\lambda^*g(\lambda_1, \lambda_2, \lambda_3)$ und das LGS:
+
+$$\nabla_{\lambda_1, \lambda_2, \lambda_3}z(\lambda_1, \lambda_2, \lambda_3, \lambda^*) =
+\begin{bmatrix}
+  1 & -5\lambda_1 & -10\lambda_2 & 4\lambda_3 & \lambda^*\\
+  1 & -20\lambda_2 & -10\lambda_1 & 8\lambda_3 & \lambda^*\\
+  1 & -5\lambda_3 & 4\lambda_1 & 8\lambda_2 & -\lambda^*
+\end{bmatrix} = 0$$
+
+Nun erhält man $\lambda_1 = \frac{4}{3}, \lambda_2 = -\frac{2}{9}, \lambda_3 = \frac{10}{9}$ und $\lambda^*=-1$.
+Da aber $\lambda_2 < 0$ ist dies keine gültige Lösung. Es wird nun an den Grenzen ($\lambda_i = 0$) weitergesucht:
+
+\begin{center}
+  \includegraphics[scale=.275]{ml06_9}
+\end{center}
+
+Da $g(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 - \lambda_3 = 0$, darf $\lambda_3 \neq 0$ sein, da sonst
+$\lambda_1 = \lambda_2 = \lambda_3 = 0$, gültige Lösungen sind daher:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $\lambda_1 = 0 \Rightarrow \lambda_2 = \lambda_3$: $h(\lambda_1, \lambda_2, \lambda_3) = -\frac{9}{2}\lambda_3^2 + 2\lambda_3$
+  mit dem Maximum bei $\lambda_2 = \lambda_3 = \frac{2}{9}$
+  \item $\lambda_2 = 0 \Rightarrow \lambda_1 = \lambda_3$: $h(\lambda_1, \lambda_2, \lambda_3) = -\lambda_3^2 + 2\lambda_3$
+  mit dem Maximum bei $\lambda_1 = \lambda_3 = 1$
+\end{itemize}
+
 
 \end{document}

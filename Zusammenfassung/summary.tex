@@ -1082,6 +1082,108 @@ Sie werden \textit{Support Vektoren} genannt.
 
 \section{Support Vector Regression}
 
+Identisch zur \textit{Linearen Regression} geht man bei der \textit{Support Vector Regression} davon aus,
+dass die Funktion $f$ die Form $f(x) = w_0 + w^Tx$ mit $w\in \mathbb{R}^d$ und $w_0\in \mathbb{R}$ hat.
 
+\begin{center}
+  \includegraphics[scale=.285]{ml06_18}
+\end{center}
+
+Zusätzlich fordert man jedoch, dass es einen $\epsilon$-großen Margin um $f$ gibt, in welchem möglichst alle
+Datenpunkte liegen. Da dies in den seltesten Fällen klappt, erlaubt man eine \textit{Überschreitung} $\epsilon + \xi_i$ und 
+\textit{Unterschreitungen} $\epsilon + \xi_i^*$ des gesamten Marings.\par
+
+Das resultierende quadratische Optimierungsproblem ist für eine feste Wahl von $\epsilon, C\in \mathbb{R} \geq 0$ gegeben durch
+
+$$\text{arg min }\frac{1}{2}||w||^2 + C\cdot \sum_{i=1}^n(\xi_i + \xi_i^*)$$
+
+mit den Nebenbedingungen $\forall\text{ }i\in\{1, ..., n\}$:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $y^i - w^Tx^i - w_0 \leq \epsilon + \xi_i$
+  \item $w^Tx^i + w_0 - y^i\leq \epsilon + \xi_i^*$
+  \item $\xi_i, \xi_i^* \geq 0$
+\end{itemize}
+
+Man bestraft somit nur Abweichungen um $\xi_i$ bzw. $\xi_i^*$ \textit{außerhalb} des $\epsilon$-Margins.
+Da nur entweder eine Überschreitung \textit{oder} eine Unterschreitung vorliegt ist immer eins der $\xi_i = 0$.\\
+Die \textit{Primale Lagrange Funktion} ist gegeben als:
+
+$$L_P(w, w_0, \lambda, \lambda^*) = -\frac{1}{2}||w||^2 - C\cdot \sum_{i=1}^n(\xi_i + \xi_i^*)
+-\sum_{i=1}^n\lambda_i[y^i - w^Tx^i - w_0 - \epsilon - \xi_i]
+-\sum_{i=1}\lambda_i^*[w^Tx^i + w_0 - y^i - \epsilon - \xi_i^*]
+$$
+
+Nach Anwenden des KKT erhält man:
+
+$$\nabla_wL_P(w, w_0, \epsilon, \epsilon^*) = -w + \sum_{i=1}^n(\lambda_i - \lambda_i^*)\cdot x_i = 0$$
+
+$$\Rightarrow w = \sum_{i=1}^n(\lambda_i - \lambda_i^*)\cdot x^i$$
+
+$$\Rightarrow\frac{dL_P}{dw_0} = \sum_{i=1}^n(\lambda_i - \lambda_i^*) = 0$$
+
+Wenn man diese Erkenntnisse in das ursprüngliche $L_P$ einsetzt, erhält man:
+
+$$L_D(\lambda, \lambda^*) = \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n(\lambda_i - \lambda_i^*)(\lambda_j - \lambda_j^*)x^{i^T}x^j
++ \epsilon\cdot\sum_{i=1}^n(\lambda_i + \lambda_i^*) + \sum_{i=1}^ny^i(\lambda_i^* - \lambda_i)$$
+
+mit Nebenbedingungen\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $\sum_{i=1}^n(\lambda_i - \lambda_i^*) = 0$
+  \item $0\leq \lambda_i, \lambda_i^*\leq C$
+  \item $\xi_i(C-\lambda_i) = 0$, $\xi_i^*(C - \lambda_i^*) = 0$
+\end{itemize}
+
+und zusätzlichen KKT Bedingungen zur Berechnung von $w_0$:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $\lambda_i[y^i - w^Tx^i - w_0 - \epsilon - \xi_i] = 0$
+  \item $\lambda_i^*[w^Tx^i + w_0 - y^i - \epsilon - \xi_i^*] = 0$
+\end{itemize}
+
+Nur ein Teil der Datenpunkte $x^i \in S\subseteq D$ liefern Lagrange Multiplikatoren $\lambda_i, \lambda_i^* > 0$. Diese
+Support Vektoren verletzten den Margin.
+
+\subsection{Kerntrick}
+
+Durch $w = \sum_{i\in S}(\lambda_i - \lambda_i^*)\cdot x^i$ erhält man:
+
+$$f(x) = w^Tx + w_0 = \sum_{i\in S}(\lambda_i - \lambda_i^*)\cdot x^{i^T}x + w_0$$
+
+Das Skalarprodukt $x^{i^T}x$ ist ein Maß für die Ähnlichkeit - umso höher der Wert umso ähnlicher die Vektoren.
+Es wird nun zu einem \textit{Kernel} $k$ für eine Basistransformation $\phi$ verallgemeinert:
+
+$$k(u, v) = \phi(u)^T\phi(v)$$
+
+Dadurch erhält man:
+
+$$f(x) = \sum_{i\in S}(\lambda_i - \lambda_i^*)\cdot k(x^i, x) + w_0$$
+
+Die ursprüngliche Formulierung erhält man mit $\phi(u) = u$ und $k(u, v) = u^Tv$.
+
+$$L_d(\lambda, \lambda^*) = \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n(\lambda_i - \lambda_i^*)(\lambda_j - \lambda_j^*)
+k(x^i, x^j) + \epsilon\sum_{i=1}^n(\lambda_i + \lambda_i^*) + \sum_{i=1}^ny^i(\lambda_i^* - \lambda_i)$$
+
+Die Berechnung von $k(u, v)$ ist effizient und kann ohne genaue Kenntniss von $\phi$ erfolgen.
+Das Verfahren wird \textit{Kerntrick} genannt. Beispiele:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item Linearer Kernel: $k(u, v) = u^Tv$
+  \item Polynomialer Kernel: $k(u, v) = (1 + u^Tv)^p$
+  \item Radiale Basisfunktion: $k(u, v) = e^{-\frac{||u-v||^2}{2\sigma^2}}$
+\end{itemize}
+
+Bei hohen Dimensionen birgt wieder die Gefahr vor Overfitting.
+
+\begin{center}
+  \includegraphics[scale=.295]{ml06_19}
+\end{center}
+
+Die dicken, schwarzen Punkte sind Support Vektoren (auch diejenigen außerhalb des Margins).
+
+Der Kerntrick lässt sich auch bei der \textit{Support Vector Klassifikation} verwenden:
+
+$$L_D(\lambda) = \sum_{i=1}^n\lambda_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy^iy^jk(x^i, x^j)$$
 
 \end{document}

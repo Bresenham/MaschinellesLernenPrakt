@@ -970,7 +970,7 @@ Da aber $\lambda_2 < 0$ ist dies keine gültige Lösung. Es wird nun an den Gren
   \includegraphics[scale=.275]{ml06_9}
 \end{center}
 
-Da $g(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 - \lambda_3 = 0$, darf $\lambda_3 \neq 0$ sein, da sonst
+Da $g(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 - \lambda_3 = 0$, darf $\lambda_3$ nicht $0$ sein, da sonst
 $\lambda_1 = \lambda_2 = \lambda_3 = 0$, gültige Lösungen sind daher:\\
 \vspace*{-1.5em}
 \begin{itemize}
@@ -979,6 +979,109 @@ $\lambda_1 = \lambda_2 = \lambda_3 = 0$, gültige Lösungen sind daher:\\
   \item $\lambda_2 = 0 \Rightarrow \lambda_1 = \lambda_3$: $h(\lambda_1, \lambda_2, \lambda_3) = -\lambda_3^2 + 2\lambda_3$
   mit dem Maximum bei $\lambda_1 = \lambda_3 = 1$
 \end{itemize}
+
+\begin{center}
+  \includegraphics[scale=.275]{ml06_10}
+\end{center}
+
+Man erhält mit $\lambda_1 =1, \lambda_2=0, \lambda_3=1$ den selben Klassifikator wie im ersten Beispiel, diesmal ist
+der zweite Datenpunkt $x^2$ nicht mehr beteiligt. Man erkennt an den \textit{Lagrange-Multiplikatoren}, welche
+Datenpunkte Support Vektoren sind und welche nicht ($\lambda = 0$).
+
+\section{Support Vector Klassifikation}
+
+Die Einschränkung der Maximum Margin Klassifikation, dass Klassen perfekt separierbar sein müssen, wird nun fallen gelassen.
+Es ist erlaubt, dass Datenpunkte\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item innerhalb des Margins
+  \item oder sogar auf der falschen Seite der Hyperebene liegen (Grundvoraussetzung für eine trennende Hyperebene)
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.265]{ml06_11}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml06_12}
+  \end{minipage}
+\end{figure}
+
+\subsection{Optimierungsproblem}
+
+Die Support Vector Klassifizierung liefert das Optimierungsproblem
+
+$$\text{arg max } M$$
+
+unter den Bedingungen
+
+$$\sum_{j=1}^dw_j^2 = 1$$
+
+$$y^i\cdot(w_0 + w^Tx^i)\geq \text{ }M\cdot(1 - \epsilon_i)\text{ },\epsilon\geq 0\text{ }, \forall\text{ }1\geq i\geq n$$
+
+$$\sum_{i=1}^n\epsilon_i\geq C$$
+
+wobei $C\in \mathbb{R}$ und $C \geq 0$ ein \textit{Hyperparameter} ist. Die Schlupfvariable $\epsilon_i$ gibt Auskunft über
+die Position des $i$-ten Datenpunkts:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $\epsilon_i = 0$: $x^i$ befindet sich auf der richtigen Seite der Hyperebene
+  \item $\epsilon\in\{0,1\}$: $x^i$ verletzt den Mindestabstand zur Hyperebene (Margin), befindet sich jedoch auf der richtigen Seite
+  \item $\epsilon_i > 1$: $x^i$ befindet sich auf der falschen Seite der Hyperebene
+\end{itemize}
+
+$C$ begrenzt den Grad der \textit{Verletzung}. Ist $C=0$ und damit $\epsilon_1 = ... = \epsilon_n = 0$ handelt es sich um einen
+Maximum Margin Klassifikator. Generell dürfen nicht mehr als $C$ Datenpunkte auf der falschen Seite liegen.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.265]{ml06_13}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml06_14}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.265]{ml06_15}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.275]{ml06_16}
+  \end{minipage}
+\end{figure}
+
+\subsection{Lösen des Optimierungsproblems}
+Anwenden des \textit{KKT}, so reduziert sich das Optimierungsproblem auf das duale Problem
+
+$$\text{arg max }L_D(\lambda)$$
+
+mit
+
+$$L_D(\lambda) = \sum_{i=1}^n\lambda_i -\frac{1}{2}\cdot\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy^iy^jx^{i^T}x^j$$
+
+mit Nebenbedingung\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $\sum_{i=1}^n\lambda_iy^i = $
+  \item $0\geq \lambda_i\geq C$ für alle $i\in \{1, ..., n\}$
+\end{itemize}
+
+Die Hyperebene wird nur von Datenpunkten innerhalb des Margins bzw. auf der falschen Seite bestimmt.
+Sie werden \textit{Support Vektoren} genannt.
+
+\begin{center}
+  \includegraphics[scale=.275]{ml06_17}
+\end{center}
+
+\section{Support Vector Regression}
+
 
 
 \end{document}

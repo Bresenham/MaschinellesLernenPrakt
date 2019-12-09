@@ -1186,4 +1186,51 @@ Der Kerntrick lässt sich auch bei der \textit{Support Vector Klassifikation} ve
 
 $$L_D(\lambda) = \sum_{i=1}^n\lambda_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy^iy^jk(x^i, x^j)$$
 
+\chapter{Entscheidungsbäume}
+
+\subsection{Einführung}
+
+Wird angewendet, wenn $X$ \textit{nominal} ist, d.h. mit diskreten Werten aber ohne
+natürliche Distanzmetrik  (wie euklidische Norm)), z.B.:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $X_{\text{Farbe}} = \{\text{rot}, \text{grün}, \text{gelb}\}$
+  \item $X_{\text{From}} = \{\text{rund}, \text{dünn}\}$
+  \item $X_{\text{Größe}} = \{\text{groß}, \text{mittel}, \text{klein}\}$
+  \item $X_{\text{Geschmack}} = \{\text{süß}, \text{sauer}\}$
+\end{itemize}
+
+Ein Objekt $x\in X$ wird als $d$-Tupel, in diesem Beispiel mit einem $4$-Tupel
+
+$$x = (x_1, x_2, x_3, x_4)\in X$$
+
+mit $X = X_{\text{Farbe}} \times X_{\text{From}} \times X_{\text{Größe}} \times X_{\text{Geschmack}}$\\
+Ein Apfel wird z.B. beschrieben durch (rot, rund, mittel, süß)
+
+\subsection{Definition}
+
+Es soll eine Funktion $f: X\rightarrow Y$ gelernt werden, wobei $X$ reell, diskret oder nominal und $Y = \{y_1, ..., y_n\}$
+eine diskrete Menge von Klassen ist.\\
+Entscheidungsbäume klassifzieren Objekte anhand nominaler Kriterien mit Hilfe von Fragensequenzen, wobei die nächste Frage
+direkt von der Antwort der aktuellen Frage abhängt. Die Antwort auf jede Frage muss nominal sein wie z.B. generell $\{$ja, nein$\}$
+oder speziell $\{$rot, grün, gelb$\}$.\par
+Die Knoten des Baumes sind die systematischen Fragen und die Kanten die jeweiligen Antwortmöglichkeiten. Die Blätter des
+Baumes sind die Klassen. Die Klassifikation beginnt in der Wurzel und endet in einem Blatt - also in einer Klasse.\\
+Die Kanten, die einen Knoten verlassen müssen \textit{eindeutig} und \textit{erschöpfend} sein, sodass immer genau einer Kante
+gefolgt wird.
+
+\begin{center}
+  \includegraphics[scale=.285]{ml07_1}
+\end{center}
+
+\subsection{Eigenschaften}
+
+\begin{itemize}
+  \item Die Klassifikation einzelner Datenpunkte $x\in X$ kann vom Menschen nachvollzogen werden
+  \item Die Klassen $y\in Y$ selbst erhalten eine Beschreibung anhand von logischen Kriterien, z.B.
+  \subitem Apfel = (Farbe = grün $\land$ Größe = mittel) $\lor$ (Farbe = rot $\land$ Größe = mittel)
+  = (Farbe = grün $\lor$ Farbe = rot) $\land$ Größe = mittel
+  \item Entscheidungsbäume können daher durch explizites Vorwissen ergänzt werden
+\end{itemize}
+
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.10)  16 DEC 2019 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.10)  16 DEC 2019 21:15
 entering extended mode
 **c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
 (c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
@@ -934,19 +934,128 @@ File: ./screenshots/ml07_6.png Graphic file (type png)
 <use ./screenshots/ml07_6.png>
 Package pdftex.def Info: ./screenshots/ml07_6.png  used on input line 1313.
 (pdftex.def)             Requested size: 240.52545pt x 153.34908pt.
-[42 <./screenshots/ml07_5.png> <./screenshots/ml07_6.png>] [43] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
+[42 <./screenshots/ml07_5.png> <./screenshots/ml07_6.png>]
+<./screenshots/ml07_7.png, id=285, 583.42969pt x 442.65375pt>
+File: ./screenshots/ml07_7.png Graphic file (type png)
+<use ./screenshots/ml07_7.png>
+Package pdftex.def Info: ./screenshots/ml07_7.png  used on input line 1336.
+(pdftex.def)             Requested size: 175.03024pt x 132.79713pt.
+<./screenshots/ml07_8.png, id=286, 560.8453pt x 500.62032pt>
+File: ./screenshots/ml07_8.png Graphic file (type png)
+<use ./screenshots/ml07_8.png>
+Package pdftex.def Info: ./screenshots/ml07_8.png  used on input line 1352.
+(pdftex.def)             Requested size: 131.79866pt x 117.64578pt.
+<./screenshots/ml07_9.png, id=287, 429.10312pt x 505.13719pt>
+File: ./screenshots/ml07_9.png Graphic file (type png)
+<use ./screenshots/ml07_9.png>
+Package pdftex.def Info: ./screenshots/ml07_9.png  used on input line 1355.
+(pdftex.def)             Requested size: 100.83923pt x 118.70724pt.
+<./screenshots/ml07_10.png, id=288, 483.30562pt x 493.0922pt>
+File: ./screenshots/ml07_10.png Graphic file (type png)
+<use ./screenshots/ml07_10.png>
+Package pdftex.def Info: ./screenshots/ml07_10.png  used on input line 1362.
+(pdftex.def)             Requested size: 113.57683pt x 115.87668pt.
+<./screenshots/ml07_11.png, id=289, 496.85625pt x 495.35063pt>
+File: ./screenshots/ml07_11.png Graphic file (type png)
+<use ./screenshots/ml07_11.png>
+Package pdftex.def Info: ./screenshots/ml07_11.png  used on input line 1365.
+(pdftex.def)             Requested size: 116.76123pt x 116.40741pt.
+ [43 <./screenshots/ml07_7.png> <./screenshots/ml07_8.png> <./screenshots/ml07_9.png>]
+<./screenshots/ml07_12.png, id=297, 353.06906pt x 463.7325pt>
+File: ./screenshots/ml07_12.png Graphic file (type png)
+<use ./screenshots/ml07_12.png>
+Package pdftex.def Info: ./screenshots/ml07_12.png  used on input line 1372.
+(pdftex.def)             Requested size: 82.97124pt x 108.97714pt.
+<./screenshots/ml07_13.png, id=298, 591.71063pt x 347.79938pt>
+File: ./screenshots/ml07_13.png Graphic file (type png)
+<use ./screenshots/ml07_13.png>
+Package pdftex.def Info: ./screenshots/ml07_13.png  used on input line 1375.
+(pdftex.def)             Requested size: 139.05202pt x 81.73286pt.
+
+Overfull \hbox (1.05412pt too wide) in paragraph at lines 1375--1376
+[][] 
+ []
+
+<./screenshots/ml07_14.png, id=299, 752.8125pt x 392.21532pt>
+File: ./screenshots/ml07_14.png Graphic file (type png)
+<use ./screenshots/ml07_14.png>
+Package pdftex.def Info: ./screenshots/ml07_14.png  used on input line 1384.
+(pdftex.def)             Requested size: 225.84549pt x 117.6655pt.
+<./screenshots/ml07_15.png, id=300, 498.36188pt x 465.23813pt>
+File: ./screenshots/ml07_15.png Graphic file (type png)
+<use ./screenshots/ml07_15.png>
+Package pdftex.def Info: ./screenshots/ml07_15.png  used on input line 1390.
+(pdftex.def)             Requested size: 117.11505pt x 109.33096pt.
+<./screenshots/ml07_16.png, id=301, 561.59813pt x 488.57532pt>
+File: ./screenshots/ml07_16.png Graphic file (type png)
+<use ./screenshots/ml07_16.png>
+Package pdftex.def Info: ./screenshots/ml07_16.png  used on input line 1393.
+(pdftex.def)             Requested size: 131.97557pt x 114.81522pt.
+[44 <./screenshots/ml07_10.png> <./screenshots/ml07_11.png> <./screenshots/ml07_12.png> <./screenshots/ml07_13.png> <./screenshots/ml07_14.png>]
+<./screenshots/ml07_17.png, id=310, 560.8453pt x 493.845pt>
+File: ./screenshots/ml07_17.png Graphic file (type png)
+<use ./screenshots/ml07_17.png>
+Package pdftex.def Info: ./screenshots/ml07_17.png  used on input line 1400.
+(pdftex.def)             Requested size: 131.79866pt x 116.05359pt.
+<./screenshots/ml07_18.png, id=311, 502.12593pt x 469.00218pt>
+File: ./screenshots/ml07_18.png Graphic file (type png)
+<use ./screenshots/ml07_18.png>
+Package pdftex.def Info: ./screenshots/ml07_18.png  used on input line 1403.
+(pdftex.def)             Requested size: 117.9996pt x 110.21552pt.
+<./screenshots/ml07_19.png, id=312, 502.12593pt x 472.01344pt>
+File: ./screenshots/ml07_19.png Graphic file (type png)
+<use ./screenshots/ml07_19.png>
+Package pdftex.def Info: ./screenshots/ml07_19.png  used on input line 1410.
+(pdftex.def)             Requested size: 117.9996pt x 110.92317pt.
+<./screenshots/ml07_20.png, id=313, 753.5653pt x 354.57469pt>
+File: ./screenshots/ml07_20.png Graphic file (type png)
+<use ./screenshots/ml07_20.png>
+Package pdftex.def Info: ./screenshots/ml07_20.png  used on input line 1419.
+(pdftex.def)             Requested size: 226.07133pt x 106.37321pt.
+<./screenshots/ml07_21.png, id=314, 357.58594pt x 455.45157pt>
+File: ./screenshots/ml07_21.png Graphic file (type png)
+<use ./screenshots/ml07_21.png>
+Package pdftex.def Info: ./screenshots/ml07_21.png  used on input line 1425.
+(pdftex.def)             Requested size: 84.0327pt x 107.03113pt.
+<./screenshots/ml07_22.png, id=315, 357.58594pt x 465.23813pt>
+File: ./screenshots/ml07_22.png Graphic file (type png)
+<use ./screenshots/ml07_22.png>
+Package pdftex.def Info: ./screenshots/ml07_22.png  used on input line 1428.
+(pdftex.def)             Requested size: 84.0327pt x 109.33096pt.
+ [45 <./screenshots/ml07_15.png> <./screenshots/ml07_16.png> <./screenshots/ml07_17.png> <./screenshots/ml07_18.png> <./screenshots/ml07_19.png> <./screenshots/ml07_20.png>]
+<./screenshots/ml07_23.png, id=325, 356.0803pt x 463.7325pt>
+File: ./screenshots/ml07_23.png Graphic file (type png)
+<use ./screenshots/ml07_23.png>
+Package pdftex.def Info: ./screenshots/ml07_23.png  used on input line 1435.
+(pdftex.def)             Requested size: 83.67888pt x 108.97714pt.
+<./screenshots/ml07_24.png, id=326, 718.18312pt x 289.08pt>
+File: ./screenshots/ml07_24.png Graphic file (type png)
+<use ./screenshots/ml07_24.png>
+Package pdftex.def Info: ./screenshots/ml07_24.png  used on input line 1445.
+(pdftex.def)             Requested size: 215.45659pt x 86.72466pt.
+<./screenshots/ml07_25.png, id=327, 782.17218pt x 390.70969pt>
+File: ./screenshots/ml07_25.png Graphic file (type png)
+<use ./screenshots/ml07_25.png>
+Package pdftex.def Info: ./screenshots/ml07_25.png  used on input line 1454.
+(pdftex.def)             Requested size: 234.65346pt x 117.2138pt.
+ [46 <./screenshots/ml07_21.png> <./screenshots/ml07_22.png> <./screenshots/ml07_23.png> <./screenshots/ml07_24.png>]
+Overfull \hbox (6.4171pt too wide) in paragraph at lines 1463--1466
+\OT1/cmr/m/n/10 Wahrschein-lichkeit im Bere-ich der []\OT1/cmr/bx/n/10 Uberanpassung\OT1/cmr/m/n/10 . Im Ex-trem-fall besteht
+ []
+
+[47 <./screenshots/ml07_25.png>] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
 Here is how much of TeX's memory you used:
- 4712 strings out of 492450
- 64884 string characters out of 3120471
+ 4845 strings out of 492450
+ 67751 string characters out of 3120471
  129561 words of memory out of 3000000
- 9037 multiletter control sequences out of 15000+200000
+ 9170 multiletter control sequences out of 15000+200000
  12587 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,14n,36p,324b,1216s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (43 pages, 4848422 bytes).
+Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (47 pages, 5815915 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
+ 400 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 361 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 456 words of extra memory for PDF output out of 10000 (max. 10000000)
 

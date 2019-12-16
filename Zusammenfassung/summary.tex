@@ -1332,6 +1332,147 @@ mit\\
 
 \section{Beispiel: Erstellung eines binären Entscheidungsbaumes}
 
+\begin{center}
+  \includegraphics[scale=.3]{ml07_7}
+\end{center}
 
+In diesem Beispiel hat der binäre Entscheidungsbaum 6 Fragen:\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item rot: Ja/Nein
+  \item grün: Ja/Nein
+  \item blau: Ja/Nein
+  \item weich: Ja/Nein
+  \item ...
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_8}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_9}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_10}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_11}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_12}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_13}
+  \end{minipage}
+\end{figure}
+
+Es wird die erste Frage $x_2 = $ \textit{flüssig} gewählt, da sie neben $x_2 = $ \textit{weich} den maximalen
+$\Delta i(N)$-Wert besitzt. Man stellt weiterhin fest, dass die Daten im linken Knoten bereits \textit{rein}
+sind und man daher direkt die Klasse \textit{blau} bestimmen kann:
+
+\begin{center}
+  \includegraphics[scale=.3]{ml07_14}
+\end{center}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_15}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_16}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_17}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_18}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_19}
+  \end{minipage}
+\end{figure}
+
+Man wählt die Frage $x_2 = $ \textit{weich}, da sie neben $x_2 = $ \textit{trocken} den maximalen $\Delta i(N)$-Wert
+besitzt. Außerdem stellt man fest, dass die Daten im linken Knoten \textit{rein} sind und man direkt die Klasse
+\textit{rot} bestimmen kann.
+
+\begin{center}
+  \includegraphics[scale=.3]{ml07_20}
+\end{center}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_21}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_22}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.235]{ml07_23}
+  \end{minipage}
+\end{figure}
+
+Man wählt als nächste Frage $x_1 = $ \textit{rot}, da sie neben $x_1 = $ \textit{blau} den maximalen
+$\Delta i(N)$-Wert besitzt. Außerdem stellt man fest, dass die Daten im linken Knoten \textit{rein}
+sind und man direkt die Klasse \textit{blau} bestimmen kann. Auch der rechte Knoten ist nun \textit{rein}
+und wird der Klasse \textit{rot} zugeordnet $\Rightarrow$ fertig.
+
+\begin{center}
+  \includegraphics[scale=.3]{ml07_24}
+\end{center}
+
+\section{Weiterführendes}
+
+Bei reellwertigen Features $X = \mathbb{R}^d$ sollten die Fragen passend gewählt werden. Oftmals werden auch
+Linearkombinationen erlaubt, was die Baumkomplexität deutlich verringert
+
+\begin{center}
+  \includegraphics[scale=.3]{ml07_25}
+\end{center}
+
+\vspace*{-1.5em}
+\begin{itemize}
+  \item Der gezeigte Algorithmus führt nur lokale Optimierung durch und ist damit \textit{greedy}, d.h. es gibt keine Garantie,
+  dass die Folge von lokalen Festlegungen zu einem globalen Optimum bezüglich der Baumgröße führen.
+  \item Man reduziert eigentlich die \textit{Missclassification Impurity}, trotzdem ist oft die \textit{Gini Unreinheit}
+  vorzuziehen, da sie vorausschauender ist
+  \item In der Praxis wichtiger sind Kriterien, wann der Baumaufbau gestoppt bzw. der Baum gestutzt werden sollte. Baut
+  man nämlich den Baum immer bis zur minimalen Unreinheit aus, befindet amn sich mit großer Wahrscheinlichkeit im
+  Bereich der \textbf{Überanpassung}. Im Extremfall besteht jedes Blatt aus einem einzigen Datenpunkt
+\end{itemize}
+
+\section{Stopkriterien}
+
+\vspace*{-1.5em}
+\begin{itemize}
+  \item \textbf{Testfehlerkriterium:} Split der Daten in Trainings- und Testdaten, nach jedem Schritt im Baumaufbau wird Fehler auf
+  Testdaten protokolliert. Schlussendlich verwendet man die Splittingtiefe pro Baumteil, die zum minimalen Testfehler geführt hat
+  \item \textbf{Mindestreduktion:} Von weiteren Splits wird abgesehen, wenn Reduktion der Unreinheit kleiner als Hyperparameter
+  $\beta \in \mathbb{R} \geq 0$: $\text{max} \Delta i(N) < \beta$
+\end{itemize}
 
 \end{document}

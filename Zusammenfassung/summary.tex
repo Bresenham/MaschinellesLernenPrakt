@@ -1188,7 +1188,7 @@ $$L_D(\lambda) = \sum_{i=1}^n\lambda_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lam
 
 \chapter{Entscheidungsbäume}
 
-\subsection{Einführung}
+\section{Einführung}
 
 Wird angewendet, wenn $X$ \textit{nominal} ist, d.h. mit diskreten Werten aber ohne
 natürliche Distanzmetrik  (wie euklidische Norm)), z.B.:\\
@@ -1232,5 +1232,106 @@ gefolgt wird.
   = (Farbe = grün $\lor$ Farbe = rot) $\land$ Größe = mittel
   \item Entscheidungsbäume können daher durch explizites Vorwissen ergänzt werden
 \end{itemize}
+
+\subsection{CART}
+
+Das \textit{CART} (Classifikation and Regression Tree) Framework bietet eine allgemeine Methodik umd
+verschiedenste Arten von Entscheidungsbäumen zu generieren.\par
+Ein Entscheidungsbaum teilt sukzessive die Menge $D \subseteq X \times Y$ in immer kleinere Teilmengen.
+Idealerweise endet jeder Pfad in einer \textit{reinen} Menge, d.h. einer Menge $F \subseteq D$ für die gilt,
+dass alle Labels $y$ gleich sind (üblicherweise nicht der Fall, ggf. weitere Aufteilung)
+
+\begin{lstlisting}
+  D := Trainingsdaten, Q := Fragen
+  if stop_criteria(D) then
+    return LEAF(compute_class(D))
+  else
+    foreach q in Q
+      Sq = split(D, q)
+      delta_iq = compute_improvement(D, S)
+    end for
+    b = arg max (delta_iq)
+    return NODE(b, dtree(S_1b, Q\b), dtree(S_2b, Q\b))
+\end{lstlisting}
+
+\section{Aufteilung}
+
+Jede Entscheidung ist mit einem \textit{Split} der Trainingsdaten verbunden. Die Anzahl kann grundsätzlich frei
+gewählt werden, bereits zwei Splits reichen allerdings im Allgemeinen aus, d.h. binäre Entscheidungsbäume sind \textit{universell}.
+
+\begin{center}
+  \includegraphics[scale=.325]{ml07_2}
+\end{center}
+
+Hauptziel ist, einen Baum mit möglichst wenigen Kanten und Knoten zu erstellen. Für jeden Knoten wird daher die Frage gesucht,
+die resultierende Datenmengen so \textit{rein} wie möglich macht. Das geschiet über Reduktion der \textit{Unreinheit} (Impurity)
+$i(N)$ in Knoten $N$.\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $i(N) = 0$: Alle Daten in Knoten $N$ haben die gleiche Klasse
+  \item $i(N) = 1$: Alle Klassen sind gleich häufig in Daten in Knoten $N$ vertreten
+\end{itemize}
+
+Ein Maß für Unreinheit / Unordnung / Entropie ist
+
+$$i(N) = -\sum_{j=1}^mP(y_j)\cdot log_2(P(y_j))$$
+
+mit\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $P(y_j)$ = relative Häufigkeit der Klasse $y_j$ innerhalb der Trainingsdaten an Knoten $N$
+  \subitem $P(y_j)$ $\in (0, 1)$, da$log_2(P(y_j)) < 0$ kommt ein $-$ vor der Summe
+  \item $m$ = Anzahl Klassen
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.2]{ml07_3}
+  \end{minipage}
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.2]{ml07_4}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[scale=.2]{ml07_5}
+  \end{minipage}
+\end{figure}
+
+Weiteres Maß ist die \textit{Gini Unreinheit}:
+
+$$i(N) = \sum_{i\neq j}P(y_i)\cdot P(y_j) = \frac{1}{2}(1 - \sum_{j=1}^mP^2(y_j))$$
+
+und die \textit{Missclassification Impurity} (Wahrscheinlichkeit einen Fehler zu machen):
+
+$$i(N) = 1 - \text{ max }P(y_j)$$
+
+\begin{center}
+  \includegraphics[scale=.3]{ml07_6}
+\end{center}
+
+An einem Knoten $N$ eines binären Baums möchte man wissen, welche Fragen an die übrigen Testdaten gestellt werden soll.
+Eine Heuristik ist die Frage, welche den Rückgang der Unreinheit maximiert:
+
+$$\Delta i(N) = i(N) - P_Pi(N_p) - P_Ni(N_N)$$
+
+mit\\
+\vspace*{-1.5em}
+\begin{itemize}
+  \item $N_P$: Positiver Nachfolgeknoten von $N$
+  \item $N_N$: Negativer Nachfolgeknoten von $N$
+  \item $P_P = 1 - P_N$: Anteil der Datenpunkte, die dem positiven Knoten zugeordnet werden
+  \item Bei nominalen Features muss ein vollständiger Vergleich aller möglichen Fragen pro Knoten in allen
+  Dimensionen durchgeführt werden
+  \item Bei diskreten / reellen Features werden stattdessen Vergleiche $x_i <= c$, $c\in \mathbb{R}$ verwendet.
+  $c$ beschränkt sich auf tatsächlich in den Trainingsdaten vorhandene Werte
+\end{itemize}
+
+\section{Beispiel: Erstellung eines binären Entscheidungsbaumes}
+
+
 
 \end{document}

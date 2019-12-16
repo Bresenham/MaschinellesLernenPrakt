@@ -55,30 +55,8 @@ INPUT c:\Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\su
 OUTPUT c:\Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux
 INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\ifluatex.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\ifluatex.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\iftex.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\iftex.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\ifpdf.sty
-INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\generic\iftex\ifpdf.sty
+INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmti12.tfm
@@ -456,6 +434,31 @@ INPUT .\screenshots\ml07_1.png
 INPUT .\screenshots\ml07_1.png
 INPUT .\screenshots\ml07_1.png
 INPUT .\screenshots\ml07_1.png
+INPUT screenshots\ml07_2.png
+INPUT .\screenshots\ml07_2.png
+INPUT .\screenshots\ml07_2.png
+INPUT .\screenshots\ml07_2.png
+INPUT .\screenshots\ml07_2.png
+INPUT screenshots\ml07_3.png
+INPUT .\screenshots\ml07_3.png
+INPUT .\screenshots\ml07_3.png
+INPUT .\screenshots\ml07_3.png
+INPUT .\screenshots\ml07_3.png
+INPUT screenshots\ml07_4.png
+INPUT .\screenshots\ml07_4.png
+INPUT .\screenshots\ml07_4.png
+INPUT .\screenshots\ml07_4.png
+INPUT .\screenshots\ml07_4.png
+INPUT screenshots\ml07_5.png
+INPUT .\screenshots\ml07_5.png
+INPUT .\screenshots\ml07_5.png
+INPUT .\screenshots\ml07_5.png
+INPUT .\screenshots\ml07_5.png
+INPUT screenshots\ml07_6.png
+INPUT .\screenshots\ml07_6.png
+INPUT .\screenshots\ml07_6.png
+INPUT .\screenshots\ml07_6.png
+INPUT .\screenshots\ml07_6.png
 INPUT c:\Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux
 INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\test\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx10.pfb

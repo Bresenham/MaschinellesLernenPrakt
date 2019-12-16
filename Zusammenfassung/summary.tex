@@ -1467,12 +1467,50 @@ Linearkombinationen erlaubt, was die Baumkomplexität deutlich verringert
 
 \section{Stopkriterien}
 
-\vspace*{-1.5em}
 \begin{itemize}
   \item \textbf{Testfehlerkriterium:} Split der Daten in Trainings- und Testdaten, nach jedem Schritt im Baumaufbau wird Fehler auf
   Testdaten protokolliert. Schlussendlich verwendet man die Splittingtiefe pro Baumteil, die zum minimalen Testfehler geführt hat
-  \item \textbf{Mindestreduktion:} Von weiteren Splits wird abgesehen, wenn Reduktion der Unreinheit kleiner als Hyperparameter
-  $\beta \in \mathbb{R} \geq 0$: $\text{max} \Delta i(N) < \beta$
+  \item \textbf{Mindestreduktion:} Von weiteren Splits wird abgesehen, wenn Reduktion der Unreinheit kleiner\\
+  als Hyperparameter $\beta \in \mathbb{R} \geq 0$: $\text{max } \Delta i(N) < \beta$
+  \subitem Alle Daten können für das Lernen verwendet werden, Blätter können
+  \subitem auf allen Ebenen liegen (Vorteilhaft bei hoher Diversität
+  \subitem in Feature-Dimensionen) \textbf{aber} optimale Wahl von $\beta$ nicht ersichtlich
+  \item \textbf{Mindestgröße:} Splitting wird beendet, sobald eine Mindestgröße der Datenmenge absolut oder relativ unterschritten
+  wird
+  \subitem Vorteil: Partitionsgröße passt sich ungleich verteilen Daten an, d.h.
+  \subitem kleine Partitionen bei dichten und
+  \subitem große Partitionen bei spärlichen Daten
+  \item \textbf{Globale Kriterien:} Baum wird solange gesplitted bis Minimum bezüglich eines globalen Kriteriums
+  $\alpha \cdot \text{ Größe } + \sum_{\text{Blätter}}i(N)$
+  \subitem Größe kann z.B. Anzahl der Knoten / Kanten des Baumes sein
+  \subitem Hyperparameter $\alpha \in \mathbb{R} \geq 0$ wägt zwischen
+  \subitem Größe und Unreinheit der Blätter ab (optimale Wahl nicht ersichtlich)
+  \subitem $\sum_{\text{Blätter}}i(N)$ ist ein Maß für die Gesamtunsicherheit
+  \subitem der Trainingsdaten innerhalb des Baumes
+  \item \textbf{Hypothesentest:} ?
 \end{itemize}
+
+\section{Stutzen}
+
+Stopkriterien leiden unter dem \textit{Horizonteffekt} - bei einem zu früh entschiedenen Stop werden eventuell spätere,
+global gesehen jedoch gute Splits nicht erkannt. Beim \textit{Stutzen} wird der Baum komplett aufgebaut (Blätter mit minimaler
+Unreinheit) und anschließend werden Teile des Baums entfernt, so wird der Horizonteffekt vermieden. Nachteil sind die höheren
+Berechnungskosten als im Falle von Stopkriterien.
+
+\begin{itemize}
+  \item \textbf{Verschmelzen:} Splits werden sukzessive rückgängig gemacht, angefangen an den Blättern die nur kleinen
+  Beitrag zur Unreinheit leisten
+  \item \textbf{Regeln:} Jedes Blatt kann durch einen \textit{booleschen Term} als aussagenlogische Formel bezüglich der
+  Features beschrieben werden. Durch Betrachtung dieser Liste können Vereinfachungen auf Formelebene gefunden werden.
+\end{itemize}
+
+\section{Abschluss}
+
+Bei absoluter \textit{Reinheit} in einem Blatt ist die Klassenzuordnung klar. Durch Stopkriterien oder Stutzen können sich in einem
+Blatt verschiedene Klassen befinden. In diesem Fall wird die Klasse mit den meisten Datenpunkten gewählt.\par
+
+Bei unbekannten Test- bzw. Trainingsdaten können die Daten aus den Trainingsdaten entfernt werden. Alternativ wird die
+Berechnung der Unreinheit an die vorhandenen Daten je Feature / Frage angepasst (= Entscheidungsbaum muss an jedem Knoten
+\textit{Alternativen} bereitstellen, falls Feature nicht vorhanden).
 
 \end{document}

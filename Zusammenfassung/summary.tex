@@ -30,68 +30,1488 @@
 
 \newpage
 
-\begin{tabular}{ccccc|}
- \textbf{1} & -3 & 3 & \textbf{0} & 2\\
-  1 & \textbf{1} & 5 & 3 & -5\\
-  4 & -4 & \textbf{1} & -3 & \textbf{0}\\
-  9 & \textbf{0} & 3 & \textbf{1} & 2\\
-  \textbf{0} & -2 & 1 & -2 & \textbf{1}\\
-  \hline
-\end{tabular}
+\chapter{Grundlagen}
+  \vspace*{-1.25em}
+  \section{Lineare Algebra}
+  \subsection{Skalarprodukt}
+  - Vektoren $x, y \in \mathbb{R}^n$: $x\circ y = \sum_{i=1}^n x_i\cdot y_i = x^Ty$\\
+  - $\begin{bmatrix}1\\2\end{bmatrix}\circ \begin{bmatrix}3\\4\end{bmatrix} = 1\cdot 3 + 2\cdot 4 = 11$
+  \subsection{Vektornorm}
+  $f: \mathbb{R}^n\rightarrow \mathbb{R}$ mit\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $f(x) = 0 \Rightarrow x = 0$	
+    \item $f(x + y) \leq f(x) + f(y)$ (\textit{Dreiecksgleichung})	
+    \item $f(\alpha x) = |\alpha|f(x)$	
+  \end{itemize}	
+  - $L_1$-Norm: $||x||_1 = \sum_i|x_i|$\\	
+  - $L_2$-Norm: $||x||_2 = \sqrt{\sum_i x_i^2}$ (\textit{euklidische Norm})	
+  \subsection{Matrizen}	
+  - \textit{m} Zeilen und \textit{n Spalten}	
+  A = $\begin{bmatrix}A_{11} & ... & A_{1n}\\A_{m1} & ... & A_{mn} \end{bmatrix}$,	
+  $\begin{bmatrix}1 & 2\\3 & 4\\5 & 6\end{bmatrix}^T = \begin{bmatrix}1 & 3 & 5\\2 & 4 & 6\end{bmatrix}$\\	
+  - $\begin{bmatrix}a & b & c\\d & e & f\end{bmatrix}\cdot \begin{bmatrix}g & h\\i & j\\k & l\end{bmatrix}$	
+  = $\begin{bmatrix}ag + bi + ck & ah + bj + cl\\dg + ei + fk & dh + ej + fl\end{bmatrix}$,	
+  $I = \begin{bmatrix}1 & 0 & 0\\0 & 1 & 0\\0 & 0 &1\end{bmatrix}$\\	
+  - $A^{-1}A = I$ (Matrizen mit linear abhängigen Zeilen oder Spalten (niedriger Rang) sind nicht invertierbar)	
+  \subsection{Hyperebene}	
+  - x $\in$ $\mathbb{R}^d$ erfüllen Gleichung $w_0 + w_1x_1 + w2_x2 + ... + w_dx_d = 0$ ($w_0 + w^Tx = 0$)\\	
+  - $d = 1$: Skalar ($w_0 + w_1x_1$), $d = 2$: Gerade ($w_0 + w_1x_1 + w_2x_2$), $d = 3$: Ebene\\	
+  - Für einen Punkt $x$ entscheidet das Vorzeichen $sgn(w_0 + w^Tx)\in \{-1, 0, 1\}$ auf welcher Seite der Hyperebene er liegt (bzw. ob er auf ihr liegt)\\	
+  \begin{center}	
+  \includegraphics[scale=.2]{ml01_1} $1 - \frac{1}{4}x_1 - \frac{1}{6}x_2 = 0$	
+  \end{center}	
+  
+  \section{Statistik}	
+  \begin{itemize}	
+    \item Durchschnittswert: (Summe über alle Zeilen) / (Anzahl an Zeilen)	
+    \item Standardabweichung: Wurzel ver Varianz	
+    \item 25\%-Quantile: 25\% aller Werte sind kleiner als dieser Wert	
+    \item 50\%-Quantile: 50\% aller Werte sind kleiner als dieser Wert (= \textit{Median})	
+    \item 75\%-Quantile: 75\% aller Werte sind kleiner als dieser Wert	
+  \end{itemize}	
+  
+  
+  \section{Analysis}	
+  \subsection{Kettenregel}	
+  - Wenn $z$ von $y$ und $y$ von $x$ abhängt, dann gilt: $\frac{dz}{dx} = \frac{dz}{dy}\frac{dy}{dx}$\\	
+  - $f(x) = g(h(x)) = \frac{1}{2}\cdot(x_1 - x_2)^2$ $\rightarrow$ $g(x) = \frac{1}{2}x^2$ und $h(x) = x_1 - x_2$\\	
+  - $\frac{df}{dx_2} = \frac{dg}{dh}\frac{dh}{d_x2} = h(x)(-1) = -(x_1 - x_2) = x_2 - x_1$	
+  \subsection{Partielle Ableitung}	
+  $f(x) = 2x_1^3 - 5x_2^2 + 3$, $\frac{df}{dx_1} = 6x_1^2$, $\frac{df}{dx_2} = -10x_2$	
+  \subsection{Gradient}	
+  $\nabla f = \begin{bmatrix}\frac{df}{dx_1}\\ . \\. \\.\\\frac{df}{dx_n}\end{bmatrix}$, $f(x) = 2x_1^3 - 5x_2^2 + 3, \nabla f = \begin{bmatrix}6x_1^2\\-10x_2\end{bmatrix}$	
+  
+  \section{Was ist maschinelles Lernen}	
+  \subsection{Paradigmenwechsel}	
+  Es ist schwierig, den entsprechenden Programmcode manuell zu schreiben, daher wird ein anderes Paradigma verwendet:	
+  \begin{center}	
+    \includegraphics[scale=.4]{ml01_2}	
+  \end{center}	
+  Drei verschiedene Lernmethoden	
+  \begin{itemize}	
+    \item Überwachtes Lernen (\textit{Supervised Learning})	
+    \item Unüberwachtes Lernen (\textit{Unsupervised Learning})	
+    \item Bestärkendes Lernen (\textit{Reinforcement Learning})	
+  \end{itemize}	
+  
+  \section{Überwachtes Lernen}	
+  - Ziel: finden einer Funktion $f: X \rightarrow Y$ wobei $X$ auch \textit{Features / Prädiktoren} und $Y$ auch \textit{Responses} genannt werden\\	
+  - $X$ = $\mathbb{R}^d$ (\textit{d}-dimensionaler Vektorraum) mit $d\in \mathbb{N}$\\	
+  - Eine perfekte Abbildung ist nicht möglich, es treten \textit{reduzierbare} Fehler (z.B. durch eine bessere Funktion $f$) und \textit{nicht reduzierbare} Fehler (z.B. Messfehler in Eingabedaten) auf\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item \textit{Vorhersage:} $y = f(x)$ optimieren wobei $f$ auch \textit{Blackbox} sein kann	
+    \item \textit{Inferenz:} Interpretierbarkeit von $f$ steht im Vordergrund (Welche Prädiktoren sind für welche Response verwantwortlich)	
+    \item \textit{Parametrische} Methoden: Annahme einer parametrisierten Struktur von $f$ dessen Parameter mit Hilfe von Daten bestimmt werden	
+    \item \textit{Nicht-parametrische} Methoden: Keine Annahme einer Struktur von $f$ sondern möglichst direkte Definition mit Hilfe von Daten	
+  \end{itemize}	
+  - Menge $X$ und $Y$ bekannt, genaue Abbildung $f$ kann aber nur anhand von Beispielen $D = \{(x^i, y^i) | x^i \in X, y^i \in Y, 1 \leq i \leq n\}$ (\textit{Trainingsdatensatz} bzw. \textit{gelabelte} Daten) erahnt werden\\	
+  
+  \subsection{Beispiel Klassifikation}	
+  - Wenn $Y$ diskrete Menge $\{C_1, ..., C_k\}$ für $k \in \mathbb{N}$ dann handelt es sich um ein \textit{Klassifikationsproblem}, $C_1, ..., C_k$ sind dann \textit{Klassen / Kategorien}\\	
+  - $|Y| = 2$ (\textit{Binäre} Klassifikation) mit $f : \mathbb{R} \rightarrow \{$angenehm, unangenehm$\}$ (Temperaturklassifikation)\\	
+  - $|Y| = 5$ (\textit{Mehrklassen}-Klassifikation) mit $f : \mathbb{R} \rightarrow \{$frostig, kalt, angenehm, warm, heiß$\}$	
+  
+  \subsection{Beispiel Regression}	
+  - Wenn $Y$ kontinuierliche Menge, d.h. $Y \subseteq \mathbb{R}$, dann handelt es sich um ein \textit{Regressionsproblem}\\	
+  - Interesse an \textit{quantitativen} Aussagen\\	
+  \begin{center}	
+    \includegraphics[scale=.4]{ml01_3}	
+  \end{center}	
+  - Ausgabemenge $Y$ kann auch mehrdimensional sein (z.B. $\{$gut, schlecht$\}\times \{$günstig, normal, teuer$\}$)	
+  
+  \section{Unüberwachtes Lernen}	
+  - Mehrwert erhalten ohne Zuhilfenahme von gelabelten Daten\\	
+  - Man geht von Menge an Daten $D = \{x^i|x^i \in X, 1 \leq i \leq n\}$ aus und versucht mehr über Beschaffenheit von $X$ herauszufinden\\	
+  - z.B. \textit{Verteilung} von $X$ bei Sprachmodellen, \textit{Dimensionsreduktion} zur Verbesserung von überwachten Lernverfahren	
+  
+  \section{Datenvisualisierung}	
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml01_4}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml01_5}	
+    \end{minipage}	
+  \end{figure}	
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml01_6}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml01_7}	
+    \end{minipage}	
+  \end{figure}	
+  \subsection{Boxplot}	
+  \begin{center}	
+    \includegraphics[scale=.125]{ml01_8}	
+  \end{center}	
+  - Zwischen dem linken waagerechten Strich (Minimum) und dem rechten waagerechten Strich (Maximum) liegen 99.3\% aller Daten\\	
+  - Die \textit{Outliers} an den beiden Enden sind die letzten 0.7\%\\	
+  - Der Abstandsfaktor (hier 1.5) ist frei wählbar\\	
+  - Sollte der Punkt $Q1 - 1.5\cdot IQR$ bzw. $Q3 + 1.5\cdot IQR$ nicht existieren wird der Strich auf den nächst-näheren Punkt gesetzt	
+  
+  \section{Datenvorverarbeitung}	
+  Bevor ein Modell erstellt und trainiert werden kann, müssen Daten durch\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item \textit{Auswahl}: Nur für den Anwendungsfall relevante Daten verwenden	
+    \item \textit{Aufbereitung}	
+    \subitem Dateiformat (Tabellen, BigData)	
+    \subitem Bereinigung von unvollständigen oder ungültigen Daten	
+    \subitem Repräsentative Auswahl bei langer Laufzeit / großem Speicheraufwand	
+    \item \textit{Transformation}	
+    \subitem Features in geeigneten Wertebereich bringen ([0, 1])	
+    \subitem Zerlegen in sinnvolle Features	
+    \subitem Aggregation mehrerer Features	
+  \end{itemize}	
+  
+  \chapter{Lineare Regression}	
+  \section{Lineare Regression im Eindimensionalen}	
+  - $f : \mathbb{R} \rightarrow \mathbb{R}$ mit $f_w(x) = w_1x + w_0$\\	
+  - $w = (w_0, w_1)^T \in \mathbb{R}^2$ sind die \textit{Parameter} des Modells	
+  \begin{center}	
+    \includegraphics[scale=0.275]{ml02_1}	
+  \end{center}	
+  - Wie mit Daten $D = \{(x^i, y^i) \in \mathbb{R}^2 | 1 \leq i \leq n\}$ die \textit{besten} Parameter von $f$ bestimmen?\\	
+  \subsection{Lösungsverfahren}	
+  - Quadratischen Fehler (\textit{Residual Sum of Squares}) mit\\	
+  $RSS(w) = \sum_{i=1}^n(y^i - f_w(x^i))^2$ bestimmen	
+  \begin{center}	
+    \includegraphics[scale=0.35]{ml02_2}	
+  \end{center}	
+  - Zur besseren Vergleichbarkeit verwendet man oft die normalisierte Variante\\	
+  \textit{Mean Squared Error}: $MSE(w) = \frac{1}{n}\cdot RSS(w)$ (n = Anzahl Trainingsdaten)\\	
+  - Die beste Funktion durch Minimierung des Fehlers finden	
+  $\Rightarrow w^* =$ arg min $E(w) =$ arg min $\frac{1}{2}\cdot \sum_{i=1}^n(y^i - f_w(x^i))^2$\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Ableitung von $E(w)$ gleich Null setzen und Gleichungssystem lösen	
+    \item $\nabla E(w) = \begin{bmatrix}\frac{dE(w)}{dw_0}\\\frac{dE(w)}{dw_1}\end{bmatrix} = 0$	
+    \subitem $\frac{dE(w)}{dw_0} = -\sum_{i=1}^ny^i + w_1\cdot \sum_{i=1}^nx^i + n\cdot w_0$	
+    \subitem $\frac{dE(w)}{dw_1} = -\sum_{i=1}^nx^iy^i + w_1\cdot \sum_{i=1}^nx^ix^i + w_0\cdot \sum_{i=1}^nx^i$	
+    \item Gleichungssystem mit zwei Gleichungen und zwei Unbekannten lösbar, aber numerisch ungenau bei großen Matrizen 	
+  \end{itemize}	
+  
+  \subsection{Gradientenabstiegsverfahren}	
+  
+  \begin{center}	
+    \includegraphics[scale=.25]{ml02_3}	
+  \end{center}	
+  - Iterativ einem Bruchteil der negativen Ableitung: $-\eta f'(x) = \eta\cdot (2 - 2x)$ folgen\\	
+  - \textit{Lernrate} $\eta$ hat direkten Einfluss auf Konvergenz (zu klein $\Rightarrow$ viele Schritte, zu groß $\Rightarrow$ Oszillation)\\	
+  \begin{lstlisting}	
+    w0 = 0, w1 = 0	
+    for (x, y) in D	
+      dw0 += -y + w1*x + w0	
+      dw1 += -xy + w1*x*x + w0*x	
+    end for	
+    w0 += -eta*dw0	
+    w1 += -eta*dw1	
+  \end{lstlisting}	
+  
+  \section{Mehrdimensionale Lineare Regression}	
+  - $X = \mathbb{R}^d$ und $f: \mathbb{R}^d \rightarrow \mathbb{R}$ sowie $f_w(x) = \sum_{i=1}^dw_ix_i + w_0$\\	
+  mit Parametern $w = (w_0, w_1, ..., w_d)^T \in \mathbb{R}^{d + 1}$	
+  - Kompaktere Schreibweise mit $x_0 = 1$: $f_w(x) = \sum_{i = 1}^dw_ix_i + w_0 = w^Tx$\\	
+  \begin{center}	
+    \includegraphics[scale=.25]{ml02_4}	
+  \end{center}	
+  - Im Mehrdimensionalen wird eine Hyperebene, im dreidimensionalen eine Ebene, im Raum so positioniert, dass der Abstand zu den Datenpunkten minimiert wird\\	
+  - Angepasste Fehlermetrik $E(w) = \frac{1}{2}\cdot \sum_{i=1}^n(y^i - f(x^i))^2$	
+  mit $\nabla E(w) = \begin{bmatrix}\frac{dE(w)}{dw_0}\\\frac{dE(w)}{dw_1}\\...\\\frac{dE(w)}{dw_d}\end{bmatrix}$\\	
+  \begin{lstlisting}	
+    dw = 0	
+    for (x, y) in D	
+      dw += -(y - f(x) * gradF(x))	
+    end for	
+    w += -eta*dw	
+  \end{lstlisting}	
+  wobei gradF(x) = $\nabla f(x) = \begin{bmatrix}1\\x_1\\...\\x_d\end{bmatrix}$\\	
+  \begin{center}	
+    \includegraphics[scale=.25]{ml02_5}	
+  \end{center}	
+  
+  \section{Genauigkeit}	
+  - Wie gut ist das durch das Gradientenabstiegsverfahren gefundene Modell?\\	
+  $\Rightarrow$ Quadratischer Fehler \textit{RSS} oder mittlerer quadratischer Fehler \textit{MSE}\\	
+  - Letzterer ist unabhängig von der Anzahl an Trainingsdaten allerdings gibt es keine allgemein gültige Skala da diese vom Wertebereich der y-Werte abhängt	
+  
+  \subsection{$R^2$ Statistik}	
+  - Definiert über den quadratischen Gesamtfehler $TSS = \sum_{i=1}^n(y^i - \bar{y})^2$\\	
+  - $\bar{y} = \frac{1}{n}\cdot \sum_{i=1}^ny^i$ $\Rightarrow$ $R^2(w) = \frac{TSS - RSS(w)}{TSS} = 1 - \frac{RSS(w)}{TSS}$\\	
+  - \textit{TSS} misst die komplette Varianz in den Ausgabedaten $y^i$\\	
+  - $TSS - RSS(w)$ misst die durch das Modell mit Parametern $w$ erklärte Varianz\\	
+  - $R^2$ misst die komplette Varianz des Modells und ist $\in [0, 1]$\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item $R^2$ nahe 1 zeugt von einem passenden Model das die Daten gut erklärt (viele Datenpunkte liegen auf der Geraden bzw. Hyperebene)	
+    \item $R^2$ nahe 0 bedeutet, dass das Modell die Daten schlecht erklärt (umso weiter entfernt die Datenpunkte von der Hyperebene sind umso näher ist $R^2$ bei 0)	
+  \end{itemize}	
+  - $R^2$ ist unabhängig von Anzahl an Trainingsdaten \textit{UND} dem Wertebereich\\	
+  - Allgemeine Aussage ab welchem $R^2$-Wert das Modell \textit{gut} ist, ist nicht möglich. Hängt vom Anwendungsfall (Medizin / Physik) ab	
+  
+  \section{Interpretierbarkeit}	
+  - Die Parameter $w$ von Linearen Regressionsmodellen sind interpretierbar:\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item $w_i > 0$: positiver Zusammenhang, steigt $x_i$ um $m$ so steigt $y$ um $m\cdot |w_i|$	
+    \item $w_i nahe 0$: kein linearer Zusammenhang zwischen $x_i$ und $y$	
+    \item $w_i < 0$ negativer Zusammenhang, steigt $x_i$ um $m$ so sinkt $y$ um $m\cdot |w_i|$	
+  \end{itemize}	
+  
+  \section{Nichtlineare Zusammenhänge}	
+  - Mit der mehrdimensionalen linearen Regressions lassen sich auch \textit{nichtlineare} Zusammehänge lernen\\	
+  - Mit Funktion $\Phi: \mathbb{R} \rightarrow \mathbb{R}^d$ wird ein \textit{Basiswechsel} vollzogen\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Die Konkatenation von $\Phi: \mathbb{R} \rightarrow \mathbb{R}^d$, $\Phi(x) = (x, x^2)^T$	
+    und $f: \mathbb{R}^2 \rightarrow \mathbb{R}, f(x) = w_2x_w + w_1x_1 + w_0$ durch $f\circ \Phi$	
+    erlaubt Darstellung der quadratischen Funktion $(f\circ \Phi)(x) = f(\Phi(x)) = w_2x^2 + w_1x + w_0$	
+    \item $\Phi: \mathbb{R}^2 \rightarrow \mathbb{R}^5, \Phi(x) = (x_2, x_1, x_1x_2, x_2^2, x_1^2)^T$\\	
+    und $f: \mathbb{R}^5 \rightarrow \mathbb{R}, f(x) = \sum_{i = 1}^5 w_ix_i + w_0$ ergibt $(f\circ \Phi)(x) = f(\Phi(x)) = w_5x_1^2 + w_4x_2^2 + w_3x_1x_2 + w_2x_1 + w_1x_2 + w_0$	
+  \end{itemize}	
+  
+  \subsection{Beispiel}	
+  - Annahme eines quadratischen Zusammenhangs $f(x) = w_2\cdot x^2 + w_1\cdot x + w_0$	
+  \begin{center}	
+    \includegraphics[scale=.295]{ml02_6}	
+  \end{center}	
+  
+  \subsection{Richtiger Grad}	
+  - Mit der mehrdimensionalen Regression, dem Basiswechsel und Gradientenabstiegsverfahren ist es möglich, ein Polyon \textit{n}-ten Grades an \textit{n} Datenpunkte zu fitten	
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.2125]{ml02_7}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.2125]{ml02_8}	
+    \end{minipage}	
+  \end{figure}	
+  
+  - Mit höherer Modellkomplexität (Grad und Koeffizienten des Polynoms) kommt es zu\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Numerischen Problemen	
+    \item \textit{Overfitting}: Das Modell passt sich zu sehr an die Daten an und ist nicht mehr in der Lage zu generalisieren	
+    $\rightarrow$ Schlechte Leistung in der Praxis	
+  \end{itemize}	
+  
+  \section{Trainings- und Testdaten}	
+  - Datensatz $D$ wird in zwei disjunkte Teile $T$ und $V$ aufgeteilt\\	
+  - Trainingsdatensatz $T$ wird für das Lernen verwendet\\	
+  - Testdatensatz $V$ enthält ungesehene Daten zur Validierung der Praxistauglichkeit\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Ein hoher Fehler auf $T$ lässt auf Unteranpassung schließen (zu geringe Modellkomplexität, zu wenig Daten)	
+    \item Ein geringer Fehler auf $T$ aber hoher Fehler auf $V$ bedeutet Überanpassung $\rightarrow$ Komplexität verringern	
+  \end{itemize}	
+  
+  \section{Optimierung von Hyperparametern}	
+  - Lineare Regression auf Polynomen mit Gradientenabstiegsverfahren besitzt\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Lernrate $\eta$: Einfluss auf Modellkomplexität	
+    \item Anzahl Lernschritte: Je geringer desto unwahrscheinlicher ist Überanpassung, allerdings Unteranpassung wiederum möglich	
+    \item Polynomgrad Zu Hoch $\rightarrow$ Überanpassung, zu niedrig $\rightarrow$ Unteranpassung	
+  \end{itemize}	
+  als Hpyerparameter	
+  
+  \subsection{Rastersuche}	
+  - Durchsuchen des Hyperparameterraums entweder\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Entlang eines gleichmäßigen Rasters mit linearer oder logarithmischer Skala	
+    \item Entlang eines zufälligen Rasters mit uniformer oder logarithmischer Skala	
+  \end{itemize}	
+  - Verfeinern der Suche durch Rekursion	
+  
+  \subsection{Validierungsdaten}	
+  - Sollen die Hyperparameter des Modells optimiert werden, werden die verfügbaren Daten $D$	
+  in \textit{Trainingsdaten}, \textit{Validierungsdaten} und \textit{Testdaten} aufgeteilt.\\	
+  - Die Hyperparameter werden mit dem Validierungsdatensatz optimiert	
+  - Endgültige Performance des Modells wird auf den Testdaten bestimmt	
+  
+  \subsection{Kreuzvalidierung}	
+  - Zerteilen des Datensatzes in $k$ Partitionen, ws wird nun $k$-mal trainiert\\	
+  - Mit jeder Iteration $i$ wird eine andere Partition $i$ getestet\\	
+  - Die Restlichen Partitionen dienen als Trainingsdaten\\	
+  - Final wird die ausgewählte Leistungsmetrik über $k$ Iterationen gemittelt	
+  \begin{center}	
+    \includegraphics[scale=.225]{ml02_9}	
+  \end{center}	
+  
+  \subsection{Ridge Regression}	
+  - Verhindern von Überanpassung durch Bestrafung von $w$ für exzessive Werte mit angepasster Fehlerfunktion	
+  $E(w) = \frac{1}{2}\cdot \sum_{i=1}^n(y^i - f_w(x^i))^2 + \alpha ||w||^2$\\	
+  - Hyperparamter $\alpha \in \mathbb{R} \geq 0$ ist ein weiterer Freiheitsgrad mit dem sich der Polynomgrad stufenlos einstellen lässt	
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.215]{ml02_10}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.215]{ml02_11}	
+    \end{minipage}	
+  \end{figure}	
+  \begin{itemize}	
+    \item $\alpha = 0$: klassische Regression	
+    \item $\alpha > 0$: Normaler Wirkungsbereich, mit wachsendem $\alpha$ werden $w$ immer weiter eingeschränkt und der effektive Polynomgrad sinkt	
+    \item lim $\alpha \rightarrow \infty$: $f(x) = 0$ da Parameter lim $w \rightarrow 0$	
+  \end{itemize}	
+  
+  \chapter{Logistische Regression}	
+  \section{Klassifikation}	
+  \subsection{Lineare Regression}	
+  - Lineare Regression als Klassifikator zu verwenden: $f: \mathbb{R} \rightarrow \mathbb{R}$	
+  mit $f(x) = w_1x + w_0$	
+  \begin{center}	
+    \includegraphics[scale=.215]{ml03_1}	
+  \end{center}	
+  - Im Beispiel: $x$ = Monatseinkommen, $f(x)$ = Kunde kreditwürdig ja / nein, ABER:\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Diskrete Ausgabewerte (Klasse 0 / 1) wird nicht eingehalten, Ausgabe nimmt alle Werte in $[-0.0014, 1.4]$ an	
+    \item Intepretation von $f(x)$ als Wahrscheinlichkeit auch nicht möglich\\	
+    da $f(0) = -0.0014 < 0$ und $f(8000) = 1.4 > 1$	
+  \end{itemize}	
+  
+  \subsection{Logistische Regression}	
+  - Idee: Wahrscheinlichkeit der Klassenzugehörigkeit aufgreifen aber\\	
+  Wertebereich von $f$ mit Hilfe der logistischen Funktion	
+  $$logistic(x) = \frac{e^x}{1 + e^x}$$	
+  unter Kontrolle bekommen	
+  \begin{center}	
+    \includegraphics[scale=.3]{ml03_2}	
+  \end{center}	
+  - Kombination der Linearen Regression $f(x) = w_1x + w_0$ mit der logistischen Funktion	
+  $$p(x) = logistic(f(x)) = \frac{e^{w_1x + w_0}}{1 + e^{w_1x + w_0}}$$	
+  $$p(x) \in (0, 1) \forall x \in \mathbb{R}$$\\	
+  - $p(x)$ ist die Wahrscheinlichkeit, dass $x$ zur Klasse $1$ gehört:\\	
+  $$p(x) = Pr(y = 1 | X = x)$$\\	
+  - $x$ gehört zur Klasse $0$ mit Wahrscheinlichkeit $1 - p(x)$:\\	
+  $$Pr(y = 0|X = x) = 1 - Pr(y = 1 | X = x) = 1 - p(x)$$	
+  
+  \section{Maximum Likelihood}	
+  Parameter der Modells werden so bestimmt, dass die Wahrscheinlichkeit, dass das Modell die Daten generiert, maximiert wird\\	
+  
+  \subsection{Beispiel Münzwurf}	
+  - Eine Münze zeigt mit unbekannter Wahrscheinlichkeit $w \in [0, 1]$ Kopf und mit Wahrscheinlichkeit $(1 - w)$ Zahl\\	
+  - Münze wird $n$-mal geworfen, die Wahrscheinlichkeit, $k$-mal Kopf zu erhalten ist\\	
+  $$L(w) = w^k(1 - w)^{n-k}$$	
+  - $L(w)$ wird \textit{Likelihood} genannt, man sucht: $arg$ $max$ $L(w)$\\	
+  Maximum finden durch Ableiten\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item $\frac{dL(w)}{dw} = kw^{k-1}\cdot(1 - w)^{n-k} + w^k(n-k)(1-w)^{n-k-1}\cdot(-1)$\\	
+    $ = w^{k-1}\cdot (1-w)^{n-k-1}\cdot[k(1-w)-(n-k)\cdot w]$	
+  \end{itemize}	
+  anschließend gleich Null setzen\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item $\frac{dL(w)}{dw} = 0 \Leftrightarrow w = 0 \lor w = 1 \lor w = \frac{k}{n}$	
+    \item $k(1-w) - w\cdot(n - k) = 0 \Leftrightarrow k -wk - wn + wk = 0 \Leftrightarrow k - wn = 0 \Leftrightarrow w = \frac{k}{n}$	
+  \end{itemize}	
+  und Überprüfen von\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item $w = 0: L(0) = 0^k(1 - 0)^{n-k} = 0$	
+    \item $w = 1: L(1) = 1^k(1 - 1)^{n-k} = 0$	
+    \item $w = \frac{k}{n}: L(\frac{k}{n}) = (\frac{k}{n})^k\cdot (1 - \frac{k}{n})^{n-k} > 0$ für $k > 0$ und $k \neq n$	
+  \end{itemize}	
+  Die \textit{Maximum Likelihood} Schätzung ist demnach $w = \frac{k}{n}$	
+  
+  \subsection{Beispiel Logistische Regression}	
+  Die Likelihood ist wie folgt definiert	
+  \begin{equation*}	
+  L(w) = \Pi_{i=1}^n 	
+  \begin{cases}	
+    p(x^i) & \text{falls $y^i = 1$}\\	
+    1 - p(x^i) & \text{falls $y^i = 0$}	
+  \end{cases} = \Pi_{i | y^i=1}p(x^i) \cdot \Pi_{i | y^i = 0}(1 - p(x^i))	
+  \end{equation*}	
+  Anstatt das Maximum mit Hilfe der Ableitung zu finden, kann auch das Minimum des negativen Logarithmus gesucht werden	
+  \begin{equation*}	
+    -log(L(w)) = -\sum_{i|y^i = 1}log(p(x^i)) - \sum_{i | y^i = 0}log(1 - p(x^i))	
+  \end{equation*}	
+  und Ableiten	
+  $$\frac{d(-log(L_w))}{dw_j} = - \sum_{i|y^i = 1} \frac{\frac{dp(x^i)}{dw_j}}{p(x^i)} + \sum_{i|y^i = 0} \frac{\frac{dp(x^i)}{dw_j}}{1 - p(x^i)}$$	
+  \begin{equation*}	
+    \frac{dp(x)}{dw_j} = \frac{d}{dw_j}\cdot \frac{e^{w_1x + w_0}}{1 + e^{w_1x + w_0}} = \frac{e^{w_1x + w_0}}{(1 + e^{w_1x + w_0})^2}	
+    \begin{cases}	
+      1 & \text{falls $j = 0$}\\	
+      $x$ & \text{falls $j = 1$}	
+    \end{cases}	
+  \end{equation*}	
+  $$1 - p(x) = \frac{1}{1 + e^{w_1x + w_0}}$$	
+  \begin{equation*}	
+    \frac{\frac{dp(x)}{dw_j}}{p(x)} = \frac{1}{p(x)}\cdot \frac{dp(x)}{dw_j} = 	
+    \frac{1 + e^{w_1x + w_0}}{e^{w_1x + w_0}}\cdot \frac{e^{w_1x + w_0}}{(1 + e^{w_1x + w_0})^2} = (1 - p(x))	
+    \begin{cases}	
+      1 & \text{falls $j = 0$}\\	
+      $x$ & \text{falls $j = 1$}	
+    \end{cases}	
+  \end{equation*}	
+  
+  \begin{equation*}	
+    \frac{\frac{dp(x)}{dw_j}}{1 - p(x)} = \frac{1}{1 - p(x)}\cdot \frac{dp(x)}{dw_j}	
+    = (1 + e^{w_1x + w_0})\cdot \frac{e^{w_1x + w_0}}{(1 + e^{w_1x + w_0})^2} = p(x)	
+    \begin{cases}	
+      1 & \text{falls $j = 0$}\\	
+      $x$ & \text{falls $j = 1$}	
+    \end{cases}	
+  \end{equation*}	
+  
+  Zusammenfassend	
+  $$\frac{d(-log(L(w)))}{dw_0} = -\sum_{i|y^i = 1}(1 - p(x^i)) + \sum_{i | y^i = 0}p(x^i)$$	
+  $$\frac{d(-log(L(w)))}{dw_1} = -\sum_{i|y^i = 1}(1 - p(x^i))\cdot x^i + \sum_{i|y^i = 0}p(x^i)\cdot x^i$$	
+  
+  Mit dem Gradientenabstiegsverfahren erhält man für das Beispiel der Kreditvergabe	
+  \begin{center}	
+    \includegraphics[scale=.25]{ml03_3}	
+  \end{center}	
+  
+  \section{Bayes Klassifikator}	
+  - Der Kredit wird also genau dann ausgegeben, wenn die Wahrscheinlichkeit, dass er zurück gezahlt wird größer ist, als dass er es nicht wird\\	
+  - Der \textit{Bayes Klassifikator} weißt jeder Beobachtung $x \in X$ die wahrscheinlichste Klasse zu: $f(x) =$ $arg$ $max$ $Pr(y = y* | X = x)$\\	
+  - Im Beispiel liegt die \textit{Entscheidungsgrenze} bei 2300EUR	
+  \begin{center}	
+    \includegraphics[scale=.25]{ml03_4}	
+  \end{center}	
+  
+  \section{Mehrdimensionale Logistische Regression}	
+  - Für $x \in \mathbb{R}^d$ wird das Modell beschrieben durch $p(x) = \frac{e^{w^Tx}}{1 + e^{w^Tx}}$\\	
+  - Der Gradient aus der negativen, logarithmierten Likelihood ergibt sich durch	
+  $$\frac{d(-log(L(w)))}{dw_j} = -\sum_{i|y^i = 1}(1 - p(x_j^i))\cdot x_j^i + \sum_{i|y^i = 0}p(x_j^i)\cdot x_j^i$$	
+  
+  \section{Nichtlineare Logistische Regression}	
+  - Mit der Basiserweiterung $\Phi: \mathbb{R}^d \rightarrow \mathbb{R^{d'}}$ und der mehrdimensionalen	
+  Logistischen Regression können auch nichtlineare Klassifikatoren gelernt werden	
+  \begin{center}	
+    \includegraphics[scale=.3125]{ml03_5}	
+  \end{center}	
+  - Mit der Basiserweiterung $\Phi(x) = (x_1^2, x_2^2)$ kann ein Logistisches Regressionsmodell gelernt werden, das die beiden Klassen trennt	
+  \begin{center}	
+    \includegraphics[scale=.3125]{ml03_6}	
+  \end{center}	
+  
+  \section{Leistungsmetriken}	
+  Für die Binäre Klassifikation ist kein $R^2$-Wert möglich $\Rightarrow$ Wahrheitsmatrix:	
+  \begin{center}	
+    \includegraphics[scale=.25]{ml03_7}	
+  \end{center}	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Genauigkeit (\textit{accuracy}) $\frac{tp + tn}{tp + tn + fp + fn}$: Ist der Anteil der korrekt klassifizierten Daten am Gesamtdatensatz.	
+    Es wird versucht, die Genauigkeit zu maximieren	
+    \item Fehlerrate $\frac{fp + fn}{tp + tn + fp + fn}$ = 1 - Genauigkeit: Gegenteil der Genauigkeit. Wird minimiert.	
+    \item Präzision (\textit{precision}) $\frac{tp}{tp + fp}$: Anteil der korrekt positiv vorhergesagten Datensätze an der Gesamtheit der als positiv vorhergesagten Datensätze	
+    \item Trefferquote (\textit{recall}) $\frac{tp}{tp + fn}$: Anteil der korrekt positiv vorhergesagten Datensätze an der Gesamtheit der echt positiven Datensätze	
+  \end{itemize}	
+  Präzision und Trefferquote werden maximiert, allerdings muss üblicherweise ein Kompromiss getroffen werden.\\	
+  Es kommt außerdem auf den Anwendungsfall an, welche Leistungsmetrik verwendet werden sollte:\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Medizinische Tests: Positiv bedeutet \textit{krank} (z.B. HIV positiv), dann sollte ein Test einen hohen Recall haben	
+    \item Spam-Erkennung: Positiv bedeutet \textit{gewollte} E-Mail, dann sollte ein Spam-Erkenner eine hohe Precision haben	
+  \end{itemize}	
+  
+  \subsection{Recall-Precision-Kurve}	
+  \begin{center}	
+    \includegraphics[scale=.225]{ml03_8}	
+  \end{center}	
+  
+  \subsection{Beispiel steigende Kurse an der Börse}	
+  Man setzt auf steigende Kurse immer dann wenn das Modell \textit{up} vorhersagt. Es ist wichtig zu wissen, wie oft das Modell relativ gesehen richtig liegt.	
+  \begin{itemize}	
+    \item Die Präzision bezieht sich auf den Anteil der korrekt vorhergesagten positiven Renditen. Auf diesen Wert sollte man achten.	
+    \item Die Genauigkeit besagt in diesem Fall lediglich, welcher Anteil der Vorhersagen richtig war, unabhängig ob \textit{up} oder \textit{down}	
+    \item Die Trefferquote besagt, welcher Anteil der positiven Renditen tatsächlich auch korrekt vorhergesagt wurde	
+  \end{itemize}	
+  
+  \chapter{Perzeptron und Adaline}	
+  \section{Perzeptron}	
+  \subsection{Biologischer Hintergrund}	
+  In einem biologischen neuronalen Netz finden Berechnungen statt, indem elektrische Ladungen zwischen Nervenzellen ausgetauscht werden\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item Ein Neuron kann viele Synapsen haben und somit mit hunderten weiteren Neuronen verknüpft sein	
+    \item Ein Neuron kann auch viele Dendriten besitzen und somit Input von vielen Neuronen empfangen	
+    \item Verbindungen können \textit{verstärkend} oder \textit{hemmend} wirken, je nach der Chemie innerhalb des synaptischen Spalts	
+  \end{itemize}	
+  \begin{center}	
+    \includegraphics[scale=.2275]{ml04_3}	
+  \end{center}	
+  
+  \subsection{Einführung}	
+  Ein \textit{Perzeptron} ist ein binärer Klassifikator $f: \mathbb{R}^d \rightarrow\{0,1\}$ definiert als	
+  $$f(x) = \alpha \cdot(w\circ x + w_0)$$	
+  Alternativ wird das Perzeptron in der Literatur auch definiert als	
+  $$f(x) = \alpha \cdot (w\circ x)$$	
+  Hier ist $x = (1, x_1, ..., x_n)^T$ und $w = (w_0, w_1, ..., w_n)^T$, d.h. $x_0 = 1$ und $w_0$ sind in $x$ und $w$ enthalten	
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.2]{ml04_1}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.325]{ml04_6}	
+    \end{minipage}	
+  \end{figure}	
+  
+  Die \textit{Heaviside} Aktivierungsfunktion ist definiert als	
+  \begin{equation*}	
+    \alpha(x) = \begin{cases}	
+      1 & \text{falls $x > 0$}\\	
+      0 & \text{andernfalls}	
+    \end{cases}	
+  \end{equation*}	
+  \begin{center}	
+    \includegraphics[scale=.225]{ml04_2}	
+  \end{center}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml04_4}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml04_5}	
+    \end{minipage}	
+  \end{figure}	
+  
+  Die Klassifizierung lässt sich umdrehen, indem man alle Gewichte mit $\cdot (-1)$ multipliziert	
+  
+  \subsection{Lernalgorithmus}	
+  \begin{itemize}	
+    \item Beginne mit einer zufälligen oder festen Wahl für $w$, z.B. $w = 0$	
+    \item Bestimme die falsch klassifzierten Datenpunkte	
+    \item Versuche iterativ die einzelnen Parameter so zu verändern, dass die Anzahl der falsch klassifzierten Daten sinkt	
+    \item Höre auf sobald keine Verbesserung mehr eintritt	
+  \end{itemize}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml04_7}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.25]{ml04_8}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item $x$ wurde als Klasse 1 eingestuft, ist aber Klasse 0	
+    \subitem $f_w(x) = \alpha \cdot (w\circ x) = 1 \Rightarrow w\circ x > 0$	
+    \subitem $w' = w - x$	
+    \subitem $w'\circ x = (w - x)\circ x = w\circ x - x \circ x$	
+    \subitem $f_{w'}(x) = \alpha \cdot (w\circ x - x \circ x) = 0$	
+    \item $x$ wurde als Klasse 0 eingestuft, ist aber Klasse 1	
+    \subitem $f_w(x) = \alpha \cdot (w\circ x) = 0 \Rightarrow w\circ x \leq 0$	
+    \subitem $w' = w + x$	
+    \subitem $w'\circ x = (w + x)\circ x = w\circ x + x\circ x$	
+    \subitem $f_{w'}(x) = \alpha(w\circ x + x\circ x) = 1$	
+  \end{itemize}	
+  
+  
+  \begin{lstlisting}	
+    w = 0	
+    while (1.0 / n) * sum(|yi - alpha(w.dot(xi))|) > gamma do	
+      w' = w	
+      for i = 1 until n	
+        oi = alpha(w.dot(xi))	
+        w' += (yi - oi) * xi	
+      end for	
+      w = w'	
+    end while	
+  \end{lstlisting}	
+  
+  Die Gewichte eines Perzeptrons können auch einfacher berechnet werden, wenn z.B. bekannt ist, dass\\	
+  \vspace*{-1.25em}	
+  \begin{itemize}	
+    \item die Punke $(3, 0)$ und $(0, 3)$ auf der Entscheidungsgrenze (bzw. Entscheidungsoberfläche) liegen	
+    \item der Ursprung $(0, 0)$ negativ klassifiziert wird	
+  \end{itemize}	
+  
+  $f(x_1, x_2) = w_0 + w_1x_1 + w_2x_2$\\	
+  $f(3, 0) = w_0 + 3x_1 = 0 \Rightarrow w_0 = -3x_1$\\	
+  $f(0, 3) = w_0 + 3x_2 = 0 \Rightarrow w_0 = -3x_2$\\	
+  $f(0, 0) < 0 \Rightarrow x_1 = x_2 = 1 \Rightarrow w_0 = -3$\\	
+  eine Mögliche Lösung ist dann: $f(x_1, x_2) = -3 + x_1 + x_2$	
+  
+  \subsubsection{Beispiel Lernalgorithmus}	
+  \begin{itemize}	
+    \item $(x^1, y^1) = ([1, 1], 0)$ bzw. $([1, 1, 1], 0)$	
+    \item $(x^2, y^2) = ([1, 2], 1)$ bzw. $([1, 1, 2], 0)$	
+    \item $(x^3, y^3) = ([2, 2], 0)$ bzw. $([1, 2, 2], 0)$	
+  \end{itemize}	
+  
+  \begin{tabular}{l|l|l|l|l|l}	
+    $w_0$ & $w_1$ & $w_2$ & $([1, 1], 0)$ & $([1, 2], 1)$ & $([2, 2], 0)$\\	
+    \hline
+    0 & 0 & 0 & $0^{\checkmark}$ & $0^{x}$ & $0^{\checkmark}$\\	
+    +1 & +1 & +2 & & &\\	
+    \hline	
+    1 & 1 & 2 & $1^x$ & $1^{\checkmark}$ & $1^x$\\	
+    -1 & -1 & -1 & & &\\	
+    -1 & -2 & -2 & & &\\	
+    \hline	
+    -1 & -2 & -1 & $0^{\checkmark}$ & $0^x$ & $0^{\checkmark}$\\	
+    +1 & + 1 & + 2 & & &\\	
+    \hline	
+    0 & -1 & 1 & $0^{\checkmark}$ & $1^{\checkmark}$ & $0^{\checkmark}$	
+  \end{tabular}
+  \subsection{Grenzen des Perzeptron}
+  Probleme wie das Exklusiv-Oder (XOR), welche nicht \textit{linear trennbar} sind, können von einem Perzeptron nicht gelernt werden.\\	
+  Auch wenn ein Problem linear trennbar ist, erhält man mit dem Perzeptron Lernalgorithmus kein eindeutiges Modell
+  \begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+      \includegraphics[scale=.25]{ml04_9}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.4\textwidth}
+      \includegraphics[scale=.25]{ml04_10}	
+    \end{minipage}
+  \end{figure}	
+  
+  \section{Adaline}
+  Das \textit{Adaline} ähnelt im Aufbau dem Perzeptron besitzt jedoch eine andere Aktivierungsfunktion und einen unterschiedlichen Lernalgorithmus genannt \textit{Deltaregel}
+  \begin{center}
+    \includegraphics[scale=.2125]{ml04_11}
+  \end{center}
+  Das \textit{Adaline} ist ein \textit{Binärklassifikator} $f: \mathbb{R}^d \rightarrow {-1, 0, 1}$ definiert als
+  $$f(x) = \alpha\cdot(w\circ x + w_0)$$
+  wobei $\alpha$ die \textit{Signum} Aktivierungsfunktion ist.\\	
+  Auch hier nehmen wir implizit an, dass $x_0 = 1$ und $w$ den Parameter $w_0$ beinhaltet
+  
+  \subsection{Einführung}
+  Die \textit{Signum} Aktivierungsfunktion ist definiert als
+  \begin{equation*}
+    \alpha(x) = \begin{cases}
+      1 & \text{falls $x > 0$}\\
+      0 & \text{falls $x = 0$}\\
+      -1 & \text{andernfalls}
+    \end{cases}
+  \end{equation*}	
+  
+  \begin{center}	
+    \includegraphics[scale=.2275]{ml04_12}
+  \end{center}
+  
+  \subsection{Lernalgorithmus}
+  Wie bei der Linearen Regression verwenden wir beim Adaline ein bekanntes Fehlermaß inspiriert
+  durch die RSS/MSE in Verbindung mit dem \textit{Gradientenabstiegsverfahren}, um den negativen Gradienten
+  des Fehlermaßes zum Minimum zu folgen:\\
+  $$E(w)^i = \frac{1}{2}\cdot (y^i - f(x^i))^2 = \frac{1}{2}\cdot(y^i - w\circ x^i)^2$$
+  $$\frac{dE(w^i)}{dw_j} = (y^i - w\circ x^i)\cdot \frac{d}{dw_j}(y^i - w\circ x^i) = -(y^i - w\circ x^i)$$	
+  $$\nabla_wE(w)^i = \begin{bmatrix}\frac{dE(w)^i}{dw_0}\\...\\\frac{dE(w)^i}{dw_n}\end{bmatrix} = -(y^i - w\circ x^i)\cdot x^i$$
+  
+  \begin{lstlisting}
+    w = 0	
+    while (1 / n) * sum(|yi - alpha(w.dot(xi))|) > gamma
+      for i = 1 until n
+        w += eta * (yi - w.dot(xi)) * xi /* Deltaregel */
+      end for
+    end while
+  \end{lstlisting}
 
-\vspace*{1em}
+  \begin{itemize}
+    \item Bei hoher Lernrate $\eta$ beginnt der Algorithmus zu oszillieren und konvergiert nicht
+    \item Aufgrund seiner linearen Natur kann auch das Adaline die XOR-Funktion nicht direkt lernen	
+    \item Je nach Datensatz und Initialisierung ist der Klassifikator eindeutig	
+  \end{itemize}
 
-\begin{tabular}{ccccc|}
-  \textbf{0} & -3 & 8 & \textbf{1} & 7\\
-   1 & \textbf{0} & 10 & 3 & \textbf{1}\\
-   -1 & -9 & \textbf{1} & -8 & \textbf{0}\\
-   9 & \textbf{1} & 8 & \textbf{0} & 7\\
-   \textbf{1} & -2 & 6 & -2 & 5\\
-   \hline
- \end{tabular}
 
- \vspace*{1em}
-
-\begin{tabular}{ccccc|}
-  \textbf{0} & -12 & 0 & \textbf{1} & -2\\
-   10 & \textbf{0} & 11 & 12 & \textbf{1}\\
-   7 & -10 & \textbf{1} & \textbf{0} & \textbf{0}\\
-   18 & \textbf{1} & 9 & 9 & 7\\
-   \textbf{1} & -11 & -2 & -2 & -4\\
-   \hline
- \end{tabular}
-
- \vspace*{1em}
-
- \begin{tabular}{ccccc|}
-  \textbf{0} & \textbf{0} & 0 & \textbf{1} & 10\\
-   -2 & \textbf{0} & -1 & 0 & \textbf{1}\\
-   7 & 2 & \textbf{1} & \textbf{0} & 11\\
-   6 & \textbf{1} & -3 & -3 & 7\\
-   \textbf{1} & 1 & -2 & -2 & 8\\
-   \hline
- \end{tabular}
-
- \vspace*{1em}
-
- \begin{tabular}{ccccc|}
-  \textbf{0} & \textbf{1} & 0 & \textbf{0} & 10\\
-   -2 & \textbf{0} & -1 & 0 & \textbf{1}\\
-   7 & 2 & \textbf{0} & \textbf{1} & 11\\
-   9 & 3 & \textbf{1} & 0 & 10\\
-   \textbf{1} & 1 & -2 & -2 & 8\\
-   \hline
- \end{tabular}
-
- \vspace*{1em}
-
- \begin{tabular}{ccccc|}
-  2 & \textbf{1} & 0 & \textbf{0} & 10\\
-   \textbf{0} & \textbf{0} & -1 & 0 & \textbf{1}\\
-   9 & 2 & \textbf{0} & \textbf{1} & 11\\
-   11 & 3 & \textbf{1} & 0 & 10\\
-   \textbf{1} & -1 & -4 & -4 & 6\\
-   \hline
- \end{tabular}
-
-\end{document}
+  \chapter{K-Nearest Neighbors}	
+  \section{Einführung}	
+  Ausgehend vom optimalen Bayes-Klassifikator mit Klassen $C_1, ..., C_m$, $x\in X$	
+  $$f(x) = \text{arg max } Pr(y=C_j|X=x)$$	
+  Bei der KNN-Klassifikation gibt es keine direkte Formel für $Pr(y = C_j|X = x)$.\\	
+  KNN kommt ohne Parameter aus und ist somit eine \textit{nicht-parametrische} Methode.\\	
+  Man merkt sich direkt alle Punkte $x^i$ zusammen mit ihrer Klasse $y^i$, welche im Datensatz	
+  $$T = \{(x^i, y^i)|1\leq i \leq n\}$$	
+  enthalten sind. Es gibt somit keine Trainingsphase. Man nimmt stattdessen an, dass ein zu klassifizierender	
+  Datenpunkt $x$ die gleiche Klasse hat, wie die Trainingsdaten in seiner Nähe	
+  
+  \begin{center}	
+    \includegraphics[scale=.275]{ml05_1}	
+  \end{center}	
+  
+  Wobei mit \textit{Nähe} der euklidische Abstand	
+  
+  $$dist(x, x') = ||x - x'||_2 = \sqrt{\sum_{i=1}^d(x_i - x'_i)^2}$$	
+  
+  für $x, x' \in \mathbb{R}^d$ gemeint ist.\\	
+  Für eine Menge an Trainingsdaten $T = \{(x^i, y^i) | 1\leq i \leq n\}$ und einen Punkt $x$	
+  definiert man mit $N^k(x)\subseteq T$ die Menge der \textit{k} Trainingspunkte mit der geringsten Distanz $dist(x,x')$ zum Punkt $x$,	
+  die sogenannte \textit{k-Nachbarschaft}. Die Anzahl der Elemente in $N$ ist definiert als $|N^k(x)| = k$.\\	
+  Die Wahrscheinlichkeit der Klassenzugehörigkeit zur Klasse $C_j$ ist definiert als	
+  
+  $$Pr(y = C_j | X = x) = \frac{|\{(x^i, y^i) \in N^k(x) | y^i = C_j\}}{k}$$	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml05_2}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml05_3}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{center}	
+    \includegraphics[scale=.275]{ml05_4}	
+  \end{center}	
+  
+  \subsection{Auswirkungen von $K$}	
+  KNN-Methoden besitzen einen einzigen \textit{Hyperparameter} $k \in \mathbb{N}$ welcher maßgeblich die Leistung beeinflusst.	
+  Ziel ist daher, $k$ zu optimieren um\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item die \textit{Fehlerrate} auf dem Testdatensatz zu minimieren	
+    \item die Genauigkeit zu maximieren	
+  \end{itemize}	
+  
+  \begin{center}	
+    \includegraphics[scale=.35]{ml05_5}	
+  \end{center}	
+  
+  Allgemein kann man sagen, dass ein kleines $k$ zu einer rauen Trennkurve zwischen den Klassen führt und größeres $k$ zu einer glatten Trennkurve.	
+  Die Entscheidungsgrenze nähert sich mit steigendem $k$ immer mehr einer Geraden an.\\	
+  Wenn die Entscheidungsgrenze des optimalen Bayes-Klassifikators sehr stark nichtlineare wäre führt demnach ein kleines $k$ zu besseren	
+  Ergebnissen. Zu kleines $k$ birgt jedoch die Gefahr der Überanpassung, zu großes $k$ wiederum kann Unteranpassung zur Folge haben.	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.265]{ml05_6}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.255]{ml05_8}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \subsection{Laufzeit und Beschleunigungsstrukturen}	
+  Ein naiver Ansatz ist bei jedem zu klassifizierenden Datenpunkt die Abstände zu allen $n$ Trainingsdaten zu berechnen,	
+  aufsteigend zu sortieren und die $k$-ersten Punkte auszuwählen. Ein solcher Algorithmus hat die Laufzeitkomplexität von	
+  
+  $$\mathcal{O}(n^2\cdot log(n))$$	
+  
+  Reduzieren der Laufzeit gelingt z.B. mit speziellen Datenstrukturen wie dem \textit{KD-Baum}:	
+  
+  \begin{center}	
+    \includegraphics[scale=.375]{ml05_7}	
+  \end{center}	
+  
+  Gruppieren der Datenpunkte nach Abstand in einem immer feiner werdenden Netz	
+  
+  \chapter{Support Vector Machines}	
+  \section{Maximal Margin Klassifikator}	
+  \subsection{Einführung}	
+  
+  Maximal Margin Klassifikatoren betrachten die binäre Klassifikation von Punkten $x^i \in \mathbb{R}^d$ mit	
+  $y^i \in \{-1, 1\}$ und nehmen an, dass eine \textit{separierende Hyperebene} im $\mathbb{R}^d$ existiert,	
+  die beide Klassen perfekt voneinander trennt.	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml06_1}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml06_2}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \subsection{Separierende Hyperebene}	
+  Eine Hyperebene mit Parametern $w_0, w$ welche die Eigenschaft besitzt, dass für alle Datenpunkte	
+  $(x^i, y^i)\in T\subseteq \mathbb{R}^d \times \{-1, 1\}$ gilt, dass	
+  $$w_0 + w^Tx^i > 0 \text{ falls } y^i = 1 \land w_0 + w^Tx^i < 0 \text{ falls } y^i = -1$$	
+  $\Rightarrow y^i\cdot (w_0 + w^Tx^i) > 0$ wird als \textit{separierende Hyperebene} bezeichnet.	
+  
+  \subsection{Maximal Margin}	
+  Mit $f(x) = w_0 + w^Tx$ wird der binäre Klassifikator definiert als $sgn(f(x))$.\\	
+  An $f(x)$ kann man ablesen, wie sicher sich der Klassifikator ist:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item Für $|f(x)| \thickapprox 0$ befindet sich der Punkt $x$ sehr nahe an der Hyperebene	
+    $w_0 + w^Tx = 0$ und ist daher eher ein \textit{Wackelkandidat}	
+    \item Für $f(x) >> 0$ befindet sich der Punkt (sehr) weit entfernt von der Hyperebene	
+    im positiven oder negativen Bereich und die Klassifikation ist sicher	
+  \end{itemize}	
+  
+  Die Maximal Margin Hyperebene ist die separierende Hyperebene aus unendlich vielen potentiell separierenden	
+  Hyperebenen, die am weitesten von den Datenpunkten entfernt ist (= Unsicherheit minimeren).	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.265]{ml06_3}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml06_4}	
+    \end{minipage}	
+  \end{figure}	
+  
+  Die vier Datenpunkte, die der Maximal Margin Hyperebene am nächsten liegen, nennt man \textit{Support Vektoren},	
+  da sie die Hyperebene stützen. Falls sie verschoben werden, ändert sich auch die Hyperebene. Wichtig ist, dass die	
+  Maximal Margin Hyperebene nur von einer kleinen Anzahl Support Vektoren gestützt wird.	
+  
+  \subsection{Optimierungsproblem}	
+  Um die Maximal Hyperebene zu berechnen, muss das Optimierungsproblem	
+  $$arg\text{ min }\frac{1}{2}\cdot ||w||_2^2$$	
+  unter den Nebenbedingungen	
+  $$y^i\cdot(w_0 + w^Tx^i) \geq 1\text{ }\forall\text{ }1\leq i \leq n$$	
+  gelöst werden. Hier wird der Abstand der Support Vektoren zur Maximal Margin Hyperebene auf $1$ normiert,	
+  d.h. kein Punkt hat einen Abstand $< 1$.\par	
+  
+  \subsection{Karush-Kuhn-Tucker Theoreom}	
+  
+  Das Optimierungsproblem löst man mit dem \textit{Karush-Kuhn-Tucker} Theorem (KKT). Für die \textit{Maxima}	
+  einer Funktion $f(x): \mathbb{R}^d \rightarrow R$ mit $n$ Nebenbedingungen ($1\leq i \leq n$) der Form $g_i(x)\leq 0$ gelten	
+  bezüglich der \textit{Lagrange}-Funktion $L(x) = f(x) - \sum_{i=1}^m\lambda_i\cdot g_i(x)$ die notwendigen Bedingungen:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $\lambda_i\in \mathbb{R}$ und $\lambda_i \geq 0$ (\textit{Lagrange Multiplikatoren})	
+    \item $\nabla_xL(x) = 0$	
+    \item $\lambda_i\cdot g_i(x) = 0$ $\forall$ $i\in \{1, ..., n\}$	
+  \end{itemize}	
+  
+  Angewandt auf das Maximal Margin Problem wird nun $-\frac{1}{2}||w||_2^2$ maximiert anstatt $\frac{1}{2}||w||_2^2$ zu minimieren.	
+  Die \textit{Primale} Lagrange-Funktion:	
+  $$L_p(w_0, w) = -\frac{1}{2}||w||_2^2 - \sum_{i=1}^n\lambda_i(1 - y^i\cdot(w_0 + w^Tx^i))$$	
+  Da $-\frac{1}{2}||w||_2^2 = -\frac{1}{2}w^Tw = -\frac{1}{2}(w_1^2 + w_2^2 + ... + w_d^2)$	
+  und $\nabla -\frac{1}{2}||w||_2^2 = -\begin{bmatrix}w_1\\w_2\\...\\w_d\end{bmatrix}$ gilt	
+  $$\nabla_xL_p(w_0, w) = -w + \sum_{i=1}^n\lambda_iy^ix^i = 0$$	
+  wodurch $w = \sum_{i=1}^n\lambda_iy^ix^i$ und $\frac{dL_p(w_0, w)}{dw_0} = \sum_{i=1}^n\lambda_iy^i = 0$.\\	
+  Nach Einsetzen erhält man die \textit{Duale} Lagrange-Funktion:	
+  $$L_d(\lambda) = \sum_{i=1}^n\lambda_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy^iy^jx^{i^T}x^j$$	
+  die nun für $\lambda_i \geq 0$ und $i\in \{1,..., n\}$ optimiert wird.	
+  
+  \subsection{Beispiel mit zwei Datenpunkten}	
+  $x^1 = \begin{bmatrix}1\\2\end{bmatrix}, x^2 = \begin{bmatrix}2\\1\end{bmatrix}$ und $y^1 = 1, y^2 = -1$	
+  
+  \begin{center}	
+    \includegraphics[scale=.275]{ml06_5}	
+  \end{center}	
+  
+  Nach Einsetzen in $L_D(\lambda_1, \lambda_2)$:	
+  $$\lambda_1 + \lambda_2 - \frac{1}{2}\cdot\lambda_1^2\cdot1^2\cdot(1^2 + 2^2) - \frac{1}{2}\cdot\lambda_2^2\cdot(-1)^2\cdot(2^2 + 1^2)	
+  -\frac{1}{2}\cdot\lambda_1\lambda_2\cdot(-1)\cdot(2 + 2) - \frac{1}{2}\cdot\lambda_2\lambda_1\cdot(-1)\cdot1\cdot(2 + 2)$$	
+  $$\Leftrightarrow -\frac{5}{2}\cdot\lambda_1^2 - \frac{5}{2}\cdot\lambda_2^2 + 4\lambda_1\lambda_2 + \lambda_1 + \lambda_2$$	
+  Dies muss nun unter der Nebenbedingung $g(\lambda_1, \lambda_2) = \lambda_1 - \lambda_2 = 0$ optimiert werden. Aus dieser folgt,	
+  dass $\lambda_1 = \lambda_2 = \lambda$ und damit $L_D(\lambda, \lambda) = -\lambda^2 + 2\lambda$ mit globalem Maximum bei $\lambda = 1$	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.265]{ml06_6}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml06_7}	
+    \end{minipage}	
+  \end{figure}	
+  
+  $w = \sum_{i=1}^n\lambda_iy^ix^i = \begin{bmatrix}1\\2\end{bmatrix} - \begin{bmatrix}2\\1\end{bmatrix} =	
+  \begin{bmatrix}-1\\1\end{bmatrix}$\\	
+  $w_0$ lässt sich mit den ursprünglichen Nebenbedingungen $y^i\cdot(w_0 + w^Tx^i)\geq 1$\\	
+  $\forall$ $1\leq i\leq n$ bestimmen:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $1\cdot(w_0 + \begin{bmatrix}-1&1\end{bmatrix}\cdot\begin{bmatrix}1\\2\end{bmatrix}) \geq 1$ $\Rightarrow$ $w_0 + 1\geq 1$	
+    \item $-1\cdot(w_0 + \begin{bmatrix}-1&1\end{bmatrix}\cdot\begin{bmatrix}2\\1\end{bmatrix}) \geq 1$ $\Rightarrow$ $-w_0 + 1\geq 1$	
+  \end{itemize}	
+  Damit ist $w_0 = 0$ und $f(x) = w_0 + w^Tx = x_2 - x_1$	
+  
+  \subsection{Beispiel mit drei Datenpunkten}	
+  $x^1 = \begin{bmatrix}1\\2\end{bmatrix}, x^2 = \begin{bmatrix}2\\4\end{bmatrix}, x^3 = \begin{bmatrix}2\\1\end{bmatrix}$	
+  und $y^1 = 1, y^2 = 1, y^3 = -1$	
+  
+  \begin{center}	
+    \includegraphics[scale=.275]{ml06_8}	
+  \end{center}	
+  
+  Anschließendes Einsetzen ergibt das Duale Problem der Maximierung von 	
+  $$h(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 + \lambda_3 - \frac{5}{2}\lambda_1^2 - 10\lambda_2^2 -	
+  \frac{5}{2}\lambda_3^2 - 10\lambda_1\lambda_2 + 4\lambda_1\lambda_3 + 8\lambda_2\lambda_3$$	
+  mit der Nebenbedingung $g(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 - \lambda_3 = 0$.	
+  
+  Nach erneutem Einsetzen erhält man $z(\lambda_1, \lambda_2, \lambda_3, \lambda^*) = h(\lambda_1, \lambda_2, \lambda_3) +	
+  \lambda^*g(\lambda_1, \lambda_2, \lambda_3)$ und das LGS:	
+  
+  $$\nabla_{\lambda_1, \lambda_2, \lambda_3}z(\lambda_1, \lambda_2, \lambda_3, \lambda^*) =	
+  \begin{bmatrix}	
+    1 & -5\lambda_1 & -10\lambda_2 & 4\lambda_3 & \lambda^*\\	
+    1 & -20\lambda_2 & -10\lambda_1 & 8\lambda_3 & \lambda^*\\	
+    1 & -5\lambda_3 & 4\lambda_1 & 8\lambda_2 & -\lambda^*	
+  \end{bmatrix} = 0$$	
+  
+  Nun erhält man $\lambda_1 = \frac{4}{3}, \lambda_2 = -\frac{2}{9}, \lambda_3 = \frac{10}{9}$ und $\lambda^*=-1$.	
+  Da aber $\lambda_2 < 0$ ist dies keine gültige Lösung. Es wird nun an den Grenzen ($\lambda_i = 0$) weitergesucht:	
+  
+  \begin{center}	
+    \includegraphics[scale=.275]{ml06_9}	
+  \end{center}	
+  
+  Da $g(\lambda_1, \lambda_2, \lambda_3) = \lambda_1 + \lambda_2 - \lambda_3 = 0$, darf $\lambda_3$ nicht $0$ sein, da sonst	
+  $\lambda_1 = \lambda_2 = \lambda_3 = 0$, gültige Lösungen sind daher:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $\lambda_1 = 0 \Rightarrow \lambda_2 = \lambda_3$: $h(\lambda_1, \lambda_2, \lambda_3) = -\frac{9}{2}\lambda_3^2 + 2\lambda_3$	
+    mit dem Maximum bei $\lambda_2 = \lambda_3 = \frac{2}{9}$	
+    \item $\lambda_2 = 0 \Rightarrow \lambda_1 = \lambda_3$: $h(\lambda_1, \lambda_2, \lambda_3) = -\lambda_3^2 + 2\lambda_3$	
+    mit dem Maximum bei $\lambda_1 = \lambda_3 = 1$	
+  \end{itemize}	
+  
+  \begin{center}	
+    \includegraphics[scale=.275]{ml06_10}	
+  \end{center}	
+  
+  Man erhält mit $\lambda_1 =1, \lambda_2=0, \lambda_3=1$ den selben Klassifikator wie im ersten Beispiel, diesmal ist	
+  der zweite Datenpunkt $x^2$ nicht mehr beteiligt. Man erkennt an den \textit{Lagrange-Multiplikatoren}, welche	
+  Datenpunkte Support Vektoren sind und welche nicht ($\lambda = 0$).	
+  
+  \section{Support Vector Klassifikation}	
+  
+  Die Einschränkung der Maximum Margin Klassifikation, dass Klassen perfekt separierbar sein müssen, wird nun fallen gelassen.	
+  Es ist erlaubt, dass Datenpunkte\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item innerhalb des Margins	
+    \item oder sogar auf der falschen Seite der Hyperebene liegen (Grundvoraussetzung für eine trennende Hyperebene)	
+  \end{itemize}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.265]{ml06_11}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml06_12}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \subsection{Optimierungsproblem}	
+  
+  Die Support Vector Klassifizierung liefert das Optimierungsproblem	
+  
+  $$\text{arg max } M$$	
+  
+  unter den Bedingungen	
+  
+  $$\sum_{j=1}^dw_j^2 = 1$$	
+  
+  $$y^i\cdot(w_0 + w^Tx^i)\geq \text{ }M\cdot(1 - \epsilon_i)\text{ },\epsilon\geq 0\text{ }, \forall\text{ }1\geq i\geq n$$	
+  
+  $$\sum_{i=1}^n\epsilon_i\geq C$$	
+  
+  wobei $C\in \mathbb{R}$ und $C \geq 0$ ein \textit{Hyperparameter} ist. Die Schlupfvariable $\epsilon_i$ gibt Auskunft über	
+  die Position des $i$-ten Datenpunkts:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $\epsilon_i = 0$: $x^i$ befindet sich auf der richtigen Seite der Hyperebene	
+    \item $\epsilon\in\{0,1\}$: $x^i$ verletzt den Mindestabstand zur Hyperebene (Margin), befindet sich jedoch auf der richtigen Seite	
+    \item $\epsilon_i > 1$: $x^i$ befindet sich auf der falschen Seite der Hyperebene	
+  \end{itemize}	
+  
+  $C$ begrenzt den Grad der \textit{Verletzung}. Ist $C=0$ und damit $\epsilon_1 = ... = \epsilon_n = 0$ handelt es sich um einen	
+  Maximum Margin Klassifikator. Generell dürfen nicht mehr als $C$ Datenpunkte auf der falschen Seite liegen.	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.265]{ml06_13}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml06_14}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.265]{ml06_15}	
+    \end{minipage}	
+    \hfill	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.275]{ml06_16}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \subsection{Lösen des Optimierungsproblems}	
+  Anwenden des \textit{KKT}, so reduziert sich das Optimierungsproblem auf das duale Problem	
+  
+  $$\text{arg max }L_D(\lambda)$$	
+  
+  mit	
+  
+  $$L_D(\lambda) = \sum_{i=1}^n\lambda_i -\frac{1}{2}\cdot\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy^iy^jx^{i^T}x^j$$	
+  
+  mit Nebenbedingung\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $\sum_{i=1}^n\lambda_iy^i = $	
+    \item $0\geq \lambda_i\geq C$ für alle $i\in \{1, ..., n\}$	
+  \end{itemize}	
+  
+  Die Hyperebene wird nur von Datenpunkten innerhalb des Margins bzw. auf der falschen Seite bestimmt.	
+  Sie werden \textit{Support Vektoren} genannt.	
+  
+  \begin{center}	
+    \includegraphics[scale=.275]{ml06_17}	
+  \end{center}	
+  
+  \section{Support Vector Regression}	
+  
+  Identisch zur \textit{Linearen Regression} geht man bei der \textit{Support Vector Regression} davon aus,	
+  dass die Funktion $f$ die Form $f(x) = w_0 + w^Tx$ mit $w\in \mathbb{R}^d$ und $w_0\in \mathbb{R}$ hat.	
+  
+  \begin{center}	
+    \includegraphics[scale=.285]{ml06_18}	
+  \end{center}	
+  
+  Zusätzlich fordert man jedoch, dass es einen $\epsilon$-großen Margin um $f$ gibt, in welchem möglichst alle	
+  Datenpunkte liegen. Da dies in den seltesten Fällen klappt, erlaubt man eine \textit{Überschreitung} $\epsilon + \xi_i$ und 	
+  \textit{Unterschreitungen} $\epsilon + \xi_i^*$ des gesamten Marings.\par	
+  
+  Das resultierende quadratische Optimierungsproblem ist für eine feste Wahl von $\epsilon, C\in \mathbb{R} \geq 0$ gegeben durch	
+  
+  $$\text{arg min }\frac{1}{2}||w||^2 + C\cdot \sum_{i=1}^n(\xi_i + \xi_i^*)$$	
+  
+  mit den Nebenbedingungen $\forall\text{ }i\in\{1, ..., n\}$:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $y^i - w^Tx^i - w_0 \leq \epsilon + \xi_i$	
+    \item $w^Tx^i + w_0 - y^i\leq \epsilon + \xi_i^*$	
+    \item $\xi_i, \xi_i^* \geq 0$	
+  \end{itemize}	
+  
+  Man bestraft somit nur Abweichungen um $\xi_i$ bzw. $\xi_i^*$ \textit{außerhalb} des $\epsilon$-Margins.	
+  Da nur entweder eine Überschreitung \textit{oder} eine Unterschreitung vorliegt ist immer eins der $\xi_i = 0$.\\	
+  Die \textit{Primale Lagrange Funktion} ist gegeben als:	
+  
+  $$L_P(w, w_0, \lambda, \lambda^*) = -\frac{1}{2}||w||^2 - C\cdot \sum_{i=1}^n(\xi_i + \xi_i^*)	
+  -\sum_{i=1}^n\lambda_i[y^i - w^Tx^i - w_0 - \epsilon - \xi_i]	
+  -\sum_{i=1}\lambda_i^*[w^Tx^i + w_0 - y^i - \epsilon - \xi_i^*]	
+  $$	
+  
+  Nach Anwenden des KKT erhält man:	
+  
+  $$\nabla_wL_P(w, w_0, \epsilon, \epsilon^*) = -w + \sum_{i=1}^n(\lambda_i - \lambda_i^*)\cdot x_i = 0$$	
+  
+  $$\Rightarrow w = \sum_{i=1}^n(\lambda_i - \lambda_i^*)\cdot x^i$$	
+  
+  $$\Rightarrow\frac{dL_P}{dw_0} = \sum_{i=1}^n(\lambda_i - \lambda_i^*) = 0$$	
+  
+  Wenn man diese Erkenntnisse in das ursprüngliche $L_P$ einsetzt, erhält man:	
+  
+  $$L_D(\lambda, \lambda^*) = \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n(\lambda_i - \lambda_i^*)(\lambda_j - \lambda_j^*)x^{i^T}x^j	
+  + \epsilon\cdot\sum_{i=1}^n(\lambda_i + \lambda_i^*) + \sum_{i=1}^ny^i(\lambda_i^* - \lambda_i)$$	
+  
+  mit Nebenbedingungen\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $\sum_{i=1}^n(\lambda_i - \lambda_i^*) = 0$	
+    \item $0\leq \lambda_i, \lambda_i^*\leq C$	
+    \item $\xi_i(C-\lambda_i) = 0$, $\xi_i^*(C - \lambda_i^*) = 0$	
+  \end{itemize}	
+  
+  und zusätzlichen KKT Bedingungen zur Berechnung von $w_0$:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $\lambda_i[y^i - w^Tx^i - w_0 - \epsilon - \xi_i] = 0$	
+    \item $\lambda_i^*[w^Tx^i + w_0 - y^i - \epsilon - \xi_i^*] = 0$	
+  \end{itemize}	
+  
+  Nur ein Teil der Datenpunkte $x^i \in S\subseteq D$ liefern Lagrange Multiplikatoren $\lambda_i, \lambda_i^* > 0$. Diese	
+  Support Vektoren verletzten den Margin.	
+  
+  \subsection{Kerntrick}	
+  
+  Durch $w = \sum_{i\in S}(\lambda_i - \lambda_i^*)\cdot x^i$ erhält man:	
+  
+  $$f(x) = w^Tx + w_0 = \sum_{i\in S}(\lambda_i - \lambda_i^*)\cdot x^{i^T}x + w_0$$	
+  
+  Das Skalarprodukt $x^{i^T}x$ ist ein Maß für die Ähnlichkeit - umso höher der Wert umso ähnlicher die Vektoren.	
+  Es wird nun zu einem \textit{Kernel} $k$ für eine Basistransformation $\phi$ verallgemeinert:	
+  
+  $$k(u, v) = \phi(u)^T\phi(v)$$	
+  
+  Dadurch erhält man:	
+  
+  $$f(x) = \sum_{i\in S}(\lambda_i - \lambda_i^*)\cdot k(x^i, x) + w_0$$	
+  
+  Die ursprüngliche Formulierung erhält man mit $\phi(u) = u$ und $k(u, v) = u^Tv$.	
+  
+  $$L_d(\lambda, \lambda^*) = \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n(\lambda_i - \lambda_i^*)(\lambda_j - \lambda_j^*)	
+  k(x^i, x^j) + \epsilon\sum_{i=1}^n(\lambda_i + \lambda_i^*) + \sum_{i=1}^ny^i(\lambda_i^* - \lambda_i)$$	
+  
+  Die Berechnung von $k(u, v)$ ist effizient und kann ohne genaue Kenntniss von $\phi$ erfolgen.	
+  Das Verfahren wird \textit{Kerntrick} genannt. Beispiele:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item Linearer Kernel: $k(u, v) = u^Tv$	
+    \item Polynomialer Kernel: $k(u, v) = (1 + u^Tv)^p$	
+    \item Radiale Basisfunktion: $k(u, v) = e^{-\frac{||u-v||^2}{2\sigma^2}}$	
+  \end{itemize}	
+  
+  Bei hohen Dimensionen birgt wieder die Gefahr vor Overfitting.	
+  
+  \begin{center}	
+    \includegraphics[scale=.295]{ml06_19}	
+  \end{center}	
+  
+  Die dicken, schwarzen Punkte sind Support Vektoren (auch diejenigen außerhalb des Margins).	
+  
+  Der Kerntrick lässt sich auch bei der \textit{Support Vector Klassifikation} verwenden:	
+  
+  $$L_D(\lambda) = \sum_{i=1}^n\lambda_i - \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n\lambda_i\lambda_jy^iy^jk(x^i, x^j)$$	
+  
+  \chapter{Entscheidungsbäume}	
+  
+  \section{Einführung}	
+  
+  Wird angewendet, wenn $X$ \textit{nominal} ist, d.h. mit diskreten Werten aber ohne	
+  natürliche Distanzmetrik  (wie euklidische Norm)), z.B.:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $X_{\text{Farbe}} = \{\text{rot}, \text{grün}, \text{gelb}\}$	
+    \item $X_{\text{From}} = \{\text{rund}, \text{dünn}\}$	
+    \item $X_{\text{Größe}} = \{\text{groß}, \text{mittel}, \text{klein}\}$	
+    \item $X_{\text{Geschmack}} = \{\text{süß}, \text{sauer}\}$	
+  \end{itemize}	
+  
+  Ein Objekt $x\in X$ wird als $d$-Tupel, in diesem Beispiel mit einem $4$-Tupel	
+  
+  $$x = (x_1, x_2, x_3, x_4)\in X$$	
+  
+  mit $X = X_{\text{Farbe}} \times X_{\text{From}} \times X_{\text{Größe}} \times X_{\text{Geschmack}}$\\	
+  Ein Apfel wird z.B. beschrieben durch (rot, rund, mittel, süß)	
+  
+  \subsection{Definition}	
+  
+  Es soll eine Funktion $f: X\rightarrow Y$ gelernt werden, wobei $X$ reell, diskret oder nominal und $Y = \{y_1, ..., y_n\}$	
+  eine diskrete Menge von Klassen ist.\\	
+  Entscheidungsbäume klassifzieren Objekte anhand nominaler Kriterien mit Hilfe von Fragensequenzen, wobei die nächste Frage	
+  direkt von der Antwort der aktuellen Frage abhängt. Die Antwort auf jede Frage muss nominal sein wie z.B. generell $\{$ja, nein$\}$	
+  oder speziell $\{$rot, grün, gelb$\}$.\par	
+  Die Knoten des Baumes sind die systematischen Fragen und die Kanten die jeweiligen Antwortmöglichkeiten. Die Blätter des	
+  Baumes sind die Klassen. Die Klassifikation beginnt in der Wurzel und endet in einem Blatt - also in einer Klasse.\\	
+  Die Kanten, die einen Knoten verlassen müssen \textit{eindeutig} und \textit{erschöpfend} sein, sodass immer genau einer Kante	
+  gefolgt wird.	
+  
+  \begin{center}	
+    \includegraphics[scale=.285]{ml07_1}	
+  \end{center}	
+  
+  \subsection{Eigenschaften}	
+  
+  \begin{itemize}	
+    \item Die Klassifikation einzelner Datenpunkte $x\in X$ kann vom Menschen nachvollzogen werden	
+    \item Die Klassen $y\in Y$ selbst erhalten eine Beschreibung anhand von logischen Kriterien, z.B.	
+    \subitem Apfel = (Farbe = grün $\land$ Größe = mittel) $\lor$ (Farbe = rot $\land$ Größe = mittel)	
+    = (Farbe = grün $\lor$ Farbe = rot) $\land$ Größe = mittel	
+    \item Entscheidungsbäume können daher durch explizites Vorwissen ergänzt werden	
+  \end{itemize}	
+  
+  \subsection{CART}	
+  
+  Das \textit{CART} (Classifikation and Regression Tree) Framework bietet eine allgemeine Methodik umd	
+  verschiedenste Arten von Entscheidungsbäumen zu generieren.\par	
+  Ein Entscheidungsbaum teilt sukzessive die Menge $D \subseteq X \times Y$ in immer kleinere Teilmengen.	
+  Idealerweise endet jeder Pfad in einer \textit{reinen} Menge, d.h. einer Menge $F \subseteq D$ für die gilt,	
+  dass alle Labels $y$ gleich sind (üblicherweise nicht der Fall, ggf. weitere Aufteilung)	
+  
+  \begin{lstlisting}	
+    D := Trainingsdaten, Q := Fragen	
+    if stop_criteria(D) then	
+      return LEAF(compute_class(D))	
+    else	
+      foreach q in Q	
+        Sq = split(D, q)	
+        delta_iq = compute_improvement(D, S)	
+      end for	
+      b = arg max (delta_iq)	
+      return NODE(b, dtree(S_1b, Q\b), dtree(S_2b, Q\b))	
+  \end{lstlisting}	
+  
+  \section{Aufteilung}	
+  
+  Jede Entscheidung ist mit einem \textit{Split} der Trainingsdaten verbunden. Die Anzahl kann grundsätzlich frei	
+  gewählt werden, bereits zwei Splits reichen allerdings im Allgemeinen aus, d.h. binäre Entscheidungsbäume sind \textit{universell}.	
+  
+  \begin{center}	
+    \includegraphics[scale=.325]{ml07_2}	
+  \end{center}	
+  
+  Hauptziel ist, einen Baum mit möglichst wenigen Kanten und Knoten zu erstellen. Für jeden Knoten wird daher die Frage gesucht,	
+  die resultierende Datenmengen so \textit{rein} wie möglich macht. Das geschiet über Reduktion der \textit{Unreinheit} (Impurity)	
+  $i(N)$ in Knoten $N$.\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $i(N) = 0$: Alle Daten in Knoten $N$ haben die gleiche Klasse	
+    \item $i(N) = 1$: Alle Klassen sind gleich häufig in Daten in Knoten $N$ vertreten	
+  \end{itemize}	
+  
+  Ein Maß für Unreinheit / Unordnung / Entropie ist	
+  
+  $$i(N) = -\sum_{j=1}^mP(y_j)\cdot log_2(P(y_j))$$	
+  
+  mit\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $P(y_j)$ = relative Häufigkeit der Klasse $y_j$ innerhalb der Trainingsdaten an Knoten $N$	
+    \subitem $P(y_j)$ $\in (0, 1)$, da$log_2(P(y_j)) < 0$ kommt ein $-$ vor der Summe	
+    \item $m$ = Anzahl Klassen	
+  \end{itemize}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.2]{ml07_3}	
+    \end{minipage}	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.2]{ml07_4}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.2]{ml07_5}	
+    \end{minipage}	
+  \end{figure}	
+  
+  Weiteres Maß ist die \textit{Gini Unreinheit}:	
+  
+  $$i(N) = \sum_{i\neq j}P(y_i)\cdot P(y_j) = \frac{1}{2}(1 - \sum_{j=1}^mP^2(y_j))$$	
+  
+  und die \textit{Missclassification Impurity} (Wahrscheinlichkeit einen Fehler zu machen):	
+  
+  $$i(N) = 1 - \text{ max }P(y_j)$$	
+  
+  \begin{center}	
+    \includegraphics[scale=.3]{ml07_6}	
+  \end{center}	
+  
+  An einem Knoten $N$ eines binären Baums möchte man wissen, welche Fragen an die übrigen Testdaten gestellt werden soll.	
+  Eine Heuristik ist die Frage, welche den Rückgang der Unreinheit maximiert:	
+  
+  $$\Delta i(N) = i(N) - P_Pi(N_p) - P_Ni(N_N)$$	
+  
+  mit\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item $N_P$: Positiver Nachfolgeknoten von $N$	
+    \item $N_N$: Negativer Nachfolgeknoten von $N$	
+    \item $P_P = 1 - P_N$: Anteil der Datenpunkte, die dem positiven Knoten zugeordnet werden	
+    \item Bei nominalen Features muss ein vollständiger Vergleich aller möglichen Fragen pro Knoten in allen	
+    Dimensionen durchgeführt werden	
+    \item Bei diskreten / reellen Features werden stattdessen Vergleiche $x_i <= c$, $c\in \mathbb{R}$ verwendet.	
+    $c$ beschränkt sich auf tatsächlich in den Trainingsdaten vorhandene Werte	
+  \end{itemize}	
+  
+  \section{Beispiel: Erstellung eines binären Entscheidungsbaumes}	
+  
+  \begin{center}	
+    \includegraphics[scale=.3]{ml07_7}	
+  \end{center}	
+  
+  In diesem Beispiel hat der binäre Entscheidungsbaum 6 Fragen:\\	
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item rot: Ja/Nein	
+    \item grün: Ja/Nein	
+    \item blau: Ja/Nein	
+    \item weich: Ja/Nein	
+    \item ...	
+  \end{itemize}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_8}	
+    \end{minipage}	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_9}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_10}	
+    \end{minipage}	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_11}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_12}	
+    \end{minipage}	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_13}	
+    \end{minipage}	
+  \end{figure}	
+  
+  Es wird die erste Frage $x_2 = $ \textit{flüssig} gewählt, da sie neben $x_2 = $ \textit{weich} den maximalen	
+  $\Delta i(N)$-Wert besitzt. Man stellt weiterhin fest, dass die Daten im linken Knoten bereits \textit{rein}	
+  sind und man daher direkt die Klasse \textit{blau} bestimmen kann:	
+  
+  \begin{center}	
+    \includegraphics[scale=.3]{ml07_14}	
+  \end{center}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_15}	
+    \end{minipage}	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_16}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_17}	
+    \end{minipage}	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_18}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_19}	
+    \end{minipage}	
+  \end{figure}	
+  
+  Man wählt die Frage $x_2 = $ \textit{weich}, da sie neben $x_2 = $ \textit{trocken} den maximalen $\Delta i(N)$-Wert	
+  besitzt. Außerdem stellt man fest, dass die Daten im linken Knoten \textit{rein} sind und man direkt die Klasse	
+  \textit{rot} bestimmen kann.	
+  
+  \begin{center}	
+    \includegraphics[scale=.3]{ml07_20}	
+  \end{center}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_21}	
+    \end{minipage}	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_22}	
+    \end{minipage}	
+  \end{figure}	
+  
+  \begin{figure}[H]	
+    \centering	
+    \begin{minipage}[b]{0.4\textwidth}	
+      \includegraphics[scale=.235]{ml07_23}	
+    \end{minipage}	
+  \end{figure}	
+  
+  Man wählt als nächste Frage $x_1 = $ \textit{rot}, da sie neben $x_1 = $ \textit{blau} den maximalen	
+  $\Delta i(N)$-Wert besitzt. Außerdem stellt man fest, dass die Daten im linken Knoten \textit{rein}	
+  sind und man direkt die Klasse \textit{blau} bestimmen kann. Auch der rechte Knoten ist nun \textit{rein}	
+  und wird der Klasse \textit{rot} zugeordnet $\Rightarrow$ fertig.	
+  
+  \begin{center}	
+    \includegraphics[scale=.3]{ml07_24}	
+  \end{center}	
+  
+  \section{Weiterführendes}	
+  
+  Bei reellwertigen Features $X = \mathbb{R}^d$ sollten die Fragen passend gewählt werden. Oftmals werden auch	
+  Linearkombinationen erlaubt, was die Baumkomplexität deutlich verringert	
+  
+  \begin{center}	
+    \includegraphics[scale=.3]{ml07_25}	
+  \end{center}	
+  
+  \vspace*{-1.5em}	
+  \begin{itemize}	
+    \item Der gezeigte Algorithmus führt nur lokale Optimierung durch und ist damit \textit{greedy}, d.h. es gibt keine Garantie,	
+    dass die Folge von lokalen Festlegungen zu einem globalen Optimum bezüglich der Baumgröße führen.	
+    \item Man reduziert eigentlich die \textit{Missclassification Impurity}, trotzdem ist oft die \textit{Gini Unreinheit}	
+    vorzuziehen, da sie vorausschauender ist	
+    \item In der Praxis wichtiger sind Kriterien, wann der Baumaufbau gestoppt bzw. der Baum gestutzt werden sollte. Baut	
+    man nämlich den Baum immer bis zur minimalen Unreinheit aus, befindet amn sich mit großer Wahrscheinlichkeit im	
+    Bereich der \textbf{Überanpassung}. Im Extremfall besteht jedes Blatt aus einem einzigen Datenpunkt	
+  \end{itemize}	
+  
+  \section{Stopkriterien}	
+  
+  \begin{itemize}	
+    \item \textbf{Testfehlerkriterium:} Split der Daten in Trainings- und Testdaten, nach jedem Schritt im Baumaufbau wird Fehler auf	
+    Testdaten protokolliert. Schlussendlich verwendet man die Splittingtiefe pro Baumteil, die zum minimalen Testfehler geführt hat	
+    \item \textbf{Mindestreduktion:} Von weiteren Splits wird abgesehen, wenn Reduktion der Unreinheit kleiner\\	
+    als Hyperparameter $\beta \in \mathbb{R} \geq 0$: $\text{max } \Delta i(N) < \beta$	
+    \subitem Alle Daten können für das Lernen verwendet werden, Blätter können	
+    \subitem auf allen Ebenen liegen (Vorteilhaft bei hoher Diversität	
+    \subitem in Feature-Dimensionen) \textbf{aber} optimale Wahl von $\beta$ nicht ersichtlich	
+    \item \textbf{Mindestgröße:} Splitting wird beendet, sobald eine Mindestgröße der Datenmenge absolut oder relativ unterschritten	
+    wird	
+    \subitem Vorteil: Partitionsgröße passt sich ungleich verteilen Daten an, d.h.	
+    \subitem kleine Partitionen bei dichten und	
+    \subitem große Partitionen bei spärlichen Daten	
+    \item \textbf{Globale Kriterien:} Baum wird solange gesplitted bis Minimum bezüglich eines globalen Kriteriums	
+    $\alpha \cdot \text{ Größe } + \sum_{\text{Blätter}}i(N)$	
+    \subitem Größe kann z.B. Anzahl der Knoten / Kanten des Baumes sein	
+    \subitem Hyperparameter $\alpha \in \mathbb{R} \geq 0$ wägt zwischen	
+    \subitem Größe und Unreinheit der Blätter ab (optimale Wahl nicht ersichtlich)	
+    \subitem $\sum_{\text{Blätter}}i(N)$ ist ein Maß für die Gesamtunsicherheit	
+    \subitem der Trainingsdaten innerhalb des Baumes	
+    \item \textbf{Hypothesentest:} ?	
+  \end{itemize}	
+  
+  \section{Stutzen}	
+  
+  Stopkriterien leiden unter dem \textit{Horizonteffekt} - bei einem zu früh entschiedenen Stop werden eventuell spätere,	
+  global gesehen jedoch gute Splits nicht erkannt. Beim \textit{Stutzen} wird der Baum komplett aufgebaut (Blätter mit minimaler	
+  Unreinheit) und anschließend werden Teile des Baums entfernt, so wird der Horizonteffekt vermieden. Nachteil sind die höheren	
+  Berechnungskosten als im Falle von Stopkriterien.	
+  
+  \begin{itemize}	
+    \item \textbf{Verschmelzen:} Splits werden sukzessive rückgängig gemacht, angefangen an den Blättern die nur kleinen	
+    Beitrag zur Unreinheit leisten	
+    \item \textbf{Regeln:} Jedes Blatt kann durch einen \textit{booleschen Term} als aussagenlogische Formel bezüglich der	
+    Features beschrieben werden. Durch Betrachtung dieser Liste können Vereinfachungen auf Formelebene gefunden werden.	
+  \end{itemize}	
+  
+  \section{Abschluss}	
+  
+  Bei absoluter \textit{Reinheit} in einem Blatt ist die Klassenzuordnung klar. Durch Stopkriterien oder Stutzen können sich in einem	
+  Blatt verschiedene Klassen befinden. In diesem Fall wird die Klasse mit den meisten Datenpunkten gewählt.\par	
+  
+  Bei unbekannten Test- bzw. Trainingsdaten können die Daten aus den Trainingsdaten entfernt werden. Alternativ wird die	
+  Berechnung der Unreinheit an die vorhandenen Daten je Feature / Frage angepasst (= Entscheidungsbaum muss an jedem Knoten	
+  \textit{Alternativen} bereitstellen, falls Feature nicht vorhanden).	
+  
+  \end{document}

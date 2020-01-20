@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.10)  13 JAN 2020 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.10)  13 JAN 2020 11:56
 entering extended mode
 **c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
 (c:/Users/test/Documents/Studium/MaschinellesLernenPrakt/Zusammenfassung/summary.tex
@@ -1083,7 +1083,11 @@ Overfull \hbox (2.18056pt too wide) in paragraph at lines 1484--1486
 []\OT1/cmr/bx/n/10 Globale Kri-te-rien: \OT1/cmr/m/n/10 Baum wird solange ges-plit-ted bis Min-i-mum bezuglich
  []
 
-[47 <./screenshots/ml07_25.png>] [48] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
+[47 <./screenshots/ml07_25.png>] [48]
+Chapter 8.
+[49
+
+] (c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.aux) ) 
 Here is how much of TeX's memory you used:
  5417 strings out of 492450
  74540 string characters out of 3120471
@@ -1093,9 +1097,9 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  32i,15n,37p,327b,1218s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/test/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (48 pages, 5822898 bytes).
+Output written on c:/Users\test\Documents\Studium\MaschinellesLernenPrakt\Zusammenfassung\summary.pdf (49 pages, 5823551 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
+ 407 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  456 words of extra memory for PDF output out of 10000 (max. 10000000)
 
